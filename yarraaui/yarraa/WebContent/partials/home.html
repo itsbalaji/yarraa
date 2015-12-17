@@ -120,10 +120,10 @@
         </div>
       </section>
       
-      <section class="about-yarraa">
+      <section class="about-yarraa" id="aboutYarraa">
       	<div class="container-fluid">
         	<div class="row">
-          	<div class="col-md-6 about-us">
+          	<div class="col-md-6 about-us" >
             	<h2>{{"ABOUT_YARRAA"|translate}}</h2>
               <p>{{"YARRAA_IS_ALL_ABOUT_"|translate}}</p>
               <div class="team-yarraa" align="center">
@@ -244,6 +244,8 @@
       <script>
 			$(document).ready(function() {
 			  
+				 $('html, body').animate({ scrollTop: 0 }, 'slow');
+				 
 			  $('#loginTrigger').click(function(){
 			    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
 			  });

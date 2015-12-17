@@ -2,6 +2,8 @@ app.controller("SignupCtrl", function($scope, notify,  $location, $http, AppCons
 	
 	$scope.countries;
 	$scope.newUser = {"first_name":"" ,"email":"","telephone":"","country_code":"","state":"","city" :""};
+	$scope.onlyNumbers =/^[1-9]+[0-9]*$/;
+	
 	$scope.init = function(){
 		
 		$http.get(AppConstants.REST_URL + '/countries')
@@ -25,6 +27,12 @@ app.controller("SignupCtrl", function($scope, notify,  $location, $http, AppCons
 		{
 			$('.errorAlert').addClass('errorHighlight');
 		}*/
+		
+		if($scope.signupForm.telephone.$valid == false)
+		{
+			notify.failure('Please enter valid telephone number');
+		}
+		
 		
 		if($scope.signupForm.$valid)
 		{

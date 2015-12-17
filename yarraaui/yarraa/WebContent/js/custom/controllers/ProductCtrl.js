@@ -1,4 +1,5 @@
-app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $location, $rootScope, apiCall, DataService) {
+app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $location, $rootScope, apiCall, DataService,
+		$window) {
 	$scope.warranties;
 	$scope.warrantiesFullList = [];
 	$scope.totalAssetCost = 0;
@@ -12,6 +13,8 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 	
 	
 	$scope.init = function(){
+		
+		DataService.clearAll();
 		
 		notify.info("");
 		
@@ -142,6 +145,16 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 		});
 		
 	}
+	
+	$scope.goToReferences = function()
+	{
+		$location.path("/service404");
+	}
+	$scope.goToSell = function()
+	{
+		$location.path("/service404");
+	}
+	
 	$scope.warrantyAll = function()
 	{
 	
@@ -259,8 +272,8 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 				}
 		);
 		
-		if(DataService.getServiceCenters(id) == null)
-		{
+		
+			
 			$http({
 				method : 'POST',
 				url : AppConstants.REST_URL + '/service-centers/search',
@@ -272,7 +285,7 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 				DataService.setServiceCenters(id, response.data);
 				$("#svrCenterCnt_"+id).html(response.data['service-centers'].length);	
 			},function(){});
-		}
+		
 		
 		
 		apiCall.get(
@@ -337,20 +350,22 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 		$('#modal1').openModal();
 	}
 	
-	$scope.getWarrantyById = function(warranty_id)
+	$scope.getWarrantyById = function(warrantyId)
 	{
 		result = {};
 		indx = -1;
+		
 		$.each($scope.warranties, function()
 		{				
-			if(this.warranty_id == warranty_id)
-			{
-				indx++;
+			indx++;
+			if(this.warranty_id == warrantyId)
+			{	
+				result = this;
 				return;
 			}
 		});			
 		
-		result =  $scope.warranties[indx];
+		//result =  $scope.warranties[indx];
 		
 		return result;
 	}

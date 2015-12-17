@@ -44,7 +44,7 @@
             <button type="button" class="btn btn-default btn-signup" id="signupTrigger">{{"SIGN_UP"|translate}}</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">{{"ABOUT_YARRAA"|translate}}</a></li>
+            <li><a href="" scroll-to="aboutYarraa">{{"ABOUT_YARRAA"|translate}}</a></li>
             <li><a href="">{{"KEY_SERVICES"|translate}}</a></li>
             <li><a href="">{{"NEWS"|translate}}</a></li>
             <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
@@ -70,7 +70,7 @@
                 	<h6>{{"COMPANY"|translate}}</h6>
                   <ul class="list-unstyled">
                   	<li><a href="#/">{{"HOME"|translate}}</a></li>
-                    <li><a href="#">{{"ABOUT_YARRAA"|translate}}</a></li>
+                    <li><a href="" scroll-to="aboutYarraa">{{"ABOUT_YARRAA"|translate}}</a></li>
 		            <li><a href="#">{{"KEY_SERVICES"|translate}}</a></li>
 		            <li><a href="#">{{"NEWS"|translate}}</a></li>
                     <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
@@ -307,7 +307,7 @@
                       <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' ng-model="newUser.email" required>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" id="telephone" placeholder='{{"TELEPHONE"|translate}}'  ng-model="newUser.telephone" required>
+                      <input type="number" ng-pattern="onlyNumbers" class="form-control" name="telephone" id="telephone" placeholder='{{"TELEPHONE"|translate}}'  ng-model="newUser.telephone" required>
                     </div>
                     <div class="form-group">
                       <select class="form-control" ng-model="newUser.country_code">

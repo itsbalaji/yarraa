@@ -16,6 +16,7 @@ app.directive('onFinishRender', function ($timeout) {
     }
 });
 
+
 app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_TAGLINE) {
 	$rootScope.loggedInUser = null;
 	$scope.BRAND_TAGLINE = BRAND_TAGLINE;
@@ -25,26 +26,26 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 	
 	
 	$http.get("/yarraa/files/partners")
-	.then(function(response)
-	{		
-		$scope.partners = response.data.partners;
-		
-	}
-	,function()
-	{
-		//alert('Technical Error 2: Unable to get partner list');			
-	});
+		.then(function(response)
+		{		
+			$scope.partners = response.data.partners;
+			
+		}
+		,function()
+		{
+			//alert('Technical Error 2: Unable to get partner list');			
+		});
 	
 	$http.get("/yarraa/files/brands")
-	.then(function(response)
-	{		
-		$scope.brands = response.data.brands;
-		
-	}
-	,function()
-	{
-		//alert('Technical Error 2: Unable to get partner list');			
-	});
+		.then(function(response)
+		{		
+			$scope.brands = response.data.brands;
+			
+		}
+		,function()
+		{
+			//alert('Technical Error 2: Unable to get partner list');			
+		});
 	
 	$scope.$on('ngPartnersFinished', function(ngRepeatFinishedEvent) {
 		
@@ -56,6 +57,8 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 			});
 	});
 	
+	
+	
 	$scope.$on('ngBrandsFinished', function(ngRepeatFinishedEvent) {
 		$("#yarraa-brands").owlCarousel({
 			autoPlay: 3000, //Set AutoPlay to 3 seconds
@@ -64,13 +67,28 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 			itemsDesktopSmall : [979,3]
 		});
 	});
-	
-	
-	
-	
-	
-	
+		
 });
+
+
+
+app.directive('scrollTo', function ($location, $anchorScroll) {
+	  return function(scope, element, attrs) {
+		  $(element).click(function(event) {			
+			  event.stopPropagation();
+		        var off = scope.$on('$locationChangeStart', function(ev) {
+		            off();
+		            ev.preventDefault();
+		        });
+		        var location = attrs.scrollTo;
+		        $location.hash(location);
+		        $anchorScroll();
+	        });
+		 	  
+	    };
+	});
+
+
 
 app.config(['$httpProvider', function($httpProvider) {
 	 //$httpProvider.defaults.useXDomain = true;

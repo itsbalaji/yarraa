@@ -29,7 +29,7 @@ app.controller("ServiceCtrl", function($scope, notify, AppConstants, $http, $loc
 		if(result && ($scope.search.address && $scope.search.address != ""))
 		{			
 			address = $scope.search.address;
-			centerAddress = item.address1 + item.address2 + item.city + item.state + item.postal_code;
+			centerAddress = item.company_name + item.address1 + item.address2 + item.city + item.state + item.postal_code;
 			if(centerAddress.toLowerCase().indexOf(address.toLowerCase()) > -1 )
 				result =  true;
 			else

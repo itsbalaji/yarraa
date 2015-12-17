@@ -151,7 +151,7 @@ $translateProvider.translations('en_US', {
 	"THE_ONE_STOP_4":"your personal devices & home appliances",
 	"TOTAL_ACTIVE_USERS":"Total Active Users",
 	"TOTAL_PRODUCTS":"TOTAL PRODUCTS",
-	"TOTAL_ASSETS":"TOTAL_ASSETS",
+	"TOTAL_ASSESTS":"TOTAL_ASSETS",
 	"TYPE":"Type",
 	"UNDER_COVERAGE":"UNDER COVERAGE",
 	"UNDER_SERVING":"UNDER SERVING",
@@ -389,7 +389,9 @@ $translateProvider.translations('en_US', {
 	"TERMS_ANS_11_3":"Payment by mail: We accept money orders, cashier's checks, company and personal checks (allow 7 to 10 working days for check clearance by your bank). Please make all payment payable to YARRAA and mail payment to: YARRAA, Inc., Montgomery Street Center, Suite 1500, 315 Montgomery Street, 9th Floor, San Francisco, CA 94104 USA.",
 	"TESTIMONAL_CARLY":"Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.",
 	"TESTIMONAL_LYNDA":"The video was informative and explained uses for the site; I like this because there is nothing worse than a Web site that I don't understand or don't know how to use. Even better was the fact that I didn't have to sit through the entire thing, instead I chose from the scenes at the bottom and got a super short explanatory clip.",
-	"NO_DATA_AVAILABLE":"No data available"
+	"NO_DATA_AVAILABLE":"No data available",
+	"BACK_TO_LIST":"Back to List",
+	"SERVICE_NOT_READY":"Currently Service not ready"
 
 });
 
@@ -746,7 +748,9 @@ $translateProvider.translations('jp', {
 		"TERMS_ANS_11_3":"メールでのお支払い方法：我々は、マネーオーダー、キャッシャーのチェック、企業や個人小切手を（あなたの銀行によるクリアランス確認のために7〜10営業日を許可する）を受け入れます。 YARRAAおよびメール支払いにすべての支払いが支払わしてください：YARRAA社、モンゴメリーストリートセンター、スイート1500、315モンゴメリー通り、9階、サンフランシスコ、カリフォルニア州94104米国。",	
 		"TESTIMONAL_CARLY":"Yarraaを助けることができるお近くのサービスセンターのリストを提供します。その後、製品の脱落にそれを郵送、または（場合によっては）あってもそれを拾う来るために誰かのために手配することができます！文字化けミューザクをバックグラウンドで再生中に、あなたは自分の時間がない以上保留に待っているのあなたのサービス要求を管理します。",
 		"TESTIMONAL_LYNDA":"ビデオは有益だったとサイトに使用する説明しました。私は理解していないか、使用する方法がわからないWebサイトより悪い何もないので、私はこれが好きです。さらに良い代わりに私は一番下のシーンから選択し、超短い説明クリップを持って、私は全体のことを介して座って持っていなかったという事実でした。",
-		"NO_DATA_AVAILABLE":"データなし"
+		"NO_DATA_AVAILABLE":"データなし",
+		"BACK_TO_LIST":"一覧に戻ります",
+		"SERVICE_NOT_READY":"現在サービス準備ができていません"
 });
 
 // Tell the module what language to use by default

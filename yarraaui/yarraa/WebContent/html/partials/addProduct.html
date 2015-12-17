@@ -41,10 +41,17 @@
                             </form>
                           </div>
                           <div class="row">
-                               <div class="col s6" style="padding:20px;">
+                          
+                               <div class="col s6" style="padding:20px;"  >
                                   <button class="btn waves-effect waves-light left" type="submit" ng-click="navigateToStep2()" name="action">{{"NEXT"|translate}}</button> &nbsp;<span class="buttonbar"> | </span><a href="#" class="buttonbar">{{"CANCEL"|translate}}</a>
                               </div>
+                              
+                              
+                              
+                              
                            </div>
+                           
+                           
                     </div>
                   </div>
                 </div>
@@ -74,7 +81,7 @@
                                 </div>
                                 
                                 <div class="input-field col s6">
-                                  <input id="warrantymonths" name="warrantymonths" type="number" min="0" max="999"  class="validate" ng-model="product.warranty_period" required="required" onlyNumbers>
+                                  <input id="warrantymonths" name="warrantymonths" type="number" min="0" max="999"  class="validate" ng-model="product.warranty_period" required="required" ng-pattern="onlyNumbers">
                                   <label for="warrantymonths">{{"WARRANTY_MONTHS"|translate}}</label>
                                 </div>
                                 <div class=" col s6">
@@ -149,8 +156,9 @@
                                <div class="col s6" style="padding:20px;">
                                	  <button class="btn waves-effect waves-light left" ng-click="navigateToStep1()" name="action">{{"BACK"|translate}}</button> &nbsp;<span class="buttonbar"></span>
                                   <button class="btn waves-effect waves-light left" ng-click="navigateToStep3()" name="action">{{"NEXT"|translate}}</button> &nbsp;
-                                  <span class="buttonbar"> | </span><a href="#" class="buttonbar">{{"CANCEL"|translate}}</a>
+                                  <span class="buttonbar"> | </span><a id="backtoList" href="#/landing" class="buttonbar">{{"CANCEL"|translate}}</a>
                               </div>
+                              
                            </div>
                       </form>
                     </div>
@@ -188,10 +196,14 @@
                           </tbody>
                         </table>
                           <div class="row">
-                               <div class="col s6" style="padding:20px;">
+                               <div class="col s6" style="padding:20px;" ng-hide="product_saved===true">
                                	<button class="btn waves-effect waves-light left" ng-click="navigateToStep2()" name="action">{{"BACK"|translate}}</button> &nbsp;<span class="buttonbar"></span>
                                   <button class="btn waves-effect waves-light left" ng-click="saveWarranty()" id="saveWarranty" name="action">Submit</button> &nbsp;<span class="buttonbar"> | </span><a href="#/landing" class="buttonbar">Cancel</a>
                               </div>
+                               <div class="col s6" style="padding:20px;" ng-hide="product_saved===false" ng-show="product_saved===true">
+                               	  <a href="#/landing" class="buttonbar">{{"BACK_TO_LIST"|translate}}</a>
+                              </div>
+                             
                            </div>
                     </div>
                   </div>

@@ -19,7 +19,7 @@
 	                          	<li class="companyLogo"><img src="{{imgBaseURL}}/companies/{{ext.company_id}}/pictures" width="80px" height="auto"/></li>
 	                          	<li class="planType">{{ext.title}}</li>
 	                          	<li ng-class="{yes: feature=='Y', no: feature=='N'}" ng-repeat="feature in ext.featureStatus"></li>
-	                          	<li class="planPrice">${{ext.selling_price}}</li>
+	                          	<li class="planPrice">{{ext.selling_price | currency}}</li>
 	                          	<li class="planBuy"><button class="btn waves-effect waves-light" name="action" ng-click="purchaseWarranty($index)">{{"BUY"|translate}}</button></li>
 	                          	
 	                          </ul>

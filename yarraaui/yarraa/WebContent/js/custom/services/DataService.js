@@ -3,6 +3,12 @@ app.service("DataService", function() {
 	var warrantyDetails;
 	var serviceCenters = [];
 	
+	var clearAll = function()
+	{
+		serviceCenters = [];
+		warranty_id = null;
+	}
+	
 	var setServiceCenters = function(warranty_id, centers)
 		{
 			var item = {};
@@ -15,13 +21,14 @@ app.service("DataService", function() {
 			result = [];
 			indx = -1;
 			$.each(serviceCenters, function(obj)
-			{				
-				if(warranty_id == warranty_id)
-				{
-					indx++;
+			{	
+				indx++;				
+				if(this.warranty_id == warranty_id)
+				{					
 					return;
 				}
-			});			
+			});	
+			
 			if(indx >= 0)
 				result =  serviceCenters[indx];
 			else
@@ -54,6 +61,7 @@ app.service("DataService", function() {
 		getWarranty: getWarranty,
 		setWarranty: setWarranty,
 		getWarrantyDetails:getWarrantyDetails,
-		setWarrantyDetails:setWarrantyDetails
+		setWarrantyDetails:setWarrantyDetails,
+		clearAll:clearAll
 	  };
 });

@@ -1,5 +1,6 @@
 app.controller("ProductAddCtrl", function($scope, notify, AppConstants, $http, $location, $rootScope) {
 	$scope.step = 1;
+	$scope.product_saved = false;
 	$scope.warrantyStartDate;
 	$scope.product={
 						"brand_name":"",
@@ -115,9 +116,12 @@ app.controller("ProductAddCtrl", function($scope, notify, AppConstants, $http, $
 					if(response.data)
 					{
 						
-						if(response.data.errors && response.data.errors[0].code)
+						if(response.data.errors)
 						{
-							notify.failure(response.data.errors[0].message);
+							if(response.data.errors[0])
+								notify.failure(response.data.errors[0].message);
+							else
+								notify.failure(response.data.errors.message);
 						}
 						else
 						{
@@ -135,6 +139,8 @@ app.controller("ProductAddCtrl", function($scope, notify, AppConstants, $http, $
 							{
 								$scope.uploadImage(response.data.warranty.warranty_id, 3, "warrantyFile3");
 							}
+							
+							$scope.product_saved = true;
 							 
 					            
 					            

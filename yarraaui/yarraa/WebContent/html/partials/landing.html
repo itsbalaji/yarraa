@@ -23,8 +23,8 @@
         </div>
         <div class="col s1">&nbsp;</div>
         <div class="col s2 totalassest">
-          <span class="label">{{"TOTAL_ASSETS"|translate}}</span>
-          <span class="count">S${{totalAssetCost}}</span>
+          <span class="label">{{"TOTAL_ASSESTS"|translate }}</span>
+          <span class="count">{{totalAssetCost | currency}}</span>
         </div>
       </div>
       <div class="row" id="summaryCount">
@@ -36,26 +36,26 @@
 	<div ng-repeat="warranty in warranties | filter:searchText" class="warrantyPage">
       <ul class="collapsible" id="allGrid" data-collapsible="accordion">
         <li>
-          <div class="collapsible-header1" ng-click="toggleDetails(warranty.warranty_id)">
+          <div class="collapsible-header1" >
 	            <div class="row" style="margin-bottom:0;">
-	             <div class="col s3 headerImg">
+	             <div class="col s3 headerImg" ng-click="toggleDetails(warranty.warranty_id)">
 	                <div class="imgContainer"><img src="{{imgBaseURL}}/warranties/{{warranty.warranty_id}}/pictures/1" width="60px" height="60px" 
 						                	style="vertical-align:middle;" /> </div>
 	                <div>{{warranty.title}}</div>
 	                <div class="extendWarranty"><span>Extended Warranty at 10% OFF!</span></div>
 	                
 	             </div>
-	             <div class="col s4" align="center"><p style="text-align:center"><b>{{warranty.remainingDays}} {{"DAYS"|translate}}</b> {{"COVERAGE_REMAINING"|translate}}</p>
+	             <div ng-click="toggleDetails(warranty.warranty_id)" class="col s4" align="center"><p style="text-align:center"><b>{{warranty.remainingDays}} {{"DAYS"|translate}}</b> {{"COVERAGE_REMAINING"|translate}}</p>
 	                 <div class="progress" >
 	                    <div class="determinate" style="width: {{100 - warranty.percentUsed}}%"></div>
 	                </div>
 	             </div>
-	             <div class="col s2 deviceValSec">
+	             <div class="col s2 deviceValSec" ng-click="toggleDetails(warranty.warranty_id)">
 	               <div align="center" class="devicevalab">{{"DEVICE_VALUE"|translate}}</div>
-	               <div align="center" class="deviceval">${{warranty.cost}}</div>
+	               <div align="center" class="deviceval">{{warranty.cost | currency }}</div>
 	             </div>
 	             <div class="col s2 actionpane">
-		               <a ng-click="deleteWarranty(warranty.warranty_id)"><img src="../imgs/delete.png" />{{"DELETE"|translate}}</a><a class="warrantyDetails" id="_{{warranty.warranty_id}}" ng-click="popupDetails(warranty.warranty_id)"><img src="../imgs/details.png" />{{"DETAILS"|translate}}</a>
+		               <a href="" ng-click="deleteWarranty(warranty.warranty_id)"><img src="../imgs/delete.png" />{{"DELETE"|translate}}</a><a href="" class="warrantyDetails" id="_{{warranty.warranty_id}}" ng-click="popupDetails(warranty.warranty_id)"><img src="../imgs/details.png" />{{"DETAILS"|translate}}</a>
 		               
 	             </div>
 	          </div>
@@ -116,7 +116,7 @@
 	                  <h2 id="warrantyRefCnt_{{warranty.warranty_id}}">0</h2>
 	                </div>
 	                <div class="rightArrow" align="center">
-	                  <a href="#"><img src="../imgs/rightarrow.png"/></a>
+	                  <a href="" ng-click="goToReferences()"><img src="../imgs/rightarrow.png"/></a>
 	                </div>	                
 	              </div>
 	              <div class="detailedcolumn selldev warrantCol">
@@ -134,7 +134,7 @@
 	                  <h2 id="recyclersCost_{{warranty.warranty_id}}">$0</h2>
 	                </div>
 	                <div class="rightArrow" align="center">
-	                  <a href="#"><img src="../imgs/rightarrow.png"/></a>
+	                  <a href="" ng-click="goToSell()"><img src="../imgs/rightarrow.png"/></a>
 	                </div>
 	              </div>
 	            </div>
@@ -177,7 +177,7 @@
              </div>
              <div class="col s3 deviceValSec">
                <div align="center" class="devicevalab">{{"DEVICE_VALUE"|translate}}</div>
-               <div align="center" class="deviceval">${{selectedWarranty.cost}}</div>
+               <div align="center" class="deviceval">{{selectedWarranty.cost | currency}}</div>
              </div>
             </div>
             <div class="modalDetail">
@@ -203,7 +203,7 @@
                         <b>{{"TYPE"|translate}} : </b><span> {{selectedWarranty.product_type}}</span>
                       </td>
                       <td>
-                        <b>{{"PRODUCT_COST"|translate}} : </b><span> ${{selectedWarranty.cost}}</span>
+                        <b>{{"PRODUCT_COST"|translate}} : </b><span> {{selectedWarranty.cost | currency}}</span>
                       </td>
                     </tr>
                     <tr>
