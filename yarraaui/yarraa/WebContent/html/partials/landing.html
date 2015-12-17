@@ -1,0 +1,277 @@
+<div ng-controller="ProductCtrl" name="landing" >
+
+	<div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s2"><a class="active" href="#test1" ng-click="warrantyAll()" id="warrantyAll">{{"ALL"|translate}}</a></li>
+        <li class="tab col s3"><a href="/#test1" ng-click="underWarranty()">{{"PRODUCTS_UNDER_SERVI"|translate}}</a></li>
+        <li class="tab col s4"><a href="/#test1" ng-click="warrantyExpireNextMonth()">{{"WARRANTY_EXPRING_NEX"|translate}}</a></li>
+        <li class="tab col s3"><a href="/#test1" ng-click="warrantyExpired()">{{"WARRANTY_EXPIRED_PRO"|translate}}</a></li>
+        <li class="tab col s3"><a href="/#test1" ng-click="recycledProducts()">{{"RECYCLED_PRODUCTS"|translate}}</a></li>
+      </ul>
+    </div>
+    <div id="test1" name="test1" class="col s12">
+      <div class="row" id="addProduct">
+        <div class="col s3"><a class="waves-effect waves-light btn" ng-href="#newProduct">
+        	<i class="material-icons left">add</i>{{"ADD_PRODUCT"|translate}}</a></div>
+        <div class="col s2">&nbsp;</div>
+        <div class="col s3">
+          <div class="search">
+            <div class="search-wrapper card">
+              <input id="search" ng-model="searchText"><i class="material-icons">search</i>
+            </div>
+          </div>          
+        </div>
+        <div class="col s1">&nbsp;</div>
+        <div class="col s2 totalassest">
+          <span class="label">{{"TOTAL_ASSETS"|translate}}</span>
+          <span class="count">S${{totalAssetCost}}</span>
+        </div>
+      </div>
+      <div class="row" id="summaryCount">
+	      <div class="col s3"><span class="label">{{"TOTAL_PRODUCTS"|translate}}</span><span class="count">{{warrantiesFullList.length}}</span></div>
+	      <div class="col s3"><span class="label">{{"WARRANTY_EXPIRED"|translate}}</span><span class="count">{{warrantyExpiredCount}}</span></div>
+	      <div class="col s3"><span class="label">{{"UNDER_COVERAGE"|translate}}</span><span class="count">{{warrantiesFullList.length - warrantyExpiredCount}}</span></div>
+	      <div class="col s3"><span class="label">{{"UNDER_SERVING"|translate}}</span><span class="count"></span></div>
+      </div>
+	<div ng-repeat="warranty in warranties | filter:searchText" class="warrantyPage">
+      <ul class="collapsible" id="allGrid" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header1" ng-click="toggleDetails(warranty.warranty_id)">
+	            <div class="row" style="margin-bottom:0;">
+	             <div class="col s3 headerImg">
+	                <div class="imgContainer"><img src="{{imgBaseURL}}/warranties/{{warranty.warranty_id}}/pictures/1" width="60px" height="60px" 
+						                	style="vertical-align:middle;" /> </div>
+	                <div>{{warranty.title}}</div>
+	                <div class="extendWarranty"><span>Extended Warranty at 10% OFF!</span></div>
+	                
+	             </div>
+	             <div class="col s4" align="center"><p style="text-align:center"><b>{{warranty.remainingDays}} {{"DAYS"|translate}}</b> {{"COVERAGE_REMAINING"|translate}}</p>
+	                 <div class="progress" >
+	                    <div class="determinate" style="width: {{100 - warranty.percentUsed}}%"></div>
+	                </div>
+	             </div>
+	             <div class="col s2 deviceValSec">
+	               <div align="center" class="devicevalab">{{"DEVICE_VALUE"|translate}}</div>
+	               <div align="center" class="deviceval">${{warranty.cost}}</div>
+	             </div>
+	             <div class="col s2 actionpane">
+		               <a ng-click="deleteWarranty(warranty.warranty_id)"><img src="../imgs/delete.png" />{{"DELETE"|translate}}</a><a class="warrantyDetails" id="_{{warranty.warranty_id}}" ng-click="popupDetails(warranty.warranty_id)"><img src="../imgs/details.png" />{{"DETAILS"|translate}}</a>
+		               
+	             </div>
+	          </div>
+          
+          </div>
+          <div class="collasiblebody" id="details_{{warranty.warranty_id}}">
+	            <div class="detailedRow">
+	              <div class="detailedcolumn warrantCol">
+	                <div class="imgSec">
+	                    <img src="../imgs/warrantyimage.png" />
+	                </div>
+	                <div class="detailSec">
+	                    <h5>{{"WARRANTY"|translate}}</h5>
+	                    <p>{{"MANAGE_YOUR_EXTENDED"|translate}}</p>
+	                    <div class="tinyImg"><img src="../imgs/sheild.png"></div>
+	                </div>
+	               
+	                <div class="monthRemain" align="center">
+	                  <h5 align="center">{{"MONTHS_REMAINING"|translate}}</h5>
+	                  <h2 >{{warranty.warranty_period}}</h2>
+	                </div>
+	                 <div class="rightArrow" align="center">
+	                  <a ng-click="showExtWarranty(warranty.warranty_id)"><img src="../imgs/rightarrow.png"/></a>
+	                </div>
+	              </div>
+	              <div class="detailedcolumn servicecenter">
+	                <div class="imgSec">
+	                    <img src="../imgs/servicecenter.png" />
+	                </div>
+	                <div class="detailSec">
+	                    <h5>{{"SERVICE_CENTRES"|translate}}</h5>
+	                    <p>{{"LOCATE_THE_NEAREST_S"|translate}}</p>
+	                    <div class="tinyImg"><img src="../imgs/marker.png"></div>
+	                </div>
+	                
+	                <div class="monthRemain" align="center">
+	                  <h5 align="center">{{"CENTRES_NEAR_YOU"|translate}}</h5>
+	                  <h2 id="svrCenterCnt_{{warranty.warranty_id}}">0</h2>
+	                </div>
+	               <div class="rightArrow">
+	                  <a ng-click="showServiceCenters(warranty.warranty_id)"><img src="../imgs/rightarrow.png"/></a>
+	                </div>
+	              </div>
+	            </div>
+	            <div style="border-top:0;" class="detailedRow">
+	              <div class="detailedcolumn references">
+	                <div class="imgSec">
+	                    <img src="../imgs/references.png"/>
+	                </div>
+	                <div class="detailSec">
+	                    <h5>{{"REFERENCES"|translate}}</h5>
+	                    <p>{{"BROWSE_THROUGH_SUPPO"|translate}}</p>
+	                    <div class="tinyImg"><img src="../imgs/openbook.png"></div>
+	                </div>
+	                
+	                <div class="monthRemain" align="center">
+	                  <h5 align="center">{{"REFERENCES_AVAILABLE"|translate}}</h5>
+	                  <h2 id="warrantyRefCnt_{{warranty.warranty_id}}">0</h2>
+	                </div>
+	                <div class="rightArrow" align="center">
+	                  <a href="#"><img src="../imgs/rightarrow.png"/></a>
+	                </div>	                
+	              </div>
+	              <div class="detailedcolumn selldev warrantCol">
+	                <div class="imgSec">
+	                    <img src="../imgs/sellservice.png" />
+	                </div>
+	                <div class="detailSec">
+	                    <h5>{{"SELL_DEVICE"|translate}}</h5>
+	                    <p>{{"CHANGING_YOUR_DEVICE"|translate}}</p>
+	                    <div class="tinyImg"><img src="../imgs/money.png"></div>
+	                </div>
+	                
+	                <div class="monthRemain" align="center">
+	                  <h5 align="center">{{"CURRENT_DEVICE_VALUE"|translate}}</h5>
+	                  <h2 id="recyclersCost_{{warranty.warranty_id}}">$0</h2>
+	                </div>
+	                <div class="rightArrow" align="center">
+	                  <a href="#"><img src="../imgs/rightarrow.png"/></a>
+	                </div>
+	              </div>
+	            </div>
+          </div>
+        </li>
+      </ul>
+      
+     </div>  <!-- ng-repeat ends -->
+     
+     
+     
+     
+   <!-- Pagingation --> 
+   <!--  <div align="center">
+        <ul class="pagination">
+          <li class="disabled waves-effect"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!">4</a></li>
+          <li class="waves-effect"><a href="#!">5</a></li>
+          <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+      </div> -->
+     
+	</div>
+	
+	
+	<div id="modal1" class="modal">
+        <a class="modalClose"><img src="../imgs/delete.png" /></a>
+            <div class="modaltop row">
+                <div class="col s3 headerImg">
+                <div class="imgContainer"><img src="{{imgBaseURL}}/warranties/{{selectedWarranty.warranty_id}}/pictures/1" /> </div>
+                <div style="padding-top:18px;">{{selectedWarranty.title}}</div>
+             </div>
+             <div class="col s6 progressSec" align="center"><p><b>{{selectedWarranty.remainingDays}} {{"DAYS"|translate}}</b> {{"COVERAGE_REMAINING"|translate}}</p>
+                 <div class="progress" >
+                    <div class="determinate" style="width: {{100 - selectedWarranty.percentUsed}}%"></div>
+                </div>
+             </div>
+             <div class="col s3 deviceValSec">
+               <div align="center" class="devicevalab">{{"DEVICE_VALUE"|translate}}</div>
+               <div align="center" class="deviceval">${{selectedWarranty.cost}}</div>
+             </div>
+            </div>
+            <div class="modalDetail">
+                  <table cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td>
+                        <b>{{"SERIAL_NO"|translate}} : </b><span> {{selectedWarranty.serial_no}}</span>
+                      </td>
+                      <td>
+                        <b>{{"PURCHASED_FROM"|translate}} : </b><span> {{selectedWarranty.purchased_from}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>{{"BRAND"|translate}} : </b><span> {{selectedWarranty.brand_name}}</span>
+                      </td>
+                      <td>
+                        <b>{{"WARRANTY_LENGTH"|translate}} : </b><span> {{selectedWarranty.warranty_in_months}} months</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>{{"TYPE"|translate}} : </b><span> {{selectedWarranty.product_type}}</span>
+                      </td>
+                      <td>
+                        <b>{{"PRODUCT_COST"|translate}} : </b><span> ${{selectedWarranty.cost}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>{{"DEVICE"|translate}} : </b><span> {{selectedWarranty.title}}</span>
+                      </td>
+                      <td>
+                        <b>{{"WARRANTY_NUMBER"|translate}} : </b><span> {{selectedWarranty.warranty_no}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>{{"COUNTRY"|translate}} : </b><span> {{selectedWarranty.currency_code}}</span>
+                      </td>
+                      <td>
+                        <b>{{"BILL_NO"|translate}} : </b><span> {{selectedWarranty.bill_no}}</span>
+                      </td>
+                    </tr>
+                  </table>
+              </div>
+            <!--div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div-->
+          </div>
+	
+	
+</div>
+
+ <script type="text/javascript">
+		
+ $(window).resize(function(){
+     
+     //  var tempwidth = (($('.collasiblebody').width()/2) - 266);
+      // $('.detailSec').css('width',tempwidth);
+    
+   });
+   
+		 $(document).ready(function(){
+		
+			// $('.modal-trigger').leanModal();
+	            $('.modal-trigger').click(function(){
+	              $('#modal1').openModal();
+	            })
+	            $('.modalClose').click(function(){
+	              $('#modal1').closeModal();
+	            })
+	          $('ul.tabs').tabs({
+	             indicators: false,
+	          });
+
+	          //imgSec detailSec rightArrow detailedcolumn
+	          if(window.innerWidth <= 1186){
+	            var midDiv = 294;
+	          }else{
+	            var midDiv = 300
+	          }
+	          var tempwidth = (($('.collasiblebody').width()/2) - midDiv);
+	          $('.detailSec').css('width',tempwidth);
+		  
+		
+		   $('.collapsible .collapsible-header1').each(function(){
+		
+		       $(this).click(function(e){
+		         if(e.target.className != "modal-trigger" ){
+		           $(this).next('.collasiblebody').toggle();
+		         }
+		       })
+		   });
+		   
+		 });
+      </script>

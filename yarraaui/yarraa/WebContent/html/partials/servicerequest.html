@@ -1,0 +1,89 @@
+<div ng-controller="ServiceRequestCtrl" name="servicerequest" >
+       <h5 class="pageTitle">
+           <div  class="col s6 pageTitleText">Service Request</div>
+           <div  class="col s3">&nbsp;</div>
+           <div class="search s3">
+               <div class="search-wrapper card">
+                 <input id="search"><i class="material-icons">search</i>
+               </div>
+           </div> 
+       </h5>
+       <ul class='nav nav-wizard'>
+
+         <li class='active'><a href='#step1' data-toggle="tab">Step 1 - Select Product</a></li>
+       
+         <li><a href='#step2' data-toggle="tab">Step 2 - Create Service Request</a></li>
+       
+         <li><a>Step 3 -Confirmation</a></li>
+       
+       </ul>
+       <div class="row">
+         <div class="col s12">
+           <div class="card-panel" align="left">
+                <table  class="bordered striped highlight responsive-table">
+                   <thead>
+                     <tr>
+                         <th data-field="id">Select</th>
+                         <th data-field="brand">Brand</th>
+                         <th data-field="model">Model</th>
+                         <th data-field="producttype">Product Type</th>
+                         <th data-field="serialno">Serial Number</th>
+                     </tr>
+                   </thead>
+           
+                   <tbody>
+                     <tr>
+                       <td><p>
+                             <input name="group1" type="radio" id="test1" />
+                            <label for="">&nbsp;</label>
+                           </p>
+                       </td>
+                       <td><div>V-GUARD</div><span>Stabilizer</span></td>
+                       <td>VG 400</td>
+                       <td>Stabilizer</td>
+                       <td>00004</td>
+                     </tr>
+                     <tr>
+                       <td><p>
+                             <input name="group1" type="radio" id="test2" /><label for="">&nbsp;</label>
+                           </p>
+                       </td>
+                       <td><div>V-GUARD</div><span>Stabilizer</span></td>
+                       <td>VG 400</td>
+                       <td>Stabilizer</td>
+                       <td>00001</td>
+                     </tr>
+                     <tr>
+                       <td><p>
+                             <input name="group1" type="radio" id="test3" /><label for="">&nbsp;</label>
+                           </p>
+                       </td>
+                       <td><div>YARRAA</div><span>TV</span></td>
+                       <td>YARRAA</td>
+                       <td>TV</td>
+                       <td>899ERE</td>
+                     </tr>
+                   </tbody>
+                 </table>
+                 <div class="row">
+                      <div class="col s6" style="padding:20px;">
+                 <button class="btn waves-effect waves-light left" type="submit" name="action">Next</button>
+                 </div>
+                  <div class="col s6" align="right">
+                  <ul class="pagination">
+                   <li class="disabled waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                   <li class="active"><a href="#!">1</a></li>
+                   <li class="waves-effect"><a href="#!">2</a></li>
+                   <li class="waves-effect"><a href="#!">3</a></li>
+                   <li class="waves-effect"><a href="#!">4</a></li>
+                   <li class="waves-effect"><a href="#!">5</a></li>
+                   <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                 </ul>
+                 </div>
+                  </div>
+           </div>
+         </div>
+       </div>
+</div>
+               
+            

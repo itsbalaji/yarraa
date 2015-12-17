@@ -1,0 +1,41 @@
+<div ng-controller="PurchaseCtrl" name="purchase" ng-init="init()">
+	<h5 class="pageTitle">
+                  <div class="pageTitleText">{{"PURCHASE_WARRANTY"|translate}}</div>
+                </h5>
+                <div class="row">
+                  <div class="col s12">
+                    <div class="card-panel" align="left">
+                    
+                          
+                          <div style="display:flex" class="plansClass" ng-if="extWarranties.length > 0">
+	                          <ul class="planTitle">
+	                          	<li class="companyLogo"></li>
+	                          	<li class="planType">&nbsp;</li>
+	                          	<li ng-repeat="feature in features">{{feature}}</li>
+	                          	<li class="planPrice">Price</li>
+	                          	<li class="planBuy">&nbsp;</li>
+	                          </ul>
+	                          <ul class="plancontent" ng-repeat="ext in extWarranties">
+	                          	<li class="companyLogo"><img src="{{imgBaseURL}}/companies/{{ext.company_id}}/pictures" width="80px" height="auto"/></li>
+	                          	<li class="planType">{{ext.title}}</li>
+	                          	<li ng-class="{yes: feature=='Y', no: feature=='N'}" ng-repeat="feature in ext.featureStatus"></li>
+	                          	<li class="planPrice">${{ext.selling_price}}</li>
+	                          	<li class="planBuy"><button class="btn waves-effect waves-light" name="action" ng-click="purchaseWarranty($index)">{{"BUY"|translate}}</button></li>
+	                          	
+	                          </ul>
+                          
+                          </div>
+                          
+                          <div style="display:flex" class="plansClass" ng-if="extWarranties.length <= 0">
+                          		{{"NO_DATA_AVAILABLE"|translate}}
+                          </div>
+                          
+                          <hr/>
+                          
+                    </div>
+                  </div>
+                </div>
+                
+                
+</div>
+ 

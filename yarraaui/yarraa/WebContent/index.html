@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YARRAA</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/owl.carousel.css" rel="stylesheet">
+    <link href="src/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,400italic,600,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/Ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="src/css/app.css" rel="stylesheet">
+    <link href="src/css/login.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top-scroll" ng-app="yaraaApp">
+  	<!--/.preloader-->
+  	<div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top-scroll navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/"><img src="img/yarraa-logo.png" class="yarraa-logo"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        	<form class="navbar-form navbar-right hidden-xs">
+            <button type="button" class="btn btn-default btn-signup" id="signupTrigger">{{"SIGN_UP"|translate}}</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">{{"ABOUT_YARRAA"|translate}}</a></li>
+            <li><a href="">{{"KEY_SERVICES"|translate}}</a></li>
+            <li><a href="">{{"NEWS"|translate}}</a></li>
+            <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
+            <li><a href="#contactus">{{"CONTACT"|translate}}</a></li>
+            <li><a href="" id="loginTrigger">{{"LOGIN"|translate}}</a></li>
+          </ul>
+          <form class="navbar-form navbar-right visible-xs">
+            <button type="button" class="btn btn-default btn-signup">{{"SIGN_UP"|translate}}</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+   		
+   			<div ng-view></div>
+      
+      <footer class="footer">
+      	<section class="quick-links">
+        	<div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 quick-links-inner">
+                <h5>{{"QUICK_LINKS"|translate}}</h5>
+                <div class="col-md-3 col-sm-6">
+                	<h6>{{"COMPANY"|translate}}</h6>
+                  <ul class="list-unstyled">
+                  	<li><a href="#/">{{"HOME"|translate}}</a></li>
+                    <li><a href="#">{{"ABOUT_YARRAA"|translate}}</a></li>
+		            <li><a href="#">{{"KEY_SERVICES"|translate}}</a></li>
+		            <li><a href="#">{{"NEWS"|translate}}</a></li>
+                    <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
+                    <li><a href="#contactus">{{"CONTACT_US"|translate}}</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                	<h6>{{"BUSINESS_USERS"|translate}}</h6>
+                  <ul class="list-unstyled">
+                  	<li><a href="#">{{"RETAILERS"|translate}}</a></li>
+                    <li><a href="#">{{"COLLECTION_POINTS"|translate}}</a></li>
+                    <li><a href="#">{{"DISTRIBUTORS"|translate}}</a></li>
+					<li><a href="#">{{"SERVICE_CENTERS"|translate}}</a></li>
+					<li><a href="#">{{"MANUFACTURERS"|translate}}</a></li>
+					<li><a href="#">{{"RECYCLERS"|translate}}</a></li>
+					<li><a href="#">{{"ADVERTISE"|translate}}</a></li>
+					<li><a href="#">{{"APPLIANCES_INSURANCE"|translate}} {{"IT_PRODUCTS_INSURANC"|translate}}</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                	<h6>{{"USING_THIS_SITE"|translate}}</h6>
+                  <ul class="list-unstyled">
+                    <li><a href="#termsandcondition">{{"USER_AGREEMENT"|translate}}</a></li>
+                    <li><a href="#privacypolicy">{{"PRIVACY_POLICY"|translate}}</a></li>
+                    <li><a href="#copyright">{{"COPYRIGHT_POLICY"|translate}}</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-6" ng-controller="LanguageSelect" >			
+                	<h6>{{"LANGUAGE"|translate}}</h6>
+                  <ul class="list-unstyled">                  	
+                    <li><a href="#" class="chn-flg">中文</a></li>
+                    <li><a href="#" class="de-flg" >Deutsche</a></li>
+                    <li><a href="" class="jpn-flg" ng-click="changeLanguage('jp')">日本語</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 social-links">
+                <h5>{{"SOCIAL"|translate}}</h5>
+                <div class="col-md-12">
+                	<h6>{{"FIND_US_ON"|translate}}</h6>
+                	<ul class="list-inline">
+                  	<li><a href="#" class="y-ico y-fb"></a></li>
+                    <li><a href="#" class="y-ico y-in"></a></li>
+                    <li><a href="#" class="y-ico y-ln"></a></li>
+                    <li><a href="#" class="y-ico y-tw"></a></li>
+                    <li><a href="#" class="y-ico y-gp"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 yarraa-app">
+              	<h5>Yarraa App</h5>
+                <div class="col-md-12">
+                	<ul class="list-unstyled">
+                  	<li><a href="#" class="btn-store btn-apple-store"></a></li>
+          					<li><a href="#" class="btn-store btn-google-store"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div><!--/.container-fluid-->
+        </section>
+        
+        <section class="payment-methods">
+        	<div class="container">
+          	<div class="row">
+              <div class="col-md-12">
+              	<ul class="list-inline">
+                	<li><a href="#"><img src="img/pm-visa.png" alt="Visa Card"></a></li>
+                  <li><a href="#"><img src="img/pm-master-card.png" alt="Master Card"></a></li>
+                  <li><a href="#"><img src="img/pm-ae.png" alt="American Express"></a></li>
+                  <li><a href="#"><img src="img/pm-jcb.png" alt="JCB"></a></li>
+                  <li><a href="#"><img src="img/pm-paypal.png" alt="Paypal"></a></li>
+                </ul>
+              	<ul class="list-inline">
+                	<li><a href="#"><img src="img/security.png" alt="Secured by Net trust"></a></li>
+                </ul>
+              	<ul class="list-inline">
+                  <li><a href="#"><img src="img/rrr.png" alt="Reuse Reduce Recycle"></a></li>
+                </ul>
+              	<ul class="list-inline">
+                	<li><a href="#"><img src="img/technology-innovation.png" alt="Technology innovation program award from"></a></li>
+                  <li><a href="#"><img src="img/spring-singapore.png" alt="Spring Singapore"></a></li>
+                  <li><a href="#"><img src="img/ida.png" alt="ida"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="copy-rights">
+        	<div class="container">
+        		<p>Copyright <i class="fa fa-copyright"></i> 2015 Yarraa<i class="fa fa-registered"></i> Inc. All Rights Reserved</p>
+          </div>
+        </section>
+      </footer>
+      
+		</div><!--/.wrapper-->
+    
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="loginModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" ng-controller="LoginCtrl" name="login">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <div class="login-form">
+              <div class="login-form-header" align="center">
+                <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
+              </div>
+              <form class="login-form-main" data-toggle="validator" role="form" name="loginForm" id="loginForm">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' ng-model="newUser.email" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password" placeholder='{{"PASSWORD"|translate}}' ng-model="newUser.pwd"  required>
+                </div>		
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-default btn-block" ng-click="login()"><i class="fa fa-check"></i> {{"SIGN_IN"|translate}}</button>
+                </div>
+                 <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
+                  | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
+                    <a class="login-form-reset" id="forgetpass" href="">{{"FORGOT_PASSWORD?"|translate}}</a>
+                   </div>
+                </div>
+              </form>
+              <div class="login-form-footer" style="padding:1rem; padding-top:0;">
+                <h3 align="center" style="padding-top:0; padding-bottom:15px;">{{"DO_YOU_WANT_TO_CREAT"|translate}}</h3>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button type="submit" class="btn btn-default btn-block signupTriggers"><i class="fa fa-user"></i> {{"SIGN_UP_AS_CONSUMER"|translate}}</button>
+                  </div>
+                  <div class="col-xs-6" align="right">
+                    <button type="submit" class="btn btn-default btn-block signupTriggers"><i class="fa fa-group"></i> {{"SIGN_UP_AS_CORPORATE"|translate}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="forgetModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" ng-controller="LoginCtrl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <div class="login-form">
+              <div class="login-form-header" align="center">
+                <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
+              </div>
+
+              <form class="login-form-main" data-toggle="validator" role="form">
+                <div class="form-group">
+                  <p>{{"TO_RESET"|translate}} :</p>
+                  <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' required ng-model="newUser.email">
+                </div>
+                 
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button type="submit" class="btn btn-default btn-block" ng-click="forgotPassword()"><i class="fa fa-check"></i> {{"SUBMIT"|translate}}</button>
+                </div>
+                 <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
+                  | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
+                    <a class="login-form-reset" id="cancelForget" href="#">{{"CANCEL"|translate}}</a>
+                   </div>
+                </div>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!-- Signup Modal -->
+<div ng-controller="SignupCtrl" name="signup" ng-init="init()" class="modal signupModal fade" id="signupModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="login-form-header" align="left" style="padding-top:0; padding-bottom:2rem">
+              <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
+            </div>
+            <div><img src="img/cartimg.jpg"></img></div>
+          </div>
+          <div class="col-xs-6">
+            <div id="yarraa-login" class="yarraa-login">
+              <div class="login-content">
+                <div class="login-form">
+                 
+                  <form class="login-form-main" data-toggle="validator" role="form" style="text-align:center;" name="signupForm" id="signupForm">
+                     <h5 style="color:#5b3d19">Create your Yarraa account and start</h6>
+                  <h4 style="color:#5b3d19; font-weight:bold;">managing all devices in 1 place!</h3>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name" placeholder='{{"NAME"|translate}}' ng-model="newUser.first_name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' ng-model="newUser.email" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="telephone" placeholder='{{"TELEPHONE"|translate}}'  ng-model="newUser.telephone" required>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control" ng-model="newUser.country_code">
+                      	<option disabled="disabled" selected value="">{{"COUNTRY"|translate}}</option>
+                      	<option ng-repeat="option in countries" value="{{option.code}}">{{option.name}}</option>
+                      </select>
+                    </div>
+                    <button class="btn btn-default btn-block" ng-click="saveRegistration()"><i class="fa fa-check"></i> {{"SIGN_UP_NOW"|translate}}</button>
+                    
+                  </form>
+                 <div align="center"> <a href="#">{{"CREATE_COMP_ACC"|translate}}</a></div>
+                 <div align="center">   <a href="#" class="loginTriggerClass">{{"ALREADY_HAVE_ACCOUNT"|translate}}</a></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div> 
+  <!--  Signup Modal -->  
+    
+    
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="src/js/SmoothScroll.js"></script>
+    <script src="src/js/jquery.mCustomScrollbar.js"></script>
+    <script src="src/js/owl.carousel.js"></script>
+    
+    <script src="src/js/app.js"></script>
+
+    <script type="text/javascript" src="js/angular.js"></script>
+            <script type="text/javascript" src="js/angular-route.js"></script>
+            <script type="text/javascript" src="js/angular-cookies.js"></script>
+            <script type="text/javascript" src="js/angular-resource.js"></script>
+            
+            <script type="text/javascript" src="js/materialize.js"></script>
+            <script type="text/javascript" src="js/jquery.datetimepicker.full.js"></script>
+            
+             <script type="text/javascript" src="js/custom/controllers/mainController.js"></script>
+             
+               <script type="text/javascript" src="js/angular-translate.js"></script>
+            
+            <script src="js/translator/angular-translate-loader-static-files.js"></script>
+			<script src="js/translator/angular-translate-storage-cookie.js"></script>
+			<script src="js/translator/angular-translate-storage-local.js"></script>
+			<script src="js/translator/angular-translate-handler-log.js"></script>
+			
+			<script src="js/translator/tmhDynamicLocale.js"></script>
+			
+			<script type="text/javascript" src="js/custom/translationConfig.js"></script>
+			<script type="text/javascript" src="js/custom/controllers/LanguageCtrl.js"></script>
+			
+            <script type="text/javascript" src="js/custom/routing/home-router.js"></script>
+            
+            <script type="text/javascript" src="js/custom/controllers/LoginCtrl.js"></script>
+            <script type="text/javascript" src="js/custom/controllers/SignupCtrl.js"></script>
+    
+  </body>
+</html>

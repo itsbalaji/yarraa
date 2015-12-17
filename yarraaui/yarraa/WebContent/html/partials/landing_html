@@ -1,0 +1,152 @@
+<div ng-controller="ProductCtrl" name="landing" >
+	<div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s2"><a class="active" href="#test1" ng-click="warrantyAll()" id="warrantyAll">All</a></li>
+        <li class="tab col s3"><a href="/#test1" ng-click="underWarranty()">Product Under Service</a></li>
+        <li class="tab col s4"><a href="/#test1" ng-click="warrantyExpireNextMonth()">Warranty Expiring Next Month</a></li>
+        <li class="tab col s3"><a href="/#test1" ng-click="warrantyExpired()">Warranty Expired Products</a></li>
+        <li class="tab col s3"><a href="/#test1" ng-click="recycledProducts()">Recycled Products</a></li>
+      </ul>
+    </div>
+    <div id="test1" name="test1" class="col s12">
+      <div class="row" id="addProduct">
+        <div class="col s3"><a class="waves-effect waves-light btn" ng-href="#newProduct"><i class="material-icons left">add</i>Add Product</a></div>
+        <div class="col s2">&nbsp;</div>
+        <div class="col s3">
+          <div class="search">
+            <div class="search-wrapper card">
+              <input id="search" ng-model="searchText"><i class="material-icons">search</i>
+            </div>
+          </div>          
+        </div>
+        <div class="col s1">&nbsp;</div>
+        <div class="col s2 totalassest">
+          <span class="label">My Total Assets</span>
+          <span class="count">S${{totalAssetCost}}</span>
+        </div>
+      </div>
+      <div class="row" id="summaryCount">
+      <div class="col s3"><span class="label">Total Products</span><span class="count">{{warrantiesFullList.length}}</span></div>
+      <div class="col s3"><span class="label">Warranty Expired</span><span class="count">{{warrantyExpiredCount}}</span></div>
+      <div class="col s3"><span class="label">Under coverage</span><span class="count">{{warrantiesFullList.length - warrantyExpiredCount}}</span></div>
+      <div class="col s3"><span class="label">Under Serving</span><span class="count"></span></div>
+      </div>
+      
+      <div ng-repeat="warranty in warranties | filter:searchText" class="warrantyPage">
+					      <ul class="collapsible" id="allGrid" data-collapsible="accordion">
+					        <li>
+					          <div class="collapsible-header">
+					            <div class="row">
+					             <div class="col s3" style="padding-top:20px; padding-left:50px" align="left">
+					             
+					                <img src="{{imgBaseURL}}/warranties/{{warranty.warranty_id}}/pictures/1" width="60px" height="60px" 
+					                	style="vertical-align:middle;" /> {{warranty.title}}
+					             </div>
+
+
+					             <div class="col s5" align="center"><p style="text-align:center"><b>121 days</b> coverage remaining</p>
+					                 <div class="progress" >
+					                    <div class="determinate" style="width: 70%"></div>
+					                </div>
+					             </div>
+					             <div class="col s2">
+					               <div align="center" class="devicevalab">Device Value</div>
+					               <div align="center" class="deviceval">${{warranty.cost}}</div>
+					             </div>
+					             <div class="col s2 actionpane">
+					               <a ng-click="deleteWarranty(warranty.warranty_id)"><img src="../imgs/delete.png" style="vertical-align:middle"/>DELETE</a><a href="#"><img src="../imgs/details.png" style="vertical-align:middle"/>DETAILS</a>
+					             </div>
+					          </div>
+					          </div>
+
+
+
+
+
+
+
+
+
+
+					          <div class="collapsible-body row">
+							            <div class="col s6">
+							              	<div style="float:left; width:122px;">
+							              		<img src="imgs/warrantyimage.png" style="vertical-align:middle"></img>
+							              	</div>
+							               	<div style="float:left; width:350px;">
+									             <h5> Warranty</h5>
+												<p style="margin:0;padding:0;">Manage your extended warranty and/or accidental damage plan.</p>
+											</div>
+											<div style="float:left">
+												Months remaining
+											</div>
+											<a href="#"><img src="imgs/rightarrow.png"></img></a>
+							            </div>
+										 <div class="col s6">
+								              <div style="height:122px">
+									                <div style="float:left; width:122px;">
+									               		<img src="imgs/servicecenter.png" style="vertical-align:middle"></img>
+									               </div>
+											       <div style="float:left; width:350px;">
+											               <h5>Service Centres</h5>
+															<p style="margin:0;padding:0;">Locate the nearest service centre for your product, or make an Instant Fix.</p>
+													</div>
+													<div style="float:left">
+														Months 
+														remaining
+													</div>
+													<a href="#"><img src="imgs/rightarrow.png"></img></a>
+											   </div>
+										</div>
+										<div class="col s6">
+								        	<div style="height:122px">
+									                <div style="float:left; width:122px;">
+									               		<img src="imgs/references.png" style="vertical-align:middle"></img>
+									               </div>
+									               <div style="float:left; width:350px;">
+									               		<h5>References</h5>
+														<p style="margin:0;padding:0;">Browse through support documents and instructional videos for your product.</p>
+													</div>
+													<div style="float:left">
+														Months 
+														remaining
+													</div>
+													<a href="#"><img src="imgs/rightarrow.png"></img></a>
+								            </div>
+										</div>
+										<div class="col s6">
+								              <div style="height:122px">
+									                <div style="float:left; width:122px;">
+									               		<img src="imgs/sellservice.png" style="vertical-align:middle"></img>
+									               </div>
+									               <div style="float:left; width:350px;">
+										               <h5>Sell Device</h5>
+														<p style="margin:0;padding:0;">Changing your device? Sell your current device at the best rate possible.</p>
+													</div>
+													<div style="float:left">
+														Months 
+														remaining
+													</div>
+													<a href="#"><img src="imgs/rightarrow.png"></img></a>
+								            	</div>
+							            </div>
+					            
+					          </div>
+					        </li>
+					        
+					      </ul>
+		</div>
+    </div>
+    
+   
+    
+
+</div>
+ 
+ <script type="text/javascript">
+        $(document).ready(function(){
+          $('ul.tabs').tabs({
+             indicators: false,
+          });
+        });
+      </script>

@@ -1,0 +1,25 @@
+<div ng-controller="UploadCtrl" name="upload" >
+
+
+  <form class="col s12" name="fileUploadForm1" id="fileUploadForm1" enctype="multipart/form-data">
+  
+  Upload the File:
+  
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Attachments</span>
+          <input type="file" id="warrantyUpload">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload files">
+        </div>
+      </div>
+      
+                                  
+	<div class="row">
+         <div class="col s6" style="padding:20px;">
+            <button class="btn waves-effect waves-light left" ng-click="uploadWarrantyPlan()" name="action">Upload</button> 
+            	
+        </div>
+     </div>
+</div>

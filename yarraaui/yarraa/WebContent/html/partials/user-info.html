@@ -1,0 +1,27 @@
+
+<ul class="right hide-on-med-and-down" style="margin-top:10px;" ng-show="loggedInUser != null">
+        <li class="coin">
+          <h6>{{"REWARDS"|translate}}</h6>
+          <p>{{"POINTS_AVAILABLE"|translate}} : <span> {{loggedInUser.reward_point.remaining}}</span></p>
+          <p>{{"POINTS_EARNED"|translate}} : <span> {{loggedInUser.reward_point.earned}}</span></p>
+        </li>
+    	<li><a class="dropdown-button" data-toggle="dropdown"   data-activates="dropdown1"><i class="material-icons left">perm_identity</i>{{loggedInUser.first_name}}<i class="material-icons right">arrow_drop_down</i></a></li>
+		
+  </ul>
+  
+   <ul id="dropdown1" class="dropdown-content" >
+	                <li><a href="#!">{{"EDIT_PROFILE"|translate}}</a></li>
+	                <li><a href="#!">{{"SUPPORT"|translate}}</a></li>
+	                <li><a href="#!">{{"HELP"|translate}}</a></li>
+	                
+	                <li class="divider"></li>
+	                <li><a onClick="logout()">{{"LOGOUT"|translate}}</a></li>
+              </ul>
+             
+              
+              <script>
+              $('.dropdown-button').dropdown({
+                 
+                }
+              );	
+              </script>

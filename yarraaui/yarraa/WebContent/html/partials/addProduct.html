@@ -1,0 +1,214 @@
+<div ng-controller="ProductAddCtrl" name="addProduct" ng-init="init()">
+
+	 <!--  form class="col s12" name="myForm">-->
+
+				<h5 class="pageTitle">
+                  <div class="pageTitleText">{{"ADD_PRODUCT"|translate}}</div>
+                </h5>
+                 <ul class='nav nav-wizard'>
+                  <li ng-class='{active: step==1}'><a id="newProd_step1"  data-toggle="tab">{{"STEP"|translate}} 1 - {{"ENTER_PRODUCT_DETAIL"|translate}}</a></li>
+                  <li ng-class='{active: step==2}'><a id="newProd_step2"  >{{"STEP"|translate}} 2 - {{"REGISTER_MANUFACTURE"|translate}}</a></li>
+                  <li ng-class='{active: step==3}'><a id="newProd_step3"  >{{"STEP"|translate}} 3 ({{"OPTIONAL"|translate}}) - {{"REGISTER_EXTENDED_WA"|translate}}</a></li>
+                </ul>
+               
+              
+                <div class="row" name="step1" id="step1" ng-show="step==1">
+                  <div class="col s12">
+                    <div class="card-panel" align="left">
+                          <div class="row">
+                            <form class="col s12" id="step1Form" name="step1Form" data-toggle="validator" role="form">
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input id="serialno" name="serialno" type="text" class="form-control validate" ng-model="product.serial_no" required="required">
+                                  <label for="serialno">{{"SERIAL_NO_UPC_NO"|translate}}</label>
+                                  <span ng-show="form.serialno.$error.required">Tell us your email.</span>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input id="brand" name="brand" type="text" class="form-control validate" ng-model="product.brand_name" required="required">
+                                  <label for="brand">{{"BRAND"|translate}}</label>
+                                </div>
+                              
+                                <div class="input-field col s6">
+                                   <input id="producttype" name="producttype" type="text" class="validate" ng-model="product.product_type" required="required">
+                                  <label for="producttype">{{"PRODUCT_TYPE"|translate}}</label>
+                                </div>
+                              
+                                <div class="input-field col s6">
+                                  <input id="model" name="model" type="text" class="validate" ng-model="product.model_name" required="required">
+                                  <label for="model">{{"MODEL"|translate}}</label>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="row">
+                               <div class="col s6" style="padding:20px;">
+                                  <button class="btn waves-effect waves-light left" type="submit" ng-click="navigateToStep2()" name="action">{{"NEXT"|translate}}</button> &nbsp;<span class="buttonbar"> | </span><a href="#" class="buttonbar">{{"CANCEL"|translate}}</a>
+                              </div>
+                           </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+               
+                <div class="row" name="step2" id="step2" ng-show="step==2">
+                  <div class="col s12">
+                    <div class="card-panel" align="left">
+                    
+                    <form class="col s12" id="step2Form" name="step2Form" data-toggle="validator" role="form">
+                          <div class="row">
+                           
+                              <div class="row">
+                                <div class=" col s12">
+                                  <label for="Country">{{"COUNTRY"|translate}}</label>
+                                  <select ng-model="product.country">
+                                   		<option value="SG" selected>Singapore</option>
+                                  </select>
+                                  
+                                </div>
+                                 </div>
+                                 <div class="row">
+                                <div class="input-field col s6">
+                                  <input id="PurchasedFrom" name="PurchasedFrom" type="text" class="validate" ng-model="product.purchased_from" required="required">
+                                  <label for="PurchasedFrom">{{"PURCHASED_FROM"|translate}}</label>
+                                </div>
+                                
+                                <div class="input-field col s6">
+                                  <input id="warrantymonths" name="warrantymonths" type="number" min="0" max="999"  class="validate" ng-model="product.warranty_period" required="required" onlyNumbers>
+                                  <label for="warrantymonths">{{"WARRANTY_MONTHS"|translate}}</label>
+                                </div>
+                                <div class=" col s6">
+                                   <label for="PurchasedOn">{{"PURCHASED_ON"|translate}}</label>
+                                   <input id="PurchasedOn" name="PurchasedOn" type="date" class="validate" value="Not Applicable" disabled>                                 
+                                </div>
+                                <div class="col s6">
+                                  <label for="warrantyfrom">{{"WARRANTY_START_DATE"|translate}}</label>
+                                  <input id="warrantyfrom" name="warrantyfrom" type="date" class="validate" readonly='true' ng-model="warrantyStartDate" required="required">
+                                  
+                                </div>
+                                <div class="input-field col s4">
+                                  <input id="productcost" name="productcost" type="number" min="0" max="99999999" class="validate" ng-model="product.cost" required="required">
+                                  <label for="productcost">{{"PRODUCT_COST"|translate}}</label>
+                                </div>
+                                 <div class="input-field col s2">
+	                                   <select ng-model="product.currency_code">                                   
+	                                    <option value="SGD" selected>SGD</option>
+	                                  </select>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input id="warrantyno" name="warrantyno" type="text" class="validate" ng-model="product.warranty_no" required="required">
+                                  <label for="warrantyno">{{"WARRANTY_NUMBER"|translate}}</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input id="billno" name="billno" type="text" class="validate" ng-model="product.bill_no" required="required">
+                                  <label for="billno">{{"BILL_NO"|translate}}</label>
+                                </div>
+                                </div>
+                                <div class="row">
+                                
+                                <form class="col s12" name="fileUploadForm1" id="fileUploadForm1" enctype="multipart/form-data">
+                                  <div class="file-field input-field">
+                                    <div class="btn">
+                                      <span>{{"ATTACHMENTS"|translate}}</span>
+                                      <input type="file" id="warrantyFile1">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                      <input class="file-path validate" type="text" placeholder="Upload files">
+                                    </div>
+                                  </div>
+                                 </form>
+                               
+                              </div>
+                              <div class="row">
+                                  <div class="file-field input-field">
+                                    <div class="btn">
+                                      <span>{{"ATTACHMENTS"|translate}}</span>
+                                      <input type="file" id="warrantyFile2">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                      <input class="file-path validate" type="text" placeholder="Upload files">
+                                    </div>
+                                  </div>
+                               
+                              </div>
+                              <div class="row">
+                                  <div class="file-field input-field">
+                                    <div class="btn">
+                                      <span>{{"ATTACHMENTS"|translate}}</span>
+                                      <input type="file" id="warrantyFile3">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                      <input class="file-path validate" type="text" placeholder="Upload files">
+                                    </div>
+                                  </div>
+                               
+                              </div>
+                    
+                          </div>
+                          <div class="row">
+                               <div class="col s6" style="padding:20px;">
+                               	  <button class="btn waves-effect waves-light left" ng-click="navigateToStep1()" name="action">{{"BACK"|translate}}</button> &nbsp;<span class="buttonbar"></span>
+                                  <button class="btn waves-effect waves-light left" ng-click="navigateToStep3()" name="action">{{"NEXT"|translate}}</button> &nbsp;
+                                  <span class="buttonbar"> | </span><a href="#" class="buttonbar">{{"CANCEL"|translate}}</a>
+                              </div>
+                           </div>
+                      </form>
+                    </div>
+                  </div>
+                </div> 
+                
+                
+                <div class="row" name="step3" id="step3" ng-show="step==3">
+                  <div class="col s12">
+                    <div class="card-panel" align="left">
+                        <table>
+                          <thead>
+                            <tr>
+                                <th data-field="name">Available Plans</th>
+                                <th data-field="product">V-GUARD</th>
+                            </tr>
+                          </thead>
+                  
+                          <tbody>
+                            <tr>
+                              <td>Alvin</td>
+                              <td><i class="material-icons" style="color:green">done</i></td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Alan</td>
+                              <td>Jellybean</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Jonathan</td>
+                              <td>Lollipop</td>
+                             
+                            </tr>
+                          </tbody>
+                        </table>
+                          <div class="row">
+                               <div class="col s6" style="padding:20px;">
+                               	<button class="btn waves-effect waves-light left" ng-click="navigateToStep2()" name="action">{{"BACK"|translate}}</button> &nbsp;<span class="buttonbar"></span>
+                                  <button class="btn waves-effect waves-light left" ng-click="saveWarranty()" id="saveWarranty" name="action">Submit</button> &nbsp;<span class="buttonbar"> | </span><a href="#/landing" class="buttonbar">Cancel</a>
+                              </div>
+                           </div>
+                    </div>
+                  </div>
+                </div>
+                
+ <!--       </form> -->
+       
+       <script>
+       
+       $('#warrantyfrom').datetimepicker({
+    		yearOffset:0,
+    		lang:'ch',
+    		timepicker:false,
+    		format:'Y-m-d',
+    		formatDate:'Y-m-d',
+    		minDate: new Date(2007, 1 - 1, 1),
+    		maxDate: new Date()
+    	});
+       </script>
+</div>

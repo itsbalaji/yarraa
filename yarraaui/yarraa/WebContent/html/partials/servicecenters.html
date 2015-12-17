@@ -1,0 +1,75 @@
+<div ng-controller="ServiceCtrl" name="service" ng-init="init()">
+
+<div class="col s12">
+                    <div class="card-panel" align="left">
+                        <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s2">
+                                  <input id="brand" type="text" class="validate" ng-model="search.brand">
+                                  <label for="brand">{{"BRAND"|translate}}</label>
+                                </div>
+                                <div class="input-field col s2">
+                                  <input id="producttype" type="text" class="validate" ng-model="search.producttype">
+                                  <label for="producttype">{{"PRODUCT_TYPE"|translate}}</label>
+                                </div>
+                                <div class="input-field col s2">
+                                   <select ng-model="search.country">
+                                   <option value="" disabled selected>{{"COUNTRY"|translate}}</option>
+                                    <option value="Singapore">Singapore</option>
+                                  </select>
+                                </div>
+                                <div class="input-field col s2">
+                                  <input id="address" type="text" class="validate" ng-model="search.address">
+                                  <label for="address">{{"ADDRESS_CONTAIN"|translate}}</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <button class="btn waves-effect waves-light left" type="submit" name="action">{{"SEARCH"|translate}}</button>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                       
+                         <table  class="bordered striped highlight responsive-table">
+                            <thead>
+                              <tr>
+                                  
+                                  <th data-field="brand">{{"BRAND"|translate}}</th>
+                                  <th data-field="model">{{"COUNTRY"|translate}}</th>
+                                  <th data-field="producttype">{{"PRODUCT_TYPE"|translate}}</th>
+                                  <th data-field="serialno">{{"ADDRESS"|translate}}</th>
+                              </tr>
+                            </thead>
+                    
+                            <tbody>
+                            	
+                              <tr ng-repeat="centers in serviceCenters.serviceCenters['service-centers'] | filter: searchCenters " >
+                                <td><div>{{warranty.brand_name}}</div></td>
+                                <td>{{centers.country_name}}</td>
+                                <td>{{warranty.product_type}}</td>
+                                <td>{{centers.company_name}} <br/>{{centers.address1}} {{centers.address2}} <br/>
+                                	{{centers.city}} {{centers.state}} {{centers.postal_code}}
+                                </td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                      <!--     <div class="row">
+                               <div class="col s6" style="padding:20px;">
+                          <button class="btn waves-effect waves-light left" type="submit" name="action">Back to List</button>
+                          </div>
+                           <div class="col s6" align="right">
+                           <ul class="pagination">
+                            <li class="disabled waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!">4</a></li>
+                            <li class="waves-effect"><a href="#!">5</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                          </ul>
+                          </div>
+                           </div> -->
+                    </div>
+                  </div>
+</div>					

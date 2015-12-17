@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YARRAA</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/owl.carousel.css" rel="stylesheet">
+    <link href="src/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,400italic,600,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/Ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="src/css/app.css" rel="stylesheet">
+    <link href="src/css/login.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top-scroll" ng-app="yaraaApp">
+  	<!--/.preloader-->
+  	<div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top-scroll navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="img/yarraa-logo.png" class="yarraa-logo"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        	<form class="navbar-form navbar-right hidden-xs">
+            <button type="button" class="btn btn-default btn-signup" id="signupTrigger">SIGN UP</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">About Yarra</a></li>
+            <li><a href="#">Key Services</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" id="loginTrigger">Login</a></li>
+          </ul>
+          <form class="navbar-form navbar-right visible-xs">
+            <button type="button" class="btn btn-default btn-signup">SIGN UP</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    
+    <header class="header">
+    	<div class="container" align="center">
+    		<h2>The <span class="hcontent-01">one stop solution</span> to track &amp; secure <span class="hcontent-02">your personal devices &amp; home appliances</span></h2>
+        <div class="store-icons">
+        	<a href="#" class="btn-store btn-apple-store"></a>
+          <a href="#" class="btn-store btn-google-store"></a>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <section id="services" class="yarraa-services">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4 no-padding">
+              <div class="thumbnail">
+                <img src="img/services01.jpg" class="img-responsive" alt="Register and Track">
+                <div class="caption caption-register">
+                  <h3>REGISTER &amp; TRACK</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 no-padding">
+              <div class="thumbnail">
+                <img src="img/services02.jpg" class="img-responsive" alt="Get covered">
+                <div class="caption caption-covered">
+                  <h3>GET COVERED</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 no-padding">
+              <div class="thumbnail">
+                <img src="img/services03.jpg" class="img-responsive" alt="Fix any time">
+                <div class="caption caption-fix">
+                  <h3>FIX ANY TIME</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--/.container-fluid-->
+      </section>
+      
+      <section class="yarraa-brands" ng-controller="MainCtrl">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 brand-content-border">
+              <div class="brand-content">
+                <p>Users have recently <span>registered devices</span> and <span>purchased coverage</span> on Yarraa for there brands</p>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div id="yarraa-brands">
+              	<div class="item" ng-repeat="brand in brands" on-finish-render="ngBrandsFinished"><img src="img/brands/{{brand}}" ></div>
+              </div>
+            </div>
+          </div>
+        </div><!--/.container-fluid-->    
+      </section>
+      
+      <section class="getting-started">
+        <div class="container">
+          <h2>Getting started in 3 simple steps</h2> 
+          <div class="inner-tabs" align="center">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default btn-active"><i class="fa fa-shield"></i> Get Covered</button>
+              <button type="button" class="btn btn-default btn-active"><i class="icon ion-settings"></i> Instant Fix</button>
+            </div>
+          </div>
+          <img src="img/yarraa-steps.png" class="img-responsive" alt="getting started with yarraa">
+        </div><!--/.container  -->
+      </section>
+      
+      <section class="yarraa-status">
+        <div class="container-fluid" align="center">
+        	<div class="row">
+            <div class="col-md-4">
+              <div class="status-content">
+                <span class="y-icons y-brands">Registered Brands</span> <span class="status-total">1198</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="status-content">
+                <span class="y-icons y-users">Total Active Users</span> <span class="status-total">21216</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="status-content">
+                <span class="y-icons y-centers"> Service Centres</span> <span class="status-total">10269</span>
+              </div>
+            </div>
+          </div>
+        </div><!--/.container-fluid--> 
+      </section>
+      
+      <section class="featurettes">
+      	<div class="container-fluid">
+        	<div class="row">
+          	<div class="col-md-2 no-padding featurettes-content">
+            	<div class="featurettes-inner">
+              	<h4>FEATURETTES</h4>
+              </div>
+            </div>
+            <div class="col-md-10 no-padding">
+              <div id="featurettes">
+                <div class="item"><img src="img/f1.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f2.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f3.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f4.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f5.png" alt="featurettes"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="about-yarraa">
+      	<div class="container-fluid">
+        	<div class="row">
+          	<div class="col-md-6 about-us">
+            	<h2>About Yarraa</h2>
+              <p>Yarraa is all about providing an easy tracking and hassle-free Online Reverse Logistics Solution for consumers, retailers, distributors, service centers, and manufacturers. Our name is derived from the Wurundjeri term Yarra Yarra, meaning 'flow'; and the Yarra River, a waterway famed for being the only river that flows 'in reverse'. Putting the two elements together, the idea is a perfect fit to Yarraa's business: that of streamlined reverse logistics.</p>
+              <div class="team-yarraa" align="center">
+              	<div class="row">
+                	<div class="col-md-4 no-padding team-lead">
+                  	<img src="img/abt1.png" class="img-responsive" alt="Yarraa Team">
+                  </div>
+                  <div class="col-md-8 sub-team no-padding">
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt2.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt3.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt4.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt5.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt6.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt7.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="testimonials">
+                <h2>Testimonials</h2>
+                <div class="testi-content mCustomScrollbar">
+                	<div class="row tsml-wrap">
+                  	<div class="col-md-3">
+                    	<img src="img/tst1.png" class="img-circle" alt="yarraa testimonials">
+                    </div>
+                    <div class="col-md-9">
+                    	<div class="tsml-content tsml-before">
+                        <h4>Carly, USA</h4>
+                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row tsml-wrap">
+                  	<div class="col-md-3 col-md-push-9">
+                    	<img src="img/tst2.png" class="img-circle" alt="yarraa testimonials">
+                    </div>
+                  	<div class="col-md-9 col-md-pull-3">
+                    	<div class="tsml-content tsml-after">
+                        <h4>Lynda, USA</h4>
+                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row tsml-wrap">
+                  	<div class="col-md-3">
+                    	<img src="img/tst1.png" class="img-circle" alt="yarraa testimonials">
+                    </div>
+                    <div class="col-md-9">
+                    	<div class="tsml-content tsml-before">
+                        <h4>Carly, USA</h4>
+                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row tsml-wrap">
+                    <div class="col-md-3 col-md-push-9">
+                      <img src="img/tst2.png" class="img-circle" alt="yarraa testimonials">
+                    </div>
+                    <div class="col-md-9 col-md-pull-3">
+                      <div class="tsml-content tsml-after">
+                        <h4>Lynda, USA</h4>
+                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="collaborate">
+      	<div class="container-fluid">
+        	<div class="row">
+          	<div class="col-lg-12 no-padding">
+            	<div class="cbl-header">
+            		<h4>Collaborate with Yarraa</h4>
+              </div>
+            </div>
+          </div><!--/.row-->
+          <div class="cbl-content">
+            <div class="row">
+              <div class="col-md-6 no-padding">
+                <div class="cbl-content-left">
+                  <h2>For Businesses</h2>
+                  <p>Partner with us to provide your customers with best in class after sales support.</p>
+                  <button type="button" class="btn btn-default btn-cbl">PARTNER NOW <i class="fa fa-caret-right"></i></button>
+                </div>
+              </div>
+              <div class="col-md-6 no-padding">
+                <div class="cbl-content-right">
+                	<h2>For Individuals</h2>
+                  <p>Perhaps you are a technician, or a salesperson. Regardless of what you do, unleash the entrepreneurial spirit within by becoming a reseller of our products.</p>
+                  <button type="button" class="btn btn-default btn-cbl">BECOME AN AGENT NOW <i class="fa fa-caret-right"></i></button>
+                </div>
+              </div>
+            </div><!--/.row-->
+          </div>
+        </div><!--/.container-fluid-->
+      </section>
+      
+      <section class="our-partners" ng-controller="MainCtrl">
+      	<div class="container-fluid">
+        	<div class="row">
+          
+              	
+              <div class="col-md-2 no-padding our-partners-content">
+            	<div class="our-partners-inner"><h4>OUR PARTNERS</h4>
+              	</div>	
+            	</div>
+            <div class="col-md-10 no-padding partners-list">
+              <div id="our-partners">
+                <div class="item" ng-repeat="partner in partners" on-finish-render="ngPartnersFinished"><img src="img/partners/{{partner}}" ></div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="footer">
+      	<section class="quick-links">
+        	<div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 quick-links-inner">
+                <h5>Quick Links</h5>
+                <div class="col-md-3 col-sm-6">
+                	<h6>Company</h6>
+                  <ul class="list-unstyled">
+                  	<li><a href="#">Home</a></li>
+                    <li><a href="#">About YARRAA</a></li>
+                    <li><a href="#">Key Services</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                	<h6>Business Users</h6>
+                  <ul class="list-unstyled">
+                  	<li><a href="#">Retailers</a></li>
+                    <li><a href="#">Collection Points</a></li>
+                    <li><a href="#">Distributors</a></li>
+                    <li><a href="#">Service Centers</a></li>
+                    <li><a href="#">Manufacturers</a></li>
+                    <li><a href="#">Recyclers</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Appliances insurance</a></li>
+                    <li><a href="#">IT Products insurance</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                	<h6>Using this site</h6>
+                  <ul class="list-unstyled">
+                    <li><a href="#">User Agreement</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Copyright Policy</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                	<h6>Language</h6>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="chn-flg">中文</a></li>
+                    <li><a href="#" class="de-flg">Deutsche</a></li>
+                    <li><a href="#" class="jpn-flg">Japanese</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 social-links">
+                <h5>Social</h5>
+                <div class="col-md-12">
+                	<h6>Find us on</h6>
+                	<ul class="list-inline">
+                  	<li><a href="#" class="y-ico y-fb"></a></li>
+                    <li><a href="#" class="y-ico y-in"></a></li>
+                    <li><a href="#" class="y-ico y-ln"></a></li>
+                    <li><a href="#" class="y-ico y-tw"></a></li>
+                    <li><a href="#" class="y-ico y-gp"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 yarraa-app">
+              	<h5>Yarraa App</h5>
+                <div class="col-md-12">
+                	<ul class="list-unstyled">
+                  	<li><a href="#" class="btn-store btn-apple-store"></a></li>
+          					<li><a href="#" class="btn-store btn-google-store"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div><!--/.container-fluid-->
+        </section>
+        
+        <section class="payment-methods">
+        	<div class="container">
+          	<div class="row">
+              <div class="col-md-12">
+              	<ul class="list-inline">
+                	<li><a href="#"><img src="img/pm-visa.png" alt="Visa Card"></a></li>
+                  <li><a href="#"><img src="img/pm-master-card.png" alt="Master Card"></a></li>
+                  <li><a href="#"><img src="img/pm-ae.png" alt="American Express"></a></li>
+                  <li><a href="#"><img src="img/pm-jcb.png" alt="JCB"></a></li>
+                  <li><a href="#"><img src="img/pm-paypal.png" alt="Paypal"></a></li>
+                </ul>
+              	<ul class="list-inline">
+                	<li><a href="#"><img src="img/security.png" alt="Secured by Net trust"></a></li>
+                </ul>
+              	<ul class="list-inline">
+                  <li><a href="#"><img src="img/rrr.png" alt="Reuse Reduce Recycle"></a></li>
+                </ul>
+              	<ul class="list-inline">
+                	<li><a href="#"><img src="img/technology-innovation.png" alt="Technology innovation program award from"></a></li>
+                  <li><a href="#"><img src="img/spring-singapore.png" alt="Spring Singapore"></a></li>
+                  <li><a href="#"><img src="img/ida.png" alt="ida"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="copy-rights">
+        	<div class="container">
+        		<p>Copyright <i class="fa fa-copyright"></i> 2015 Yarraa<i class="fa fa-registered"></i> Inc. All Rights Reserved</p>
+          </div>
+        </section>
+      </footer>
+      
+		</div><!--/.wrapper-->
+    
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="loginModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" ng-controller="LoginCtrl" name="login">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <div class="login-form">
+              <div class="login-form-header" align="center">
+                <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
+              </div>
+              <form class="login-form-main" data-toggle="validator" role="form">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newUser.email" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password" placeholder="Password" ng-model="newUser.pwd"  required>
+                </div>		
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-default btn-block" ng-click="login()"><i class="fa fa-check"></i> Sign In</button>
+                </div>
+                 <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
+                  | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
+                    <a class="login-form-reset" id="forgetpass" href="#">Forgot password?</a>
+                   </div>
+                </div>
+              </form>
+              <div class="login-form-footer" style="padding:1rem; padding-top:0;">
+                <h3 align="center" style="padding-top:0; padding-bottom:15px;">Do you want to Creating an account?</h3>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button type="submit" class="btn btn-default btn-block" ><i class="fa fa-user"></i> Sign Up as Consumer</button>
+                  </div>
+                  <div class="col-xs-6" align="right">
+                    <button type="submit" class="btn btn-default btn-block" ><i class="fa fa-group"></i> Sign Up as Corporate</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="forgetModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <div class="login-form">
+              <div class="login-form-header" align="center">
+                <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
+              </div>
+
+              <form class="login-form-main" data-toggle="validator" role="form">
+                <div class="form-group">
+                  <p>To Reset Please fill up your Email ID below :</p>
+                  <input type="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                 
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button type="submit" class="btn btn-default btn-block" ><i class="fa fa-check"></i> Submit</button>
+                </div>
+                 <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
+                  | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
+                    <a class="login-form-reset" id="cancelForget" href="#">Cancel</a>
+                   </div>
+                </div>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!-- Signup Modal -->
+<div ng-controller="SignupCtrl" name="signup" ng-init="init()" class="modal signupModal fade" id="signupModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="login-form-header" align="left" style="padding-top:0; padding-bottom:2rem">
+              <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
+            </div>
+            <div><img src="img/cartimg.jpg"></img></div>
+          </div>
+          <div class="col-xs-6">
+            <div id="yarraa-login" class="yarraa-login">
+              <div class="login-content">
+                <div class="login-form">
+                 
+                  <form class="login-form-main" data-toggle="validator" role="form" style="text-align:center;">
+                     <h5 style="color:#5b3d19">Create your Yarraa account and start</h6>
+                  <h4 style="color:#5b3d19; font-weight:bold;">managing all devices in 1 place!</h3>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="newUser.first_name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newUser.email" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="telephone" placeholder="Telephone" ng-model="newUser.telephone" required>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control" ng-model="newUser.country_code">
+                      	<option>Country</option>
+                      	<option ng-repeat="option in countries" value="{{option.code}}">{{option.name}}</option>
+                      </select>
+                    </div>
+                    <button class="btn btn-default btn-block" ng-click="saveRegistration()"><i class="fa fa-check"></i> SIGN UP NOW</button>
+                    
+                  </form>
+                 <div align="center"> <a href="#">Creating an account for your Company?</a></div>
+                 <div align="center">   <a href="#" class="loginTriggerClass">Already have an account?</a></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div> 
+  <!--  Signup Modal -->  
+    
+    
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="src/js/SmoothScroll.js"></script>
+    <script src="src/js/jquery.mCustomScrollbar.js"></script>
+    <script src="src/js/owl.carousel.js"></script>
+    <script>
+			$(document).ready(function() {
+			  
+			  $('#loginTrigger').click(function(){
+			    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
+			  });
+	  		$('#forgetpass').click(function(){
+	          $('#loginModal').modal('hide');
+	          $('#forgetModal').modal({backdrop: 'static', keyboard: false}) 
+	        });
+			  $('.loginTriggerClass').click(function(){
+				  	$('#signupModal').modal('hide');
+				    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
+				  })
+				  
+			   $('#signupTrigger').click(function(){
+			    $('#signupModal').modal({backdrop: 'static', keyboard: false}) 
+			  })
+				
+				
+				
+				$("#featurettes").owlCarousel({
+				autoPlay: 3000, //Set AutoPlay to 3 seconds
+				items : 5,
+				itemsDesktop : [1199,4],
+				itemsDesktopSmall : [979,4]
+				});
+				
+			
+				
+			});
+		</script>
+    <script src="src/js/app.js"></script>
+
+    <script type="text/javascript" src="js/angular.js"></script>
+            <script type="text/javascript" src="js/angular-route.js"></script>
+            <script type="text/javascript" src="js/angular-cookies.js"></script>
+            <script type="text/javascript" src="js/angular-resource.js"></script>
+            
+            <script type="text/javascript" src="js/materialize.js"></script>
+            <script type="text/javascript" src="js/jquery.datetimepicker.full.js"></script>
+            
+             <script type="text/javascript" src="js/custom/controllers/mainController.js"></script>
+            <script type="text/javascript" src="js/custom/routing/router.js"></script>
+            <script type="text/javascript" src="js/custom/controllers/LoginCtrl.js"></script>
+            <script type="text/javascript" src="js/custom/controllers/SignupCtrl.js"></script>
+    
+  </body>
+</html>

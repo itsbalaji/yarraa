@@ -1,0 +1,88 @@
+<header class="header2">
+    	
+    </header>
+    <div class="wrapper">
+      <section class="about-yarraa">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="map">
+                  <ul id="maps">
+                    <li class="usa"><a href="#usa" data-placement="bottom" title='{{"USA"|translate}}'>{{"USA"|translate}}</a></li>
+                    <li class="china"><a href="#china" data-placement="bottom" title='{{"CHINA"|translate}}'>{{"CHINA"|translate}}</a></li>
+                    <li class="asia-hq"><a href="#asiahq" data-placement="bottom" title='{{"ASIA_HQ"|translate}}'>{{"ASIA_HQ"|translate}}</a></li>
+                    <li class="india"><a href="#india" data-placement="bottom" title='{{"INDIA"|translate}}'>{{"INDIA"|translate}}</a></li>
+                  </ul>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <h3>{{"ASIA_HQ"|translate}}</h3>
+        <address id="asiahq">
+        <strong>YARRAA Pte. Ltd.</strong><br />
+        No 12 Tannery Road<br />
+        #02-04 HB Centre 1<br />
+        Singapore 347722<br />
+        Singapore<br /><br />
+        <span class="wrapper">
+          <strong>{{"SALES_ENQUIRY"|translate}}:</strong> <a href="mailto:sales@yarraa.com">sales@yarraa.com</a><br />
+          <strong>{{"TECHNICAL_SUPPORT"|translate}}:</strong> <a href="mailto:support@yarraa.com">support@yarraa.com</a><br />
+          <strong>{{"OTHER_ENQUIRY"|translate}}:</strong> <a href="mailto:feedback@yarraa.com">feedback@yarraa.com</a><br />
+        </span>
+        </address>
+            </div>
+          </div>
+           <div class="row">
+            <div class="col-md-6">
+
+              <h3>{{"USA_OFFICE"|translate}}</h3>
+        <address id="usa">
+        <strong>YARRAA Inc.</strong><br />
+        Montgomery Street Center<br />
+        Suite 1500<br />
+        315 Montgomery Street, 9th Floor<br />
+        San Francisco, CA 94104<br />
+        Phone: (415) 306 9368, (415) 306 9369<br />
+        </address>
+        <h3>{{"CHINA_SALES_OFFICE"|translate}}</h3>
+        <address id="china">
+        <strong>YARRAA Inc.</strong><br />
+        No. 249 Xiang Yu Avenue<br />
+        2nd Central Garden Building<br />
+        China Furong District Changsha City,<br />
+        Hunan Province, 2502<br />
+        China<br />
+        </address>
+        
+
+            </div>
+            <div class="col-md-6">
+              <h3>{{"INDIA_SALES_OFFICE"|translate}}</h3>
+        <address id="india">
+        <strong>YARRAA Inc.</strong><br />
+        #1, Sri Hari towers<br />
+        5th A-Main Road<br />
+        Bangalore-560024<br />
+        India<br />
+        </address>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      
+      
+      <script>
+			$(document).ready(function() {
+			
+		        $('#maps a').popover({ 
+			      html : true, 
+			      trigger:'hover',
+			      content: function() {
+			         var content = $(this).attr("href");
+			        return $(content).html();
+			      }
+			    });
+				
+			});
+		</script>

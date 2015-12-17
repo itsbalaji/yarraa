@@ -1,0 +1,282 @@
+
+
+ 
+    <header class="header">
+    	<div class="container" align="center">
+    		<h2>
+    			{{"THE_ONE_STOP_1"|translate}}
+    			<span class="hcontent-01">{{"THE_ONE_STOP_2"|translate}}</span> {{"THE_ONE_STOP_3"|translate}} 
+    			<span class="hcontent-02">
+    			{{"THE_ONE_STOP_4"|translate}}</span>
+    		</h2>
+        <div class="store-icons">
+        	<a href="#" class="btn-store btn-apple-store"></a>
+          <a href="#" class="btn-store btn-google-store"></a>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <section id="services" class="yarraa-services">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4 no-padding">
+              <div class="thumbnail">
+                <img src="img/services01.jpg" class="img-responsive" alt="Register and Track">
+                <div class="caption caption-register">
+                  <h3>{{"REGISTER_&_TRACK"|translate}}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 no-padding">
+              <div class="thumbnail">
+                <img src="img/services02.jpg" class="img-responsive" alt="Get covered">
+                <div class="caption caption-covered">
+                  <h3>{{"GET_COVERED"|translate}}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 no-padding">
+              <div class="thumbnail">
+                <img src="img/services03.jpg" class="img-responsive" alt="Fix AnyTime">
+                <div class="caption caption-fix">
+                  <h3>{{"FIX_ANYTIME"|translate}}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--/.container-fluid-->
+      </section>
+      
+      <section class="yarraa-brands" ng-controller="MainCtrl">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 brand-content-border">
+              <div class="brand-content">
+                <p>{{"USERS_HAVE_RECENTLY_"|translate}}</p>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div id="yarraa-brands">
+              	<div class="item" ng-repeat="brand in brands" on-finish-render="ngBrandsFinished"><img src="img/brands/{{brand}}" title="{{BRAND_TAGLINE[brand]}}"></div>
+              </div>
+            </div>
+          </div>
+        </div><!--/.container-fluid-->    
+      </section>
+      
+      <section class="getting-started">
+        <div class="container">
+          <h2>{{"GETTING_STARTED_IN_3"|translate}}</h2> 
+          <div class="inner-tabs" align="center">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default btn-active"><i class="fa fa-shield"></i> {{"GET_COVERED"|translate}}</button>
+              <button type="button" class="btn btn-default btn-active"><i class="icon ion-settings"></i> {{"INSTANT_FIX"|translate}}</button>
+            </div>
+          </div>
+          <img src="img/yarraa-steps.png" class="img-responsive" alt="getting started with yarraa">
+        </div><!--/.container  -->
+      </section>
+      
+      <section class="yarraa-status">
+        <div class="container-fluid" align="center">
+        	<div class="row">
+            <div class="col-md-4">
+              <div class="status-content">
+                <span class="y-icons y-brands">{{"REGISTERED_BRANDS"|translate}}</span> <span class="status-total">1198</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="status-content">
+                <span class="y-icons y-users">{{"TOTAL_ACTIVE_USERS"|translate}}</span> <span class="status-total">21216</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="status-content">
+                <span class="y-icons y-centers">{{"SERVICE_CENTRES"|translate}}</span> <span class="status-total">10269</span>
+              </div>
+            </div>
+          </div>
+        </div><!--/.container-fluid--> 
+      </section>
+      
+      <section class="featurettes">
+      	<div class="container-fluid">
+        	<div class="row">
+          	<div class="col-md-2 no-padding featurettes-content">
+            	<div class="featurettes-inner">
+              	<h4>{{"FEATURETTES"|translate}}</h4>
+              </div>
+            </div>
+            <div class="col-md-10 no-padding">
+              <div id="featurettes">
+                <div class="item"><img src="img/f1.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f2.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f3.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f4.png" alt="featurettes"></div>
+                <div class="item"><img src="img/f5.png" alt="featurettes"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="about-yarraa">
+      	<div class="container-fluid">
+        	<div class="row">
+          	<div class="col-md-6 about-us">
+            	<h2>{{"ABOUT_YARRAA"|translate}}</h2>
+              <p>{{"YARRAA_IS_ALL_ABOUT_"|translate}}</p>
+              <div class="team-yarraa" align="center">
+              	<div class="row">
+                	<div class="col-md-4 no-padding team-lead">
+                  	<img src="img/abt1.png" class="img-responsive" alt="Yarraa Team">
+                  </div>
+                  <div class="col-md-8 sub-team no-padding">
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt2.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt3.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt4.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt5.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt6.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                    <div class="col-md-4 col-xs-6 no-padding">
+                      <img src="img/abt7.png" class="img-responsive" alt="Yarraa Team">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="testimonials">
+                <h2>{{"TESTIMONIALS"|translate}}</h2>
+                <div class="testi-content mCustomScrollbar">
+                	<div class="row tsml-wrap">
+                  	<div class="col-md-3">
+                    	<img src="img/tst1.png" class="img-circle" alt="yarraa testimonials">
+                    </div>
+                    <div class="col-md-9">
+                    	<div class="tsml-content tsml-before">
+                        <h4>Carly, USA</h4>
+                        <p>{{"TESTIMONAL_CARLY"|translate}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row tsml-wrap">
+                  	<div class="col-md-3 col-md-push-9">
+                    	<img src="img/tst2.png" class="img-circle" alt="yarraa testimonials">
+                    </div>
+                  	<div class="col-md-9 col-md-pull-3">
+                    	<div class="tsml-content tsml-after">
+                        <h4>Lynda, USA</h4>
+                        <p>{{"TESTIMONAL_LYNDA"|translate}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="collaborate">
+      	<div class="container-fluid">
+        	<div class="row">
+          	<div class="col-lg-12 no-padding">
+            	<div class="cbl-header">
+            		<h4>{{"COLLABORATE_WITH_YAR"|translate}}</h4>
+              </div>
+            </div>
+          </div><!--/.row-->
+          <div class="cbl-content">
+            <div class="row">
+              <div class="col-md-6 no-padding">
+                <div class="cbl-content-left">
+                  <h2>{{"FOR_BUSINESSES"|translate}}</h2>
+                 <p>{{"PARTNER_WITH_US_TO_P"|translate}}</p>
+                  <button type="button" class="btn btn-default btn-cbl">{{"PARTNER_NOW"|translate}}<i class="fa fa-caret-right"></i></button>
+                </div>
+              </div>
+              <div class="col-md-6 no-padding">
+                <div class="cbl-content-right">
+                	<h2>{{"FOR_INDIVIDUALS"|translate}}</h2>
+                  <p>{{"PERHAPS_YOU_ARE_A_TE"|translate}}</p>
+                  <button type="button" class="btn btn-default btn-cbl">{{"BECOME_AN_AGENT_NOW"|translate}} <i class="fa fa-caret-right"></i></button>
+                </div>
+              </div>
+            </div><!--/.row-->
+          </div>
+        </div><!--/.container-fluid-->
+      </section>
+      
+      <section class="our-partners" ng-controller="MainCtrl">
+      	<div class="container-fluid">
+        	<div class="row">
+          
+              	
+              <div class="col-md-2 no-padding our-partners-content">
+            	<div class="our-partners-inner"><h4>{{"OUR_PARTNERS"|translate}}</h4>
+              	</div>	
+            	</div>
+            <div class="col-md-10 no-padding partners-list">
+              <div id="our-partners">
+                <div class="item" ng-repeat="partner in partners" on-finish-render="ngPartnersFinished"><img src="img/partners/{{partner}}" ></div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+      <script>
+			$(document).ready(function() {
+			  
+			  $('#loginTrigger').click(function(){
+			    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
+			  });
+	  		$('#forgetpass').click(function(){
+	          $('#loginModal').modal('hide');
+	          $('#forgetModal').modal({backdrop: 'static', keyboard: false}) 
+	        });
+			  $('.loginTriggerClass').click(function(){
+				  	$('#signupModal').modal('hide');
+				    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
+				  })
+				  
+			   $('#signupTrigger').click(function(){
+			    $('#signupModal').modal({backdrop: 'static', keyboard: false}) 
+			  });
+			  $('.signupTriggers').click(function(){
+				  $('#loginModal').modal('hide');
+				    $('#signupModal').modal({backdrop: 'static', keyboard: false}) 
+				  });
+			$('#cancelForget').click(function(){
+	          $('#forgetModal').modal('hide');
+	          $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
+	        });
+				
+				
+				$("#featurettes").owlCarousel({
+				autoPlay: 3000, //Set AutoPlay to 3 seconds
+				items : 5,
+				itemsDesktop : [1199,4],
+				itemsDesktopSmall : [979,4]
+				});
+				
+			
+				
+			});
+		</script>

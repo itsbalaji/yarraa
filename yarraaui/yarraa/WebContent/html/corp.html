@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../css/app.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../css/jquery.datetimepicker.css"/>
+      
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+      .errorEmail,.errorPass{
+           display:none;   
+      }
+          .invalid ~ .errorEmail, .invalid ~ .errorPass{
+              display:block;
+              float: left;
+                margin-top: -14px;
+                font-size: 12px;
+                color: red;
+          }
+      </style>
+    </head>
+
+    <body style="background-color:#f5eee6;" ng-app="yaraaApp">
+    
+    <nav class="light-blue lighten-1" role="navigation" >
+            <div class="nav-wrapper container" >
+               
+                <a id="logo-container" href="#" class="brand-logo"><img src="../imgs/logo.jpg"/></a>
+                <div  user-info></div>
+              <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+        
+        
+      
+        <div class="container" >
+            
+            <div class="row" align="center" >
+            	<div id="alertMessage" tabindex ="1">
+				  <strong id="alertStatus"></strong> <span id="alertDesc"></span>
+				</div>				
+				
+            	<div ng-view></div>
+              <div class="footer row">
+                  <p>YARRAA Inc &copy; 2009 <a href="http://www.yarraa.com/tnc.html">User Agreement</a> | <a href="http://www.yarraa.com/privacy.htm">Privacy Policy</a> | <a href="http://www.yarraa.com/copyright.htm">Copyright Policy</a></p>
+                  <p>Use of this site is subject to express terms of use, which prohibit commercial use of this site.</p>
+                  <p>By continuing past this page, you agree to abide by these terms. Drop us your valuable feedback <a href="feedback@yarraa.com">here</a>.</p>
+                  <!--p>This site is best viewed in Microsoft Internet Explorer 6.0+ with a resolution of 1280x800.</p-->
+                </div>
+             </div>
+                
+        </div>
+        
+        
+            <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+                <script src="../js/yarraa.js"></script>
+                
+            <script type="text/javascript" src="../js/angular.js"></script>
+            <script type="text/javascript" src="../js/angular-route.js"></script>
+            <script type="text/javascript" src="../js/angular-cookies.js"></script>
+            <script type="text/javascript" src="../js/angular-resource.js"></script>
+            
+            <script type="text/javascript" src="../js/materialize.js"></script>
+            <script type="text/javascript" src="../js/jquery.datetimepicker.full.js"></script>
+            
+          
+             
+         
+		   <script type="text/javascript" src="../js/custom/controllers/mainController.js"></script>
+		    <script type="text/javascript" src="../js/angular-translate.js"></script>
+            
+            <script src="../js/translator/angular-translate-loader-static-files.js"></script>
+			<script src="../js/translator/angular-translate-storage-cookie.js"></script>
+			<script src="../js/translator/angular-translate-storage-local.js"></script>
+			<script src="../js/translator/angular-translate-handler-log.js"></script>
+			
+			<script src="../js/translator/tmhDynamicLocale.js"></script>
+			
+			<script type="text/javascript" src="../js/custom/translationConfig.js"></script>
+			
+		   <script type="text/javascript" src="../js/custom/translationConfig.js"></script>
+            <script type="text/javascript" src="../js/custom/routing/corp_router.js"></script>
+            <script type="text/javascript" src="../js/custom/services/DataService.js"></script>            
+            <script type="text/javascript" src="../js/custom/controllers/LoginCtrl.js"></script>
+            <script type="text/javascript" src="../js/custom/controllers/UploadCtrl.js"></script>
+            
+      </body>
+  </html>

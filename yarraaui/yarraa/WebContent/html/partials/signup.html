@@ -1,0 +1,54 @@
+<div ng-controller="SignupCtrl" name="signup" ng-init="init()">
+
+	 <form class="col s12" name="myForm">
+                  <div class="card-panel hoverable" align="center"> 
+                    <h4>Consumers Registration Form</h4>
+                    <div class="row">
+                                <div class="input-field col s6">
+                                  <input id="email" name="email" type="email" class="validate" ng-model="newUser.email" required>
+                                   <span class="errorEmail">This is invalid email</span>
+                                   <div role="alert"> <span class="errorAlert" ng-show="myForm.email.$error.required">Please enter Email</span></div>
+                                  <label for="email">Email</label>
+                                 <p>Please provide a valid email id since this will be the Username for your Yarraa Account.We will send you a verification Email to this id.</p>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4">
+                                  <input id="first_name" name="first_name" type="text" class="validate" ng-model="newUser.first_name" required>                                                          
+                                  <div role="alert"> <span class="errorAlert" ng-show="myForm.first_name.$error.required">Please enter firstname</span></div>
+                                  <label for="firstname">First Name</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input id="last_name" name="last_name" type="text" class="validate" ng-model="newUser.last_name" required>
+                                   <div role="alert"> <span class="errorAlert" ng-show="myForm.last_name.$error.required">Please enter lastname</span></div>
+                                  <label for="lastname">Last Name/Surname</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s4">                              		
+								    <select name="country" ng-model="newUser.country_code" placeholder="Please select country" required
+								    	style="margin: 0 0 15px">
+								    	<option value="" disabled="" selected="">Please select country</option>
+								      <option ng-repeat="option in countries" value="{{option.code}}">{{option.name}}</option>
+								    </select>
+								    <div role="alert"> <span class="errorAlert" ng-show="myForm.country.$error.required">Please select country</span></div>								  	 
+								  </div>
+                                
+                                <div class="input-field col s4">
+                                  <input id="state" type="text" name="state" class="validate" ng-model="newUser.state" required>
+                                   <div role="alert"> <span class="errorAlert" ng-show="myForm.state.$error.required">Please enter state</span></div>
+                                  <label for="state">State</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input id="city" name="city" type="text" class="validate" ng-model="newUser.city" required>
+                                   <div role="alert"> <span class="errorAlert" ng-show="myForm.city.$error.required">Please enter city</span></div>
+                                  <label for="city">City</label>
+                                </div>
+                            </div>
+                            <button class="btn waves-effect waves-light" type="button" name="action" ng-click="saveRegistration()">Submit</button>
+                        <button class="btn waves-effect waves-light" type="button" onclick="location.href='#login'" name="cancel">Cancel</button>
+                    
+                    </div>
+                </form>
+</div>
