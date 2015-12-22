@@ -391,7 +391,8 @@ $translateProvider.translations('en_US', {
 	"TESTIMONAL_LYNDA":"The video was informative and explained uses for the site; I like this because there is nothing worse than a Web site that I don't understand or don't know how to use. Even better was the fact that I didn't have to sit through the entire thing, instead I chose from the scenes at the bottom and got a super short explanatory clip.",
 	"NO_DATA_AVAILABLE":"No data available",
 	"BACK_TO_LIST":"Back to List",
-	"SERVICE_NOT_READY":"Currently Service not ready"
+	"SERVICE_NOT_READY":"Currently Service not ready",
+	"PLANS_AVAILABLE":"Available Plans"
 
 });
 
@@ -750,7 +751,8 @@ $translateProvider.translations('jp', {
 		"TESTIMONAL_LYNDA":"ビデオは有益だったとサイトに使用する説明しました。私は理解していないか、使用する方法がわからないWebサイトより悪い何もないので、私はこれが好きです。さらに良い代わりに私は一番下のシーンから選択し、超短い説明クリップを持って、私は全体のことを介して座って持っていなかったという事実でした。",
 		"NO_DATA_AVAILABLE":"データなし",
 		"BACK_TO_LIST":"一覧に戻ります",
-		"SERVICE_NOT_READY":"現在サービス準備ができていません"
+		"SERVICE_NOT_READY":"現在サービス準備ができていません",
+		"PLANS_AVAILABLE":"利用可能なプラン"
 });
 
 // Tell the module what language to use by default

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,16 +82,20 @@ public class PaymentSuccess extends HttpServlet {
 		
 		boolean errorStatus = false;
 		
-		if(request.getParameter("TXN_MESSAGE") != null )
+		if(request.getParameter("TXN_MESSAGE") != null && !"null".equalsIgnoreCase(request.getParameter("TXN_MESSAGE")) )
 		{
 			errorStatus = true;
 		}
+		
+		String status = request.getParameter("STATUS");
+		status = URLEncoder.encode(status, "UTF-8");
+		status = status.replace("/\r\n|\n/g", " ");
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append("{");
 		sb.append("\"months\":\""+hm.get("months")+"\",");
 		sb.append("\"plan_id\":\""+hm.get("plan_id")+"\",");
-		sb.append("\"status_message\":\""+request.getParameter("STATUS")+"\",");
+		sb.append("\"status_message\":\""+status+"\",");
 		sb.append("\"prd_desc\":\""+request.getParameter("DESCRIPTION")+"\",");
 		sb.append("\"currency_code\":\""+hm.get("currency")+"\",");
 		sb.append("\"txn_amt\":\""+request.getParameter("TXN_AMT")+"\",");

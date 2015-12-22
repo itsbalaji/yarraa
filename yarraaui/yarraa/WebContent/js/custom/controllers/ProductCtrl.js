@@ -273,6 +273,21 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 		);
 		
 		
+		if($("#monthsRemain_"+id).html() == 0)
+		{
+			apiCall.get(
+					AppConstants.REST_URL + '/warranties/'+id+"/ext-warranty",		
+					function(response)
+					{ 
+						//$("#availableplans_"+id).html('Plans avilable');
+						$("#availableplans_"+id).html(response.data['ext-providers'].length);
+					},
+					function(response){}
+				);
+		}
+		
+		
+		
 			
 			$http({
 				method : 'POST',

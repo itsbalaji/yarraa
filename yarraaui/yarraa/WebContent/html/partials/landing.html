@@ -73,13 +73,23 @@
 	                    <div class="tinyImg"><img src="../imgs/sheild.png"></div>
 	                </div>
 	               
-	                <div class="monthRemain" align="center">
-	                  <h5 align="center">{{"MONTHS_REMAINING"|translate}}</h5>
-	                  <h2 >{{warranty.warranty_period}}</h2>
+	                <div class="monthRemain showIfMonths" align="center" ng-hide="warranty.warranty_period == 0">
+	                  <h5 align="center" id="monthsRemainLbl_{{warranty.warranty_id}}">{{"MONTHS_REMAINING"|translate}}</h5>
+	                  <h2 id="monthsRemain_{{warranty.warranty_id}}" >{{warranty.warranty_period}}</h2>
 	                </div>
-	                 <div class="rightArrow" align="center">
+	                 <div class="rightArrow showIfMonths" align="center" ng-hide="warranty.warranty_period == 0">
+	                  <a></a>
+	                </div>
+	                
+	                <div class="monthRemain showIfNoMonths" align="center" ng-show="warranty.warranty_period == 0">
+	                  <h5 align="center">{{"PLANS_AVAILABLE"|translate}}</h5>
+	                  <h2 id="availableplans_{{warranty.warranty_id}}" >0</h2>
+	                </div>
+	                 <div class="rightArrow showIfNoMonths" align="center" ng-show="warranty.warranty_period == 0">
 	                  <a ng-click="showExtWarranty(warranty.warranty_id)"><img src="../imgs/rightarrow.png"/></a>
 	                </div>
+	                
+	                
 	              </div>
 	              <div class="detailedcolumn servicecenter">
 	                <div class="imgSec">
