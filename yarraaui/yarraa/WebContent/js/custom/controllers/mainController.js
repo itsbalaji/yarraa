@@ -23,6 +23,7 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 	
 	$scope.partners = [];
 	$scope.brands = [];
+	$scope.stats = {};
 	
 	
 	$http.get("/yarraa/files/partners")
@@ -35,6 +36,16 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 		{
 			//alert('Technical Error 2: Unable to get partner list');			
 		});
+	$http.get("/yarraa/stats")
+	.then(function(response)
+	{		
+		$scope.stats = response.data;
+		
+	}
+	,function()
+	{
+		//alert('Technical Error 2: Unable to get partner list');			
+	});
 	
 	$http.get("/yarraa/files/brands")
 		.then(function(response)

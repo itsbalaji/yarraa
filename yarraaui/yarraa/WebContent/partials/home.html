@@ -82,17 +82,17 @@
         	<div class="row">
             <div class="col-md-4">
               <div class="status-content">
-                <span class="y-icons y-brands">{{"REGISTERED_BRANDS"|translate}}</span> <span class="status-total">1198</span>
+                <span class="y-icons y-brands">{{"REGISTERED_BRANDS"|translate}}</span> <span class="status-total">{{stats.brand_count | number}}</span>
               </div>
             </div>
             <div class="col-md-4">
               <div class="status-content">
-                <span class="y-icons y-users">{{"TOTAL_ACTIVE_USERS"|translate}}</span> <span class="status-total">21216</span>
+                <span class="y-icons y-users">{{"TOTAL_ACTIVE_USERS"|translate}}</span> <span class="status-total">{{stats.user_count | number }}</span>
               </div>
             </div>
             <div class="col-md-4">
               <div class="status-content">
-                <span class="y-icons y-centers">{{"SERVICE_CENTRES"|translate}}</span> <span class="status-total">10269</span>
+                <span class="y-icons y-centers">{{"SERVICE_CENTRES"|translate}}</span> <span class="status-total">{{stats.service_centers_count | number }}</span>
               </div>
             </div>
           </div>
