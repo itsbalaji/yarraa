@@ -11,7 +11,7 @@ app.controller("UploadCtrl", function($scope, notify, AppConstants, $http, $loca
 	         processData: false,  
 	         contentType: false
 	       }).done(function( data ) {
-	           //alert(data);
+	           alert(JSON.stringify(data));
 	       });
 	           
 	           

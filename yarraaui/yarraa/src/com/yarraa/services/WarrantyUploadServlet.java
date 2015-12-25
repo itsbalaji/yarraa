@@ -28,6 +28,9 @@ public class WarrantyUploadServlet extends HttpServlet{
 		}
 		WarrantyUpload wp = new WarrantyUpload();
 		wp.uploadWarranty(is);
+		resp.setContentType("application/json");
+		resp.getOutputStream().write("{\"status\":\"success\"}".getBytes());
+		resp.getOutputStream().close();
 	}
 
 }
