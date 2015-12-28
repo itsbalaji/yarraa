@@ -69,8 +69,8 @@
           <h2>{{"GETTING_STARTED_IN_3"|translate}}</h2> 
           <div class="inner-tabs" align="center">
             <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-default btn-active"><i class="fa fa-shield"></i> {{"GET_COVERED"|translate}}</button>
-              <button type="button" class="btn btn-default btn-active"><i class="icon ion-settings"></i> {{"INSTANT_FIX"|translate}}</button>
+              <button type="button" class="btn btn-default sheild"> {{"GET_COVERED"|translate}}</button>
+              <button type="button" class="btn btn-default wrench btn-active"> {{"INSTANT_FIX"|translate}}</button>
             </div>
           </div>
           <img src="img/yarraa-steps.png" class="img-responsive" alt="getting started with yarraa">
@@ -109,11 +109,11 @@
             </div>
             <div class="col-md-10 no-padding">
               <div id="featurettes">
-                <div class="item"><a href="#" onclick="openVideo('http://www.youtube.com/watch?v=w4Q6P7Ar3RU')" eat-click><img src="img/f1.png" alt="featurettes"></a></div>
-                <div class="item"><a href="http://www.youtube.com/watch?v=w4Q6P7Ar3RU"><img src="img/f2.png" alt="featurettes"></a></div>
-                <div class="item"><img src="img/f3.png" alt="featurettes"></div>
-                <div class="item"><img src="img/f4.png" alt="featurettes"></div>
-                <div class="item"><img src="img/f5.png" alt="featurettes"></div>
+                <div class="item"><a href="http://www.youtube.com/watch?v=w4Q6P7Ar3RU" target="_blank"><img src="img/f1.png" alt="featurettes"></a></div>
+                <div class="item"><a href="http://www.youtube.com/watch?v=5_uy1kmRaAU" target="_blank"><img src="img/f2.png" alt="featurettes"></a></div>
+                <div class="item"><a href="http://www.youtube.com/watch?v=-nGg-ynjJ_A" target="_blank"><img src="img/f3.png" alt="featurettes"></a></div>
+                <div class="item"><a href="http://www.youtube.com/watch?v=TiyZMcrIRYc" target="_blank"><img src="img/f4.png" alt="featurettes"></a></div>
+                <div class="item"><a href="http://www.youtube.com/watch?v=PSNqdJN7F_c" target="_blank"><img src="img/f5.png" alt="featurettes"></a></div>
               </div>
             </div>
           </div>
@@ -240,16 +240,8 @@
       </section>
       
       
-       <div class='popup'>
-<div class='content'>
-<img src='http://www.developertips.net/demos/popup-dialog/img/x.png' alt='quit' class='x' id='x' />
-<div id='player'></div>
-<p><a href='' class='close'>Close</a></p>
-</div>
-      
-      
       <script>
-      var overlay = jQuery('<div id="overlay"></div>');
+
 			$(document).ready(function() 
 			{
 			  
@@ -287,50 +279,10 @@
 					itemsDesktopSmall : [979,4]
 				});
 				
-				 
-				 $('.close').click(function(){
-					 $('.popup').hide();
-					 overlay.appendTo(document.body).remove();
-					 return false;
-				 });
-				 $('.click').click(function(){
-					 overlay.show();
-					 overlay.appendTo(document.body);
-					 $('.popup').show();
-					 return false;
-				});
+			
 				
 			});
 			
 			
-			 var tag = document.createElement('script');
-			 tag.src = "http://www.youtube.com/watch?v=w4Q6P7Ar3RU";
-			 var firstScriptTag = document.getElementsByTagName('script')[0];
-			 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-			 /* video settings come here */
-			 var player;
-			 function onYouTubePlayerAPIReady() {
-				 player = new YT.Player('player', {
-					 height: '350',
-					 width: '600',
-					 videoId: 'Sne_5PwcAss',
-					 events: {
-					 	'onReady': onPlayerReady
-					 }
-				 });
-			 }
-			 /* Autoplay when the dialog opens */
-			 function onPlayerReady(event) {
-			 event.target.playVideo();
-			 }
 			
-			
-			function openVideo()
-			{
-				 overlay.show();
-				 overlay.appendTo(document.body);
-				 $('.popup').show();
-				 return false;
-			}
 		</script>

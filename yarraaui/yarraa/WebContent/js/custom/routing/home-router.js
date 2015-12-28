@@ -19,7 +19,10 @@ app.config(
 		        }).  
 	        when('/termsandcondition', {
 		          templateUrl: 'partials/termsandcondition.html'
-		        }).   
+		        }). 
+	        when('/keyservices', {
+		          templateUrl: 'partials/keyservices.html'
+		        }).
 		      when('/login', {
 		        templateUrl: 'partials/login.html',
 		        controller: 'LoginCtrl'

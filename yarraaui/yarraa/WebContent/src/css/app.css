@@ -197,6 +197,7 @@ a.y-fb { background: url(../../img/y-facebook.png) no-repeat center center;}
 .y-gp { background: url(../../img/y-googleplus.png) no-repeat center center;}
 .footer .btn-store { margin-top: 6px;}
 
+
 .payment-methods { padding: 1em 0; border-top: 1px solid #d8d8d7; border-bottom: 1px solid #d8d8d7;}
 .payment-methods ul { border-right: 1px solid #d8d8d7; }
 .payment-methods ul:last-child { border-right: none;}
@@ -424,7 +425,16 @@ body { font-size: 11px;}
 }*/
 body.modal-open { overflow-y: scroll; padding-right: 0 !important;}
 .modal-open .modal.loginModal { background-color: rgba(0,0,0,0.8);}
-
+.tab-content{ background-color:#fff; padding: 10px; border-bottom: 1px solid #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd;}
+span.mask{background: url(../../img/icon_player_02.png) 50% 50% no-repeat;
+    width: 69px;
+    height: 44px;
+    display: block;
+    z-index: 301;
+    display: block;
+    position: absolute;
+    cursor: pointer;}
+  .panel-danger>.panel-heading{color:#582d00;}
 
 
 .partners-list
@@ -433,3 +443,39 @@ body.modal-open { overflow-y: scroll; padding-right: 0 !important;}
 }
 
 
+
+.sheild{background: url(../../img/sheildhome.png) no-repeat 10px center; padding-left: 30px !important}
+.wrench{background: url(../../img/wrenchhomeA.png) no-repeat 10px center; padding-left: 35px !important}
+.wrench.btn-active{background: #573C18 url(../../img/wrenchhome.png) no-repeat 10px center; padding-left: 35px !important}
+.sheild.btn-active{background: #573C18 url(../../img/sheildhomeA.png) no-repeat 10px center; padding-left: 30px !important}
+.video-player {
+    background: #fcfcfc;
+    padding: 20px 0 0 0;
+}
+.video-player div.video {
+    background: #fff url(../../img/icon_loading_03.gif) 50% 50% no-repeat;
+    width: 425px;
+    height: 344px;
+    margin: 0 auto 20px auto;
+    border: 5px solid #ECF4F6;
+}
+.videos {
+    background: #EEF0F1;
+    height: 1%;
+    margin: 0 0 30px 0;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+.video-player div.video * {
+    margin: 0;
+    display: block;
+}
+.videos dd {
+    margin: 25px 2px 0 0;
+    margin-top: 0;
+}
+.videos dd {
+    display: block;
+    float: left;
+    text-transform: uppercase;
+}

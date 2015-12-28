@@ -37,335 +37,81 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="img/yarraa-logo.png" class="yarraa-logo"></a>
+          <a class="navbar-brand" href="#/"><img src="img/yarraa-logo.png" class="yarraa-logo"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         	<form class="navbar-form navbar-right hidden-xs">
-            <button type="button" class="btn btn-default btn-signup" id="signupTrigger">SIGN UP</button>
+            <button type="button" class="btn btn-default btn-signup" id="signupTrigger">{{"SIGN_UP"|translate}}</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About Yarra</a></li>
-            <li><a href="#">Key Services</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#" id="loginTrigger">Login</a></li>
+            <li><a href="" scroll-to="aboutYarraa">{{"ABOUT_YARRAA"|translate}}</a></li>
+            <li><a href="#keyservices">{{"KEY_SERVICES"|translate}}</a></li>
+            <li><a href="">{{"NEWS"|translate}}</a></li>
+            <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
+            <li><a href="#contactus">{{"CONTACT"|translate}}</a></li>
+            <li><a href="" id="loginTrigger">{{"LOGIN"|translate}}</a></li>
           </ul>
           <form class="navbar-form navbar-right visible-xs">
-            <button type="button" class="btn btn-default btn-signup">SIGN UP</button>
+            <button type="button" class="btn btn-default btn-signup">{{"SIGN_UP"|translate}}</button>
           </form>
         </div>
       </div>
     </nav>
-    
-    <header class="header">
-    	<div class="container" align="center">
-    		<h2>The <span class="hcontent-01">one stop solution</span> to track &amp; secure <span class="hcontent-02">your personal devices &amp; home appliances</span></h2>
-        <div class="store-icons">
-        	<a href="#" class="btn-store btn-apple-store"></a>
-          <a href="#" class="btn-store btn-google-store"></a>
-        </div>
-      </div>
-    </header>
-    <div class="wrapper">
-      <section id="services" class="yarraa-services">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-4 no-padding">
-              <div class="thumbnail">
-                <img src="img/services01.jpg" class="img-responsive" alt="Register and Track">
-                <div class="caption caption-register">
-                  <h3>REGISTER &amp; TRACK</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 no-padding">
-              <div class="thumbnail">
-                <img src="img/services02.jpg" class="img-responsive" alt="Get covered">
-                <div class="caption caption-covered">
-                  <h3>GET COVERED</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 no-padding">
-              <div class="thumbnail">
-                <img src="img/services03.jpg" class="img-responsive" alt="Fix any time">
-                <div class="caption caption-fix">
-                  <h3>FIX ANY TIME</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!--/.container-fluid-->
-      </section>
-      
-      <section class="yarraa-brands" ng-controller="MainCtrl">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-3 brand-content-border">
-              <div class="brand-content">
-                <p>Users have recently <span>registered devices</span> and <span>purchased coverage</span> on Yarraa for there brands</p>
-              </div>
-            </div>
-            <div class="col-md-9">
-              <div id="yarraa-brands">
-              	<div class="item" ng-repeat="brand in brands" on-finish-render="ngBrandsFinished"><img src="img/brands/{{brand}}" ></div>
-              </div>
-            </div>
-          </div>
-        </div><!--/.container-fluid-->    
-      </section>
-      
-      <section class="getting-started">
-        <div class="container">
-          <h2>Getting started in 3 simple steps</h2> 
-          <div class="inner-tabs" align="center">
-            <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-default btn-active"><i class="fa fa-shield"></i> Get Covered</button>
-              <button type="button" class="btn btn-default btn-active"><i class="icon ion-settings"></i> Instant Fix</button>
-            </div>
-          </div>
-          <img src="img/yarraa-steps.png" class="img-responsive" alt="getting started with yarraa">
-        </div><!--/.container  -->
-      </section>
-      
-      <section class="yarraa-status">
-        <div class="container-fluid" align="center">
-        	<div class="row">
-            <div class="col-md-4">
-              <div class="status-content">
-                <span class="y-icons y-brands">Registered Brands</span> <span class="status-total">1198</span>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="status-content">
-                <span class="y-icons y-users">Total Active Users</span> <span class="status-total">21216</span>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="status-content">
-                <span class="y-icons y-centers"> Service Centres</span> <span class="status-total">10269</span>
-              </div>
-            </div>
-          </div>
-        </div><!--/.container-fluid--> 
-      </section>
-      
-      <section class="featurettes">
-      	<div class="container-fluid">
-        	<div class="row">
-          	<div class="col-md-2 no-padding featurettes-content">
-            	<div class="featurettes-inner">
-              	<h4>FEATURETTES</h4>
-              </div>
-            </div>
-            <div class="col-md-10 no-padding">
-              <div id="featurettes">
-                <div class="item"><img src="img/f1.png" alt="featurettes"></div>
-                <div class="item"><img src="img/f2.png" alt="featurettes"></div>
-                <div class="item"><img src="img/f3.png" alt="featurettes"></div>
-                <div class="item"><img src="img/f4.png" alt="featurettes"></div>
-                <div class="item"><img src="img/f5.png" alt="featurettes"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section class="about-yarraa">
-      	<div class="container-fluid">
-        	<div class="row">
-          	<div class="col-md-6 about-us">
-            	<h2>About Yarraa</h2>
-              <p>Yarraa is all about providing an easy tracking and hassle-free Online Reverse Logistics Solution for consumers, retailers, distributors, service centers, and manufacturers. Our name is derived from the Wurundjeri term Yarra Yarra, meaning 'flow'; and the Yarra River, a waterway famed for being the only river that flows 'in reverse'. Putting the two elements together, the idea is a perfect fit to Yarraa's business: that of streamlined reverse logistics.</p>
-              <div class="team-yarraa" align="center">
-              	<div class="row">
-                	<div class="col-md-4 no-padding team-lead">
-                  	<img src="img/abt1.png" class="img-responsive" alt="Yarraa Team">
-                  </div>
-                  <div class="col-md-8 sub-team no-padding">
-                    <div class="col-md-4 col-xs-6 no-padding">
-                      <img src="img/abt2.png" class="img-responsive" alt="Yarraa Team">
-                    </div>
-                    <div class="col-md-4 col-xs-6 no-padding">
-                      <img src="img/abt3.png" class="img-responsive" alt="Yarraa Team">
-                    </div>
-                    <div class="col-md-4 col-xs-6 no-padding">
-                      <img src="img/abt4.png" class="img-responsive" alt="Yarraa Team">
-                    </div>
-                    <div class="col-md-4 col-xs-6 no-padding">
-                      <img src="img/abt5.png" class="img-responsive" alt="Yarraa Team">
-                    </div>
-                    <div class="col-md-4 col-xs-6 no-padding">
-                      <img src="img/abt6.png" class="img-responsive" alt="Yarraa Team">
-                    </div>
-                    <div class="col-md-4 col-xs-6 no-padding">
-                      <img src="img/abt7.png" class="img-responsive" alt="Yarraa Team">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="testimonials">
-                <h2>Testimonials</h2>
-                <div class="testi-content mCustomScrollbar">
-                	<div class="row tsml-wrap">
-                  	<div class="col-md-3">
-                    	<img src="img/tst1.png" class="img-circle" alt="yarraa testimonials">
-                    </div>
-                    <div class="col-md-9">
-                    	<div class="tsml-content tsml-before">
-                        <h4>Carly, USA</h4>
-                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row tsml-wrap">
-                  	<div class="col-md-3 col-md-push-9">
-                    	<img src="img/tst2.png" class="img-circle" alt="yarraa testimonials">
-                    </div>
-                  	<div class="col-md-9 col-md-pull-3">
-                    	<div class="tsml-content tsml-after">
-                        <h4>Lynda, USA</h4>
-                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row tsml-wrap">
-                  	<div class="col-md-3">
-                    	<img src="img/tst1.png" class="img-circle" alt="yarraa testimonials">
-                    </div>
-                    <div class="col-md-9">
-                    	<div class="tsml-content tsml-before">
-                        <h4>Carly, USA</h4>
-                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row tsml-wrap">
-                    <div class="col-md-3 col-md-push-9">
-                      <img src="img/tst2.png" class="img-circle" alt="yarraa testimonials">
-                    </div>
-                    <div class="col-md-9 col-md-pull-3">
-                      <div class="tsml-content tsml-after">
-                        <h4>Lynda, USA</h4>
-                        <p>Yarraa will provide you with a list of service centres near you that can help. You can then drop off the product, mail it in, or (in some cases) even arrange for someone to come pick it up! Manage your service request on your own time—no more waiting on hold while garbled Muzak plays in the background.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section class="collaborate">
-      	<div class="container-fluid">
-        	<div class="row">
-          	<div class="col-lg-12 no-padding">
-            	<div class="cbl-header">
-            		<h4>Collaborate with Yarraa</h4>
-              </div>
-            </div>
-          </div><!--/.row-->
-          <div class="cbl-content">
-            <div class="row">
-              <div class="col-md-6 no-padding">
-                <div class="cbl-content-left">
-                  <h2>For Businesses</h2>
-                  <p>Partner with us to provide your customers with best in class after sales support.</p>
-                  <button type="button" class="btn btn-default btn-cbl">PARTNER NOW <i class="fa fa-caret-right"></i></button>
-                </div>
-              </div>
-              <div class="col-md-6 no-padding">
-                <div class="cbl-content-right">
-                	<h2>For Individuals</h2>
-                  <p>Perhaps you are a technician, or a salesperson. Regardless of what you do, unleash the entrepreneurial spirit within by becoming a reseller of our products.</p>
-                  <button type="button" class="btn btn-default btn-cbl">BECOME AN AGENT NOW <i class="fa fa-caret-right"></i></button>
-                </div>
-              </div>
-            </div><!--/.row-->
-          </div>
-        </div><!--/.container-fluid-->
-      </section>
-      
-      <section class="our-partners" ng-controller="MainCtrl">
-      	<div class="container-fluid">
-        	<div class="row">
-          
-              	
-              <div class="col-md-2 no-padding our-partners-content">
-            	<div class="our-partners-inner"><h4>OUR PARTNERS</h4>
-              	</div>	
-            	</div>
-            <div class="col-md-10 no-padding partners-list">
-              <div id="our-partners">
-                <div class="item" ng-repeat="partner in partners" on-finish-render="ngPartnersFinished"><img src="img/partners/{{partner}}" ></div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   		
+   			<div ng-view></div>
       
       <footer class="footer">
       	<section class="quick-links">
         	<div class="container">
             <div class="row">
               <div class="col-md-6 col-sm-6 quick-links-inner">
-                <h5>Quick Links</h5>
+                <h5>{{"QUICK_LINKS"|translate}}</h5>
                 <div class="col-md-3 col-sm-6">
-                	<h6>Company</h6>
+                	<h6>{{"COMPANY"|translate}}</h6>
                   <ul class="list-unstyled">
-                  	<li><a href="#">Home</a></li>
-                    <li><a href="#">About YARRAA</a></li>
-                    <li><a href="#">Key Services</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                  	<li><a href="#/">{{"HOME"|translate}}</a></li>
+                    <li><a href="" scroll-to="aboutYarraa">{{"ABOUT_YARRAA"|translate}}</a></li>
+		            <li><a href="#keyservices">{{"KEY_SERVICES"|translate}}</a></li>
+		            <li><a href="">{{"NEWS"|translate}}</a></li>
+                    <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
+                    <li><a href="#contactus">{{"CONTACT_US"|translate}}</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                	<h6>{{"BUSINESS_USERS"|translate}}</h6>
+                  <ul class="list-unstyled">
+                  	<li><a href="">{{"RETAILERS"|translate}}</a></li>
+                    <li><a href="">{{"COLLECTION_POINTS"|translate}}</a></li>
+                    <li><a href="">{{"DISTRIBUTORS"|translate}}</a></li>
+					<li><a href="">{{"SERVICE_CENTERS"|translate}}</a></li>
+					<li><a href="">{{"MANUFACTURERS"|translate}}</a></li>
+					<li><a href="">{{"RECYCLERS"|translate}}</a></li>
+					<li><a href="">{{"ADVERTISE"|translate}}</a></li>
+					<li><a href="">{{"APPLIANCES_INSURANCE"|translate}}</a></li>
+			<li><a href="#">{{"IT_PRODUCTS_INSURANC"|translate}}</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                	<h6>Business Users</h6>
+                	<h6>{{"USING_THIS_SITE"|translate}}</h6>
                   <ul class="list-unstyled">
-                  	<li><a href="#">Retailers</a></li>
-                    <li><a href="#">Collection Points</a></li>
-                    <li><a href="#">Distributors</a></li>
-                    <li><a href="#">Service Centers</a></li>
-                    <li><a href="#">Manufacturers</a></li>
-                    <li><a href="#">Recyclers</a></li>
-                    <li><a href="#">Advertise</a></li>
-                    <li><a href="#">Appliances insurance</a></li>
-                    <li><a href="#">IT Products insurance</a></li>
+                    <li><a href="#termsandcondition">{{"USER_AGREEMENT"|translate}}</a></li>
+                    <li><a href="#privacypolicy">{{"PRIVACY_POLICY"|translate}}</a></li>
+                    <li><a href="#copyright">{{"COPYRIGHT_POLICY"|translate}}</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                	<h6>Using this site</h6>
-                  <ul class="list-unstyled">
-                    <li><a href="#">User Agreement</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Copyright Policy</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                	<h6>Language</h6>
-                  <ul class="list-unstyled">
-                    <li><a href="#" class="chn-flg">中文</a></li>
-                    <li><a href="#" class="de-flg">Deutsche</a></li>
-                    <li><a href="#" class="jpn-flg">Japanese</a></li>
+                <div class="col-md-3 col-sm-6" ng-controller="LanguageSelect" >			
+                	<h6>{{"LANGUAGE"|translate}}</h6>
+                  <ul class="list-unstyled">                  	
+                    <li><a href="" class="chn-flg">中文</a></li>
+                    <li><a href="" class="de-flg" >Deutsche</a></li>
+                    <li><a href="" class="jpn-flg" ng-click="changeLanguage('jp')">日本語</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6 social-links">
-                <h5>Social</h5>
+                <h5>{{"SOCIAL"|translate}}</h5>
                 <div class="col-md-12">
-                	<h6>Find us on</h6>
+                	<h6>{{"FIND_US_ON"|translate}}</h6>
                 	<ul class="list-inline">
                   	<li><a href="#" class="y-ico y-fb"></a></li>
                     <li><a href="#" class="y-ico y-in"></a></li>
@@ -444,31 +190,31 @@
               <div class="login-form-header" align="center">
                 <img src="img/signuplogo.jpg" class="img-responsive" alt="yarraa">
               </div>
-              <form class="login-form-main" data-toggle="validator" role="form">
+              <form class="login-form-main" data-toggle="validator" role="form" name="loginForm" id="loginForm">
                 <div class="form-group">
-                  <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newUser.email" required>
+                  <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' ng-model="newUser.email" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" id="password" placeholder="Password" ng-model="newUser.pwd"  required>
+                  <input type="password" class="form-control" id="password" placeholder='{{"PASSWORD"|translate}}' ng-model="newUser.pwd"  required>
                 </div>		
                 <div class="row">
                   <div class="col-xs-6">
-                    <button class="btn btn-default btn-block" ng-click="login()"><i class="fa fa-check"></i> Sign In</button>
+                    <button class="btn btn-default btn-block" ng-click="login()"><i class="fa fa-check"></i> {{"SIGN_IN"|translate}}</button>
                 </div>
                  <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
                   | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
-                    <a class="login-form-reset" id="forgetpass" href="#">Forgot password?</a>
+                    <a class="login-form-reset" id="forgetpass" href="">{{"FORGOT_PASSWORD?"|translate}}</a>
                    </div>
                 </div>
               </form>
               <div class="login-form-footer" style="padding:1rem; padding-top:0;">
-                <h3 align="center" style="padding-top:0; padding-bottom:15px;">Do you want to Creating an account?</h3>
+                <h3 align="center" style="padding-top:0; padding-bottom:15px;">{{"DO_YOU_WANT_TO_CREAT"|translate}}</h3>
                 <div class="row">
                   <div class="col-xs-6">
-                    <button type="submit" class="btn btn-default btn-block" ><i class="fa fa-user"></i> Sign Up as Consumer</button>
+                    <button type="submit" class="btn btn-default btn-block signupTriggers"><i class="fa fa-user"></i> {{"SIGN_UP_AS_CONSUMER"|translate}}</button>
                   </div>
                   <div class="col-xs-6" align="right">
-                    <button type="submit" class="btn btn-default btn-block" ><i class="fa fa-group"></i> Sign Up as Corporate</button>
+                    <button type="submit" class="btn btn-default btn-block signupTriggers"><i class="fa fa-group"></i> {{"SIGN_UP_AS_CORPORATE"|translate}}</button>
                   </div>
                 </div>
               </div>
@@ -480,7 +226,7 @@
   </div>
 </div> 
 <!--LOGIN POPUP/MODAL -->
-<div class="modal loginModal fade" id="forgetModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+<div class="modal loginModal fade" id="forgetModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" ng-controller="LoginCtrl">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       
@@ -502,17 +248,17 @@
 
               <form class="login-form-main" data-toggle="validator" role="form">
                 <div class="form-group">
-                  <p>To Reset Please fill up your Email ID below :</p>
-                  <input type="email" class="form-control" id="email" placeholder="Email" required>
+                  <p>{{"TO_RESET"|translate}} :</p>
+                  <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' required ng-model="newUser.email">
                 </div>
                  
                 <div class="row">
                   <div class="col-xs-6">
-                    <button type="submit" class="btn btn-default btn-block" ><i class="fa fa-check"></i> Submit</button>
+                    <button type="submit" class="btn btn-default btn-block" ng-click="forgotPassword()"><i class="fa fa-check"></i> {{"SUBMIT"|translate}}</button>
                 </div>
                  <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
                   | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
-                    <a class="login-form-reset" id="cancelForget" href="#">Cancel</a>
+                    <a class="login-form-reset" id="cancelForget" href="#">{{"CANCEL"|translate}}</a>
                    </div>
                 </div>
               </form>
@@ -538,7 +284,7 @@
       <div class="modal-body">
         <button type="button" title="Close" class="closeButton" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
-          <span class="hide">Close</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
         </button>
         <div class="row">
           <div class="col-xs-6">
@@ -552,29 +298,30 @@
               <div class="login-content">
                 <div class="login-form">
                  
-                  <form class="login-form-main" data-toggle="validator" role="form" style="text-align:center;">
+                  <form class="login-form-main" data-toggle="validator" role="form" style="text-align:center;" name="signupForm" id="signupForm">
                      <h5 style="color:#5b3d19">Create your Yarraa account and start</h6>
                   <h4 style="color:#5b3d19; font-weight:bold;">managing all devices in 1 place!</h3>
                     <div class="form-group">
-                      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="newUser.first_name" required>
+                      <input type="text" class="form-control" id="name" placeholder='{{"NAME"|translate}}' ng-model="newUser.first_name" required>
                     </div>
                     <div class="form-group">
-                      <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newUser.email" required>
+                      <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' ng-model="newUser.email" required>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" id="telephone" placeholder="Telephone" ng-model="newUser.telephone" required>
+                      <input type="number" ng-pattern="onlyNumbers" class="form-control" name="telephone" id="telephone" 
+                      		placeholder='{{"TELEPHONE"|translate}}'  ng-model="newUser.telephone" required>
                     </div>
                     <div class="form-group">
                       <select class="form-control" ng-model="newUser.country_code">
-                      	<option>Country</option>
+                      	<option disabled="disabled" selected value="">{{"COUNTRY"|translate}}</option>
                       	<option ng-repeat="option in countries" value="{{option.code}}">{{option.name}}</option>
                       </select>
                     </div>
-                    <button class="btn btn-default btn-block" ng-click="saveRegistration()"><i class="fa fa-check"></i> SIGN UP NOW</button>
+                    <button class="btn btn-default btn-block" ng-click="saveRegistration()"><i class="fa fa-check"></i> {{"SIGN_UP_NOW"|translate}}</button>
                     
                   </form>
-                 <div align="center"> <a href="#">Creating an account for your Company?</a></div>
-                 <div align="center">   <a href="#" class="loginTriggerClass">Already have an account?</a></div>
+                 <div align="center"> <a href="#">{{"CREATE_COMP_ACC"|translate}}</a></div>
+                 <div align="center">   <a href="#" class="loginTriggerClass">{{"ALREADY_HAVE_ACCOUNT"|translate}}</a></div>
                 </div>
               </div>
             </div>
@@ -594,38 +341,7 @@
     <script src="src/js/SmoothScroll.js"></script>
     <script src="src/js/jquery.mCustomScrollbar.js"></script>
     <script src="src/js/owl.carousel.js"></script>
-    <script>
-			$(document).ready(function() {
-			  
-			  $('#loginTrigger').click(function(){
-			    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
-			  });
-	  		$('#forgetpass').click(function(){
-	          $('#loginModal').modal('hide');
-	          $('#forgetModal').modal({backdrop: 'static', keyboard: false}) 
-	        });
-			  $('.loginTriggerClass').click(function(){
-				  	$('#signupModal').modal('hide');
-				    $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
-				  })
-				  
-			   $('#signupTrigger').click(function(){
-			    $('#signupModal').modal({backdrop: 'static', keyboard: false}) 
-			  })
-				
-				
-				
-				$("#featurettes").owlCarousel({
-				autoPlay: 3000, //Set AutoPlay to 3 seconds
-				items : 5,
-				itemsDesktop : [1199,4],
-				itemsDesktopSmall : [979,4]
-				});
-				
-			
-				
-			});
-		</script>
+    
     <script src="src/js/app.js"></script>
 
     <script type="text/javascript" src="js/angular.js"></script>
@@ -637,7 +353,21 @@
             <script type="text/javascript" src="js/jquery.datetimepicker.full.js"></script>
             
              <script type="text/javascript" src="js/custom/controllers/mainController.js"></script>
-            <script type="text/javascript" src="js/custom/routing/router.js"></script>
+             
+               <script type="text/javascript" src="js/angular-translate.js"></script>
+            
+            <script src="js/translator/angular-translate-loader-static-files.js"></script>
+			<script src="js/translator/angular-translate-storage-cookie.js"></script>
+			<script src="js/translator/angular-translate-storage-local.js"></script>
+			<script src="js/translator/angular-translate-handler-log.js"></script>
+			
+			<script src="js/translator/tmhDynamicLocale.js"></script>
+			
+			<script type="text/javascript" src="js/custom/translationConfig.js"></script>
+			<script type="text/javascript" src="js/custom/controllers/LanguageCtrl.js"></script>
+			
+            <script type="text/javascript" src="js/custom/routing/home-router.js"></script>
+            
             <script type="text/javascript" src="js/custom/controllers/LoginCtrl.js"></script>
             <script type="text/javascript" src="js/custom/controllers/SignupCtrl.js"></script>
     

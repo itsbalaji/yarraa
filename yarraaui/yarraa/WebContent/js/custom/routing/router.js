@@ -33,7 +33,7 @@ app.config(
 	        when('/extwarranty', {
 		          templateUrl: 'partials/purchasewarranty.html',
 		          controller: 'PurchaseCtrl'
-		        }).
+		        }).	        
 	        when('/service404', {
 		        templateUrl: 'partials/service404.html'
 		      }).

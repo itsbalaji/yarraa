@@ -45,7 +45,7 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="" scroll-to="aboutYarraa">{{"ABOUT_YARRAA"|translate}}</a></li>
-            <li><a href="">{{"KEY_SERVICES"|translate}}</a></li>
+            <li><a href="#keyservices">{{"KEY_SERVICES"|translate}}</a></li>
             <li><a href="">{{"NEWS"|translate}}</a></li>
             <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
             <li><a href="#contactus">{{"CONTACT"|translate}}</a></li>
@@ -71,23 +71,24 @@
                   <ul class="list-unstyled">
                   	<li><a href="#/">{{"HOME"|translate}}</a></li>
                     <li><a href="" scroll-to="aboutYarraa">{{"ABOUT_YARRAA"|translate}}</a></li>
-		            <li><a href="#">{{"KEY_SERVICES"|translate}}</a></li>
-		            <li><a href="#">{{"NEWS"|translate}}</a></li>
+		            <li><a href="#keyservices">{{"KEY_SERVICES"|translate}}</a></li>
+		            <li><a href="">{{"NEWS"|translate}}</a></li>
                     <li><a href="#FAQs">{{"FAQ"|translate}}</a></li>
                     <li><a href="#contactus">{{"CONTACT_US"|translate}}</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                 	<h6>{{"BUSINESS_USERS"|translate}}</h6>
                   <ul class="list-unstyled">
-                  	<li><a href="#">{{"RETAILERS"|translate}}</a></li>
-                    <li><a href="#">{{"COLLECTION_POINTS"|translate}}</a></li>
-                    <li><a href="#">{{"DISTRIBUTORS"|translate}}</a></li>
-					<li><a href="#">{{"SERVICE_CENTERS"|translate}}</a></li>
-					<li><a href="#">{{"MANUFACTURERS"|translate}}</a></li>
-					<li><a href="#">{{"RECYCLERS"|translate}}</a></li>
-					<li><a href="#">{{"ADVERTISE"|translate}}</a></li>
-					<li><a href="#">{{"APPLIANCES_INSURANCE"|translate}} {{"IT_PRODUCTS_INSURANC"|translate}}</a></li>
+                  	<li><a href="">{{"RETAILERS"|translate}}</a></li>
+                    <li><a href="">{{"COLLECTION_POINTS"|translate}}</a></li>
+                    <li><a href="">{{"DISTRIBUTORS"|translate}}</a></li>
+					<li><a href="">{{"SERVICE_CENTERS"|translate}}</a></li>
+					<li><a href="">{{"MANUFACTURERS"|translate}}</a></li>
+					<li><a href="">{{"RECYCLERS"|translate}}</a></li>
+					<li><a href="">{{"ADVERTISE"|translate}}</a></li>
+					<li><a href="">{{"APPLIANCES_INSURANCE"|translate}}</a></li>
+			<li><a href="#">{{"IT_PRODUCTS_INSURANC"|translate}}</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -98,11 +99,11 @@
                     <li><a href="#copyright">{{"COPYRIGHT_POLICY"|translate}}</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3 col-sm-6" ng-controller="LanguageSelect" >			
+                <div class="col-md-2 col-sm-6" ng-controller="LanguageSelect" style="padding-right:0;">			
                 	<h6>{{"LANGUAGE"|translate}}</h6>
                   <ul class="list-unstyled">                  	
-                    <li><a href="#" class="chn-flg">中文</a></li>
-                    <li><a href="#" class="de-flg" >Deutsche</a></li>
+                    <li><a href="" class="chn-flg">中文</a></li>
+                    <li><a href="" class="de-flg" >Deutsche</a></li>
                     <li><a href="" class="jpn-flg" ng-click="changeLanguage('jp')">日本語</a></li>
                   </ul>
                 </div>
@@ -307,7 +308,8 @@
                       <input type="email" class="form-control" id="email" placeholder='{{"EMAIL"|translate}}' ng-model="newUser.email" required>
                     </div>
                     <div class="form-group">
-                      <input type="number" ng-pattern="onlyNumbers" class="form-control" name="telephone" id="telephone" placeholder='{{"TELEPHONE"|translate}}'  ng-model="newUser.telephone" required>
+                      <input type="number" ng-pattern="onlyNumbers" class="form-control" name="telephone" id="telephone" 
+                      		placeholder='{{"TELEPHONE"|translate}}'  ng-model="newUser.telephone" required>
                     </div>
                     <div class="form-group">
                       <select class="form-control" ng-model="newUser.country_code">
