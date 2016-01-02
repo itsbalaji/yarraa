@@ -75,6 +75,16 @@
     <servlet-name>WarrantyUpload</servlet-name>
     <url-pattern>/warrantyUpload</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>ProductUpload</display-name>
+    <servlet-name>ProductUpload</servlet-name>
+    <servlet-class>com.yarraa.services.B2CUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductUpload</servlet-name>
+    <url-pattern>/productUpload</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

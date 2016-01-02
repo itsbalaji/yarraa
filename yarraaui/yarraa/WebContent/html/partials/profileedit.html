@@ -1,0 +1,55 @@
+<div ng-controller="ProfileCtrl" name="profilePicupload" >
+  <form class="col s12" name="fileUploadForm1" id="fileUploadForm1" enctype="multipart/form-data" >
+  
+  Upload Profile Picture:
+  
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Profile Picture</span>
+          <input type="file" name="file" id="warrantyUpload">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload files">
+        </div>
+      </div>
+      
+                                  
+	<div class="row">
+         <div class="col s6" style="padding:20px;">
+            <button class="btn waves-effect waves-light left"  ng-click="uploadPhoto()" name="action">Upload</button> 
+            	
+        </div>
+     </div>
+     
+     <hr/>
+     <br/>
+     <br/>
+    {{"CHANGE_PASSWORD"|translate}}
+     
+     
+      <div class="row">
+              <div class="input-field col s6">
+                <input id="old_pwd" name="old_pwd" type="password" class="form-control validate" ng-model="userprofile.old_pwd" required="required">
+                <label for="serialno">{{"OLD_PASSWORD"|translate}}</label>
+              </div>
+		</div>
+       <div class="row">
+              <div class="input-field col s6">
+                <input id="new_pwd" name="new_pwd" type="password" class="form-control validate" ng-model="userprofile.new_pwd" required="required">
+                <label for="serialno">{{"NEW_PASSWORD"|translate}}</label>
+              </div>
+		</div>
+     
+      
+      <div class="row">
+         <div class="col s6" style="padding:20px;">
+            <button class="btn waves-effect waves-light left"  ng-click="changePassword()" name="action">{{"UPDATE"|translate}}</button> 
+            	
+        </div>
+     </div>
+     
+   </form>
+   
+   
+   
+</div>

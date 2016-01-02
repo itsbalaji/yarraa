@@ -16,8 +16,8 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 		
 		DataService.clearAll();
 		
-		notify.info("");
 		
+		$("#loaderDiv").show();
 		//{"title":"s2","serial_no":"S123s413","warranty_id":211072,"warranty_in_months":12,"has_offers":false}
 		apiCall.get(
 				AppConstants.REST_URL + '/warranties',		
@@ -97,14 +97,14 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 	
 	$scope.waitFunc = function waitFunc() {
 	    if ($scope.countList != $scope.warrantiesFullList.length) {
-	    	notify.info("");
+	    	
 	        setTimeout(waitFunc, 1000);
 	    }
 	    else
 	    {
-	    	notify.clearNotify();
+	    	//notify.clearNotify();
 	    	$("#warrantyAll").click();
-	    	
+	    	$("#loaderDiv").hide();
 	    	//$scope.warrantyAll();
 	    }
 	}
@@ -389,4 +389,7 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 	$scope.init();
   
 });
+
+
+
 

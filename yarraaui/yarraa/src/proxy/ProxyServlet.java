@@ -24,6 +24,7 @@ public class ProxyServlet extends HttpServlet {
     public ProxyServlet() {
         super();
     }
+    
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
                                 //  Create Get request dynamically to remote server

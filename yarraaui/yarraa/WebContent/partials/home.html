@@ -123,7 +123,7 @@
       <section class="about-yarraa" id="aboutYarraa">
       	<div class="container-fluid">
         	<div class="row">
-          	<div class="col-md-6 about-us" >
+          	<div class="col-md-6 about-us">
             	<h2>{{"ABOUT_YARRAA"|translate}}</h2>
               <p>{{"YARRAA_IS_ALL_ABOUT_"|translate}}</p>
               <div class="team-yarraa" align="center">
@@ -271,6 +271,30 @@
 		          $('#loginModal').modal({backdrop: 'static', keyboard: false}) 
 		        });
 				
+					$('#myTab a:first').tab('show')
+
+
+				$('#retaillersTrigger').click(function(){
+		          $('#retaillersModal').modal({backdrop: 'static', keyboard: false}) 
+		        });
+		        $('#collectionpTrigger').click(function(){
+		          $('#collectionpModal').modal({backdrop: 'static', keyboard: false}) 
+		        });
+		
+		        $('#ServicecTrigger').click(function(){
+		          $('#ServicecModal').modal({backdrop: 'static', keyboard: false}) 
+		        });
+		
+		        $('#DistributorsTrigger').click(function(){
+		          $('#DistributorsModal').modal({backdrop: 'static', keyboard: false}) 
+		        });
+		        $('#ManufacturersTrigger').click(function(){
+		          $('#ManufacturersModal').modal({backdrop: 'static', keyboard: false}) 
+		        });
+		        $('#RecyclersTrigger').click(function(){
+		          $('#RecyclersModal').modal({backdrop: 'static', keyboard: false}) 
+		        });
+        
 				
 				$("#featurettes").owlCarousel({
 					autoPlay: 3000, //Set AutoPlay to 3 seconds

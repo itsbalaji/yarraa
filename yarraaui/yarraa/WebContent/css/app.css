@@ -377,6 +377,15 @@ $('.close').each(function(){
 
 }
 
+#notofyModal .modal-content .modal-footer{background-color:transparent;}
+#notofyModal {border: 5px solid #ffffff;}
+#notofyModal .modal-content{padding:0px;}
+	
+#alertMessage
+{
+	padding-top:15px;
+}
+
 .alert-success {
 
     color: #3c763d;
@@ -455,4 +464,9 @@ button.close {
 
     opacity: .2;
 
+}
+#loaderDiv {
+    float: right;
+    height: 10px;
+    display:none;
 }

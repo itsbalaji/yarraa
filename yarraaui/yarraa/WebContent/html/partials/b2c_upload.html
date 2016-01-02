@@ -1,0 +1,29 @@
+<div ng-controller="ProductUploadCtrl" name="upload" >
+
+
+  <form class="col s12" name="fileUploadForm1" id="fileUploadForm1" enctype="multipart/form-data" >
+  
+        
+  Upload the File:
+  
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Attachments</span>
+          <input type="file" name="file" id="productUpload">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload files">
+        </div>
+      </div>
+      
+                                  
+	<div class="row">
+         <div class="col s12" style="padding:20px;">
+            <button class="btn waves-effect waves-light left"  ng-click="uploadProducts()" name="action">Upload</button> 
+            <a class="waves-effect waves-light right" href="../template/b2c sample.xls" target="_blank">
+        	{{"DOWNLOAD_SAMPLE"|translate}}</a>
+        		
+        </div>
+     </div>
+   </form>
+</div>

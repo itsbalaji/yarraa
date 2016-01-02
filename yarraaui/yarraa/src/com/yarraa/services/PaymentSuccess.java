@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yarraa.business.AppConstants;
+
 /**
  * Servlet implementation class PaymentSuccess
  */
@@ -57,7 +59,7 @@ public class PaymentSuccess extends HttpServlet {
 	private void postWarrantyPurchase(HttpServletRequest request) throws IOException
 	{
 		
-		String yarraaURL = "http://54.179.167.160:8080/Yarraa";
+		String yarraaURL = AppConstants.REST_URL;
 		
 		
 		

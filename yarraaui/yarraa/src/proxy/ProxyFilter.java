@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 public class ProxyFilter implements Filter {
-
+	
     public ProxyFilter() {
     }
 
@@ -27,7 +27,6 @@ public class ProxyFilter implements Filter {
         	
         	 request.setAttribute("uri", uri);
              // Forward filtered requests to MyProxy servlet
-
         	 request.getRequestDispatcher("/ProxyServlet").forward(request, response);       
          }
          else

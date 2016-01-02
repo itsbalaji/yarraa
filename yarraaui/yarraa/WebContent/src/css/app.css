@@ -479,3 +479,13 @@ span.mask{background: url(../../img/icon_player_02.png) 50% 50% no-repeat;
     float: left;
     text-transform: uppercase;
 }
+#notofyModal
+{
+	z-index:3003 !important;
+}
+
+#notofyModal .modal-content
+{
+	margin-left:20%;
+	margin-right:20%;
+}

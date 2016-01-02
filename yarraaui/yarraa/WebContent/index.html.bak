@@ -99,7 +99,7 @@
                     <li><a href="#copyright">{{"COPYRIGHT_POLICY"|translate}}</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3 col-sm-6" ng-controller="LanguageSelect" >			
+                <div class="col-md-2 col-sm-6" ng-controller="LanguageSelect" style="padding-right:0;">			
                 	<h6>{{"LANGUAGE"|translate}}</h6>
                   <ul class="list-unstyled">                  	
                     <li><a href="" class="chn-flg">中文</a></li>
@@ -320,8 +320,8 @@
                     <button class="btn btn-default btn-block" ng-click="saveRegistration()"><i class="fa fa-check"></i> {{"SIGN_UP_NOW"|translate}}</button>
                     
                   </form>
-                 <div align="center"> <a href="#">{{"CREATE_COMP_ACC"|translate}}</a></div>
-                 <div align="center">   <a href="#" class="loginTriggerClass">{{"ALREADY_HAVE_ACCOUNT"|translate}}</a></div>
+                 <div align="center"> <a href="javascript:void(0);" >{{"CREATE_COMP_ACC"|translate}}</a></div>
+                 <div align="center">   <a href="javascript:void(0);"  class="loginTriggerClass">{{"ALREADY_HAVE_ACCOUNT"|translate}}</a></div>
                 </div>
               </div>
             </div>
@@ -336,6 +336,316 @@
   <!--  Signup Modal -->  
     
     
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="ServicecModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>Service Centers</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home" data-toggle="tab">CASE ROUTING</a></li>
+              <li><a data-target="#profile" data-toggle="tab">MONITOR SUPPLY LEVELS</a></li>
+              <li><a data-target="#messages" data-toggle="tab">LET CONSUMERS FIND YOU</a></li>
+              <li><a data-target="#settings" data-toggle="tab">BRIDGE COMMUNICATION GAPS</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <p>Yarraa can tell you everything about what's wrong with the items – even before the shipment arrives! You can then route them immediately upon arrival. You can also see which of your technicians is ready for a new case at any given time, and your technicians can update the case status regularly on their Yarraa accounts.
+                </p>
+              </div>
+              <div class="tab-pane" id="profile">
+                <p>With YARRAA, your technicians can keep track of all the parts they use in their repair jobs in real time, so you can always keep track of the supply level. You can also set Yarraa to alert you when it’s time to reorder, and you can upload new inventory records in a matter of minutes!</p>
+              </div>
+              <div class="tab-pane" id="messages"><p>When you use Yarraa, consumers will know exactly where to find you when they need your services! They can find your location and get in touch with you in a matter of a few keystrokes, and you can get all the information you need about their products and warranties, and the nature of their problem.
+              </p></div>
+              <div class="tab-pane" id="settings"><p>If you service more than one brand, perhaps you work with suppliers who use different internal communications systems. This can make communicating with them difficult – unless you use Yarraa! Since Yarraa is universal, it can be used alongside your internal system to communicate easily and dependably with all your partners.  </p></div>
+            </div>
+
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderServiceCenter.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> View our Brochure</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">EXPLORE YARRAA® THROUGH VIDEOS</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=cetAJurtwF4" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_service-center_01.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="ManufacturersModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>Manufacturers</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home" data-toggle="tab">MONITOR AND FIX MANUFACTURING PROBLEMS</a></li>
+              <li><a data-target="#profile" data-toggle="tab">STOP FRAUDULENT RETURNS</a></li>
+              <li><a data-target="#messages" data-toggle="tab">ADDITIONAL REVENUE SOURCES</a></li>
+              <li><a data-target="#settings" data-toggle="tab">CONTACT YOUR END-USERS</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <p>With Yarraa, you can track your products' failure rates more quickly than ever before. That means you can pinpoint manufacturing problems that cause those failures more quickly, and take all necessary action to eliminate the flaws. Lower failure rates means higher customer satisfaction!
+                </p>
+              </div>
+              <div class="tab-pane" id="profile">
+                <p>When your end-users register their warranties through Yarraa at point of sale, they can prove they're legitimate consumers much more easily in the future. So you can implement effective gatekeeping policy to keep out fraudulent returns, and still meet the needs of your honest consumers whether they've saved their receipts or not.</p>
+              </div>
+              <div class="tab-pane" id="messages"><p>Yarraa offers numerous extras to your consumers: shipping services, insurance, warranty extensions and more. We offer commission-based sales, so when your consumers purchase any of our extra services, you earn additional revenues!
+              </p></div>
+              <div class="tab-pane" id="settings"><p>No matter how far-flung your consumers are, when you use Yarraa, you can contact them directly via e-mail or SMS. Sort by product, country, brand, or you can reach them all at one time with news about new products, promotions, sales, or anything else you wish to share with them. It's never been this easy or direct!</p></div>
+            </div>
+
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderManufacturer.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> View our Brochure</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">EXPLORE YARRAA® THROUGH VIDEOS</div>
+                <div class="panel-body">
+                  <a href="https://www.youtube.com/watch?v=YX4y_F2ynp4" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_manufacturer_01.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="RecyclersModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>Recyclers</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home7" data-toggle="tab">SHIPPING SOLUTIONS</a></li>
+              <li><a data-target="#profile7" data-toggle="tab">GLOBAL REACH</a></li>
+              <li><a data-target="#messages7" data-toggle="tab">PARTNERSHIP</a></li>
+              <li><a data-target="#settings7" data-toggle="tab">UNIVERSAL</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home7">
+                <p>If you or your clients can't arrange shipping directly for their recyclable products, you can find your solution here! Yarraa offers links to reduced-rate shipping services from providers including UPS, with their global reach and flexible pickup policies.
+                </p>
+              </div>
+              <div class="tab-pane" id="profile7">
+                <p>Let potential clients find you when they need you! When consumers in your area submit a recycling request on Yarraa, it will be forwarded to you automatically. You are then free to make an offer if you wish, and make arrangements for collection and payment directly with the consumer.</p>
+              </div>
+              <div class="tab-pane" id="messages7"><p>With Yarraa, you can create partnerships with service centres and distributors to handle their recycling needs on a regular basis. Reach out to as many or as few potential partners as you're able to accommodate, and coordinate shipments with them on your terms!
+              </p></div>
+              <div class="tab-pane" id="settings7"><p>If you recycle different types of products, chances are you have different avenues of collection for them. Through Yarraa, you can manage them all in one place, no matter how diverse your needs and methods are regarding each type of product. You can also reach out to new potential sources for them all in one place!</p></div>
+            </div>
+<br/>
+           
+            <div class="panel panel-danger">
+                <div class="panel-heading">EXPLORE YARRAA® THROUGH VIDEOS</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=nU-WQ2sTdg8" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_02.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="retaillersModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>Retailers</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home" data-toggle="tab">ALWAYS AVAILABLE</a></li>
+              <li><a data-target="#profile" data-toggle="tab">MANAGE OPEN CASES</a></li>
+              <li><a data-target="#messages" data-toggle="tab">CUSTOMER LOYALTY</a></li>
+              <li><a data-target="#settings" data-toggle="tab">UNIVERSAL</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <p>Create as many usernames as you need for your staff at no extra cost! All your employees can access Yarraa and get the answers they need for your consumers, whenever they need it. You have answers and updates on all open cases at your fingertips as well – all updated in real time.
+                </p>
+              </div>
+              <div class="tab-pane" id="profile">
+                <p>Need to know the history of a customer's problem with a purchase? Find it all here! Regardless of which of your staff the consumer spoke with before, you can get all the answers you need on actions requested and taken. You can also keep everyone else up to date.</p>
+              </div>
+              <div class="tab-pane" id="messages"><p>Create stronger relationships with your customers! When they have problems, they want answers immediately – and with Yarraa, you can give them answers immediately! Faster resolutions mean higher customer satisfaction and stronger customer loyalty. And it all begins with Yarraa!
+              </p></div>
+              <div class="tab-pane" id="settings"><p>No matter how many different brands you carry, Yarraa can cover them all. Track all your brands, models and products in one place, at one time. One online resource, one password to remember, one stop – that’s Yarraa!</p></div>
+            </div>
+
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderRetailer.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> View our Brochure</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">EXPLORE YARRAA® THROUGH VIDEOS</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=nU-WQ2sTdg8" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_retailer_01.gif" alt="" style="opacity: 1;"></a>
+                  <a href="http://www.youtube.com/watch?v=PsFEW2NFCjY" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_retailer_02.gif" alt="" style="opacity: 1;"></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="DistributorsModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>Distributors</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home2" data-toggle="tab">SAVE ON SHIPPING COSTS</a></li>
+              <li><a data-target="#profile2" data-toggle="tab">STAY IN TOUCH WITH EVERYONE</a></li>
+              <li><a data-target="#messages2" data-toggle="tab">KNOW WHAT'S COMING</a></li>
+              <li><a data-target="#settings2" data-toggle="tab">PRODUCT HISTORIES</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home2">
+                <p>Streamlining the reverse shipping process leads to more efficient and inexpensive shipping! Using Yarraa's bulk routing system, you can manage your shipments for faster turnaround times, leading to more efficient use of storage space and postage resources. And you will meet your partners' needs more quickly, too!</p>
+              </div>
+              <div class="tab-pane" id="profile2">
+                <p>Do you manage brands or products from more than one producer? Do you supply several different retailers? Keeping in touch with them all can be a hassle – unless you use Yarraa! With our universal online portal, you can keep in touch with them all in one place. You only need to remember one website and one password.</p>
+              </div>
+              <div class="tab-pane" id="messages2"><p>If you regularly receive shipments of various size and content from various partners, you know how taxing unpredictable shipments can be on your resources. But with Yarraa, "unpredictable" is a thing of the past. Find out what's coming, and from where, and plan ahead to receive all your shipments!
+              </p></div>
+              <div class="tab-pane" id="settings2"><p>When you receive a returned shipment, you need to know the story behind it. With Yarraa, you can find all the information you need just by looking up the serial number. Where and when it was made, where it's been since then, why it's being returned – find all you need to know for all your shipments with Yarraa.</p></div>
+            </div>
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderDistributor.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> View our Brochure</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">EXPLORE YARRAA® THROUGH VIDEOS</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=UM2cx9bR_aA" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_distributor_01.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="collectionpModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">Close</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>Collection Points</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home1" data-toggle="tab">KNOW WHAT'S COMING</a></li>
+              <li><a data-target="#profile1" data-toggle="tab">MANAGE OPEN CASES</a></li>
+              <li><a data-target="#messages1" data-toggle="tab">CUSTOMER LOYALTY</a></li>
+              <li><a data-target="#settings1" data-toggle="tab">UNIVERSAL</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home1">
+                <p>If you regularly receive shipments of various size and content from various service centres, you know how taxing unpredictable shipments can be on your resources. But with Yarraa, "unpredictable" is a thing of the past. Find out what's coming, and from where, and plan ahead to receive all your shipments!
+                </p>
+              </div>
+              <div class="tab-pane" id="profile1">
+                <p>If you have to deal with queries from consumers and/or service centres about the status of open cases, you know how important a fast response is. With Yarraa, you can always be confident of your ability to give a fast response, because all the information on an open case is at your fingertips whenever you need it!.</p>
+              </div>
+              <div class="tab-pane" id="messages1"><p>Create stronger relationships with your customers! When they have problems, they want answers immediately – and with Yarraa, you can give them answers immediately! Faster resolutions mean higher customer satisfaction and stronger customer loyalty. And it all begins with Yarraa!
+              </p></div>
+              <div class="tab-pane" id="settings1"><p>No matter how many different brands you carry, Yarraa can cover them all. Track all your brands, models and products in one place, at one time. One online resource, one password to remember, one stop – that’s Yarraa!</p></div>
+            </div>
+            <br/>
+            <div class="panel panel-danger">
+                <div class="panel-heading">EXPLORE YARRAA® THROUGH VIDEOS</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=nU-WQ2sTdg8" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_02.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
 		<script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="src/js/SmoothScroll.js"></script>

@@ -36,13 +36,13 @@ public class WarrantyUpload {
 	
 	
 	
-	public void uploadWarranty(InputStream is) {
+	public void uploadWarranty(InputStream is, String company_id, String user_id) throws Exception {
 		// TODO Auto-generated method stub
 		Connection con = ConnectionUtil.getConnection();
 		HSSFWorkbook workbook = null;
 		try {
 			
-			
+						
 			FileInputStream file = (FileInputStream)is;
 			workbook = new HSSFWorkbook(file);
 			HSSFSheet sheet = workbook.getSheetAt(1);
@@ -132,14 +132,14 @@ public class WarrantyUpload {
 			 * For all the products taken above from the sheet, get the product id from table. 
 			 * If ID not avilable then insert as new product and get the ID			 * 
 			 */
-			getsertProductDetails(products, con);
+			getsertProductDetails(products, con, user_id);
 			
 			
 			/*
 			 * Iterate through the sheet and get all plan details and insert into the table.
 			 *  
 			 */
-			List<PlanVO> lstPlans = getNewProductPlans(products, sheet, planTypeList, con);
+			List<PlanVO> lstPlans = getNewProductPlans(products, sheet, planTypeList, con, company_id, user_id);
 			insertNewPlans(lstPlans,uniqueThreadIdentifier, con);
 			
 			
@@ -154,9 +154,10 @@ public class WarrantyUpload {
 			
 			
 			
-		} catch (IOException e) {
+		} catch( Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
 		finally
 		{
@@ -173,7 +174,7 @@ public class WarrantyUpload {
 	}
 
 
-	private void processServiceDescription(HSSFSheet sheet, int uniqueThreadIdentifier, Connection con) {
+	private void processServiceDescription(HSSFSheet sheet, int uniqueThreadIdentifier, Connection con) throws SQLException {
 
 		/**
 		 * Iterate and get features list
@@ -192,10 +193,11 @@ public class WarrantyUpload {
 			
 			
 			Cell cell = row.getCell(0);
-			if(cell.getCellType() !=  Cell.CELL_TYPE_BLANK){				
+			if(cell.getCellType() !=  Cell.CELL_TYPE_BLANK
+					&& cell.getStringCellValue() !=null && !cell.getStringCellValue().trim().equals("")){				
 				featuresMap.put(cell.getStringCellValue().toUpperCase(), "");
 			}
-			else
+			else if(cell.getCellType() !=  Cell.CELL_TYPE_BLANK)
 			{
 				break;
 			}
@@ -224,8 +226,8 @@ public class WarrantyUpload {
 	}
 
 
-	private void getInsertedPlans(List<List<String>> responseList, int uniqueThreadIdentifier, Connection con) {
-		try {
+	private void getInsertedPlans(List<List<String>> responseList, int uniqueThreadIdentifier, Connection con) throws SQLException {
+		
 			
 			String EW_PLAN_QUERY  = "select PLAN_ID,PLAN_TITLE, COMPANY_ID from RST_EW_PLAN_LIST where ADDITIONAL_INFO like '"+uniqueThreadIdentifier+":%'";
 			
@@ -293,17 +295,13 @@ public class WarrantyUpload {
 			
 			
 			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 
 
-	private void insertPlansApplFeature(List<PlanFeaturesVO> lst, Connection con) {
-		try
-		{
+	private void insertPlansApplFeature(List<PlanFeaturesVO> lst, Connection con) throws SQLException {
+		
 			PreparedStatement pst = con.prepareStatement("insert into RST_EW_PLAN_APPL_FEATURES "
 					+ "(PLAN_ID, COMPANY_ID, FEATURE_ID) values (?,?,?)");
 			
@@ -317,12 +315,7 @@ public class WarrantyUpload {
 			int[] result = pst.executeBatch();
 			System.out.println(result.length + " feature records mapped");
 			
-		}
-		catch(Exception ex)
-		{
-			ex.printStackTrace();
-		}
-		
+				
 	}
 
 
@@ -332,6 +325,9 @@ public class WarrantyUpload {
 		List<String> adpFeatureList = new ArrayList<String>();
 		List<String> ewadpFeatureList = new ArrayList<String>();
 		List<List<String>> responseList = new ArrayList<List<String>>();
+		
+		System.out.println("featuresMap : "+ featuresMap);
+		
 		while(rowIterator.hasNext())
 		{
 			Row row = rowIterator.next();
@@ -342,8 +338,11 @@ public class WarrantyUpload {
 			else
 			{
 				Cell c0 = row.getCell(0);
-				if(c0.getCellType() !=  Cell.CELL_TYPE_BLANK){				
+				if(c0.getCellType() !=  Cell.CELL_TYPE_BLANK
+						&& c0.getStringCellValue() !=null && !c0.getStringCellValue().trim().equals("")){				
 					String featureName = c0.getStringCellValue().toUpperCase();
+					
+					System.out.println("featureName : "+ featureName);
 					String featureId = featuresMap.get(featureName);
 					Cell c1 = row.getCell(1);
 					if(c1.getCellType() !=  Cell.CELL_TYPE_BLANK ){
@@ -383,7 +382,7 @@ public class WarrantyUpload {
 	}
 
 
-	private void getsertFeatures(Map<String, String> featuresMap, Connection con) {		
+	private void getsertFeatures(Map<String, String> featuresMap, Connection con) throws SQLException {		
 			
 			Set<String> featuresList = featuresMap.keySet();
 			String queryCriteria = "";
@@ -400,7 +399,7 @@ public class WarrantyUpload {
 					+ " where upper(NAME_OF_THE_FEATURE)  in ("
 					+  queryCriteria + ")";
 			System.out.println("GET_QUERY = "+GET_QUERY);
-			try {
+			
 				Statement st = con.createStatement();
 				ResultSet rs = st.executeQuery(GET_QUERY);
 				while(rs.next())
@@ -447,28 +446,14 @@ public class WarrantyUpload {
 					st.close();
 				}
 				System.out.println("featuresMap = " + featuresMap);
-				
-				
-				
-				
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			
-			
-			
+							
 		
 		
 	}
 
 
-	private void insertNewPlans(List<PlanVO> lstPlans, int uniqueThreadIdentifier, Connection con) {
-		
-		try
-		{
+	private void insertNewPlans(List<PlanVO> lstPlans, int uniqueThreadIdentifier, Connection con) throws SQLException {
+	
 			PreparedStatement pst = con.prepareStatement("insert into RST_EW_PLAN_LIST ("
 					+ "PLAN_TITLE, COMPANY_ID, CREATED_BY, CREATED_ON, PLAN_SELLING_PRICE, CURRENCY_OF_SELLING_PRICE,"
 					+ "MIN_PRODUCT_COST, CURRENCY_OF_MIN_PRODUCT_COST, "
@@ -505,19 +490,13 @@ public class WarrantyUpload {
 			
 			insertProdutApplPlans(lstPlans.get(0).getCompanyId(),uniqueThreadIdentifier,con);
 			
-			
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+					
 		
 	}
 
 
-	private void insertProdutApplPlans(int companyId, int uniqueThreadIdentifier, Connection con) {
-		try
-		{
+	private void insertProdutApplPlans(int companyId, int uniqueThreadIdentifier, Connection con) throws SQLException {
+
 			Statement st = con.createStatement();
 			String currentRecordFetch = "select PLAN_ID, ADDITIONAL_INFO from RST_EW_PLAN_LIST where COMPANY_ID="+companyId+
 					" and ADDITIONAL_INFO like '"+uniqueThreadIdentifier + ":%'";
@@ -545,17 +524,13 @@ public class WarrantyUpload {
 			}
 			int result[] = pst.executeBatch();
 			System.out.println(result.length);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		
 		
 	}
 
 
 	private List<PlanVO> getNewProductPlans(Map<String, String> products, HSSFSheet sheet,
-			List<String> planTypeList, Connection con) {
+			List<String> planTypeList, Connection con, String company_id, String user_id) {
 		
 		Iterator<Row> rowIterator = sheet.rowIterator();
 		
@@ -601,7 +576,7 @@ public class WarrantyUpload {
 				
 				for(int i=PLANS_START_INDEX, pos=0; i<=PLANS_END_INDEX; i = i+2, pos++)
 				{
-					if(row.getCell(i+1).getCellType() != Cell.CELL_TYPE_BLANK && 
+					if(row.getCell(i+1) !=null && row.getCell(i+1).getCellType() != Cell.CELL_TYPE_BLANK && 
 							row.getCell(i+1).getCellType() == Cell.CELL_TYPE_NUMERIC )
 					{
 						PlanVO vo = new PlanVO();
@@ -613,8 +588,8 @@ public class WarrantyUpload {
 						vo.setMinCostCurrency("SGD");
 						vo.setMaxCostCurrency("SGD");
 						vo.setSellingPriceCurrency("SGD");
-						vo.setCreatorId(111213);
-						vo.setCompanyId(111213);
+						vo.setCreatorId(Integer.parseInt(user_id));
+						vo.setCompanyId(Integer.parseInt(company_id));
 						
 						String productIds = "";
 						for(String product : productList)
@@ -646,7 +621,7 @@ public class WarrantyUpload {
 	}
 
 
-	private void getsertProductDetails(Map<String, String> products, Connection con) {
+	private void getsertProductDetails(Map<String, String> products, Connection con, String user_id) throws SQLException {
 		
 		
 		/**
@@ -665,7 +640,7 @@ public class WarrantyUpload {
 		}
 		String GET_QUERY = "select PRODUCT_ID, SUB_CATEGORY from RST_PRODUCT_MASTER where upper(SUB_CATEGORY) in ("
 				+  queryCriteria + ")";
-		try {
+		
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(GET_QUERY);
 			while(rs.next())
@@ -691,7 +666,7 @@ public class WarrantyUpload {
 				{
 					st.addBatch(
 							"insert into RST_PRODUCT_MASTER (SUB_CATEGORY, MODEL_ID, CREATED_BY, CREATED_DT) "
-							+ "values ('"+s+"',0,111213,sysdate)");
+							+ "values ('"+s+"',0,"+user_id+",sysdate)");
 					doInsert = true;
 				}
 				
@@ -721,18 +696,6 @@ public class WarrantyUpload {
 				st.close();
 			}
 
-			
-			
-			
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
 		
 	}
 

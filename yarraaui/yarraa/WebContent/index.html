@@ -27,6 +27,17 @@
       <div id="status">&nbsp;</div>
     </div>
     
+     <div id="notofyModal" class="modal">
+		    <div class="modal-content">
+		      <div class="alert alert-success" id=alertMessage role="alert">      		
+		      		<span id="alertDesc" style="padding:12px">Success message</span>      		
+		      		<div class="modal-footer">
+		      			<a href="#!" eat-click class=" modal-action modal-close waves-effect waves-green btn-flat">{{"CLOSE"|translate}}</a>
+		    		</div>
+		      </div>
+		    </div>
+		  </div>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top-scroll navbar-fixed-top">
       <div class="container">
@@ -80,15 +91,15 @@
                 <div class="col-md-4 col-sm-6">
                 	<h6>{{"BUSINESS_USERS"|translate}}</h6>
                   <ul class="list-unstyled">
-                  	<li><a href="">{{"RETAILERS"|translate}}</a></li>
-                    <li><a href="">{{"COLLECTION_POINTS"|translate}}</a></li>
-                    <li><a href="">{{"DISTRIBUTORS"|translate}}</a></li>
-					<li><a href="">{{"SERVICE_CENTERS"|translate}}</a></li>
-					<li><a href="">{{"MANUFACTURERS"|translate}}</a></li>
-					<li><a href="">{{"RECYCLERS"|translate}}</a></li>
-					<li><a href="">{{"ADVERTISE"|translate}}</a></li>
-					<li><a href="">{{"APPLIANCES_INSURANCE"|translate}}</a></li>
-			<li><a href="#">{{"IT_PRODUCTS_INSURANC"|translate}}</a></li>
+                  	<li><a href="javascript:void(0);" id="retaillersTrigger">{{"RETAILERS"|translate}}</a></li>
+                    <li><a href="javascript:void(0);" id="collectionpTrigger">{{"COLLECTION_POINTS"|translate}}</a></li>
+                    <li><a href="javascript:void(0);" id="DistributorsTrigger">{{"DISTRIBUTORS"|translate}}</a></li>
+          					<li><a href="javascript:void(0);" id="ServicecTrigger">{{"SERVICE_CENTERS"|translate}}</a></li>
+          					<li><a href="javascript:void(0);" id="ManufacturersTrigger">{{"MANUFACTURERS"|translate}}</a></li>
+          					<li><a href="javascript:void(0);" id="RecyclersTrigger">{{"RECYCLERS"|translate}}</a></li>
+          					<li><a href="http://yarraa.com/advertisement.html">{{"ADVERTISE"|translate}}</a></li>
+          					<li><a href="javascript:void(0);" >{{"APPLIANCES_INSURANCE"|translate}} </a></li>
+                    <li><a href="javascript:void(0);" >{{"IT_PRODUCTS_INSURANC"|translate}}</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -113,11 +124,11 @@
                 <div class="col-md-12">
                 	<h6>{{"FIND_US_ON"|translate}}</h6>
                 	<ul class="list-inline">
-                  	<li><a href="#" class="y-ico y-fb"></a></li>
-                    <li><a href="#" class="y-ico y-in"></a></li>
-                    <li><a href="#" class="y-ico y-ln"></a></li>
-                    <li><a href="#" class="y-ico y-tw"></a></li>
-                    <li><a href="#" class="y-ico y-gp"></a></li>
+                  	<li><a href="" class="y-ico y-fb"></a></li>
+                    <li><a href="" class="y-ico y-in"></a></li>
+                    <li><a href="" class="y-ico y-ln"></a></li>
+                    <li><a href="" class="y-ico y-tw"></a></li>
+                    <li><a href="" class="y-ico y-gp"></a></li>
                   </ul>
                 </div>
               </div>
@@ -125,8 +136,8 @@
               	<h5>Yarraa App</h5>
                 <div class="col-md-12">
                 	<ul class="list-unstyled">
-                  	<li><a href="#" class="btn-store btn-apple-store"></a></li>
-          					<li><a href="#" class="btn-store btn-google-store"></a></li>
+                  	<li><a href="" class="btn-store btn-apple-store"></a></li>
+          					<li><a href="" class="btn-store btn-google-store"></a></li>
                   </ul>
                 </div>
               </div>
@@ -139,22 +150,22 @@
           	<div class="row">
               <div class="col-md-12">
               	<ul class="list-inline">
-                	<li><a href="#"><img src="img/pm-visa.png" alt="Visa Card"></a></li>
-                  <li><a href="#"><img src="img/pm-master-card.png" alt="Master Card"></a></li>
-                  <li><a href="#"><img src="img/pm-ae.png" alt="American Express"></a></li>
-                  <li><a href="#"><img src="img/pm-jcb.png" alt="JCB"></a></li>
-                  <li><a href="#"><img src="img/pm-paypal.png" alt="Paypal"></a></li>
+                	<li><a href="https://usa.visa.com/" target="_blank"><img src="img/pm-visa.png" alt="Visa Card"></a></li>
+                  <li><a href="https://www.mastercard.us/" target="_blank"><img src="img/pm-master-card.png" alt="Master Card"></a></li>
+                  <li><a href="https://www.americanexpress.com/sg/" target="_blank"><img src="img/pm-ae.png" alt="American Express"></a></li>
+                  <li><a href="http://www.jsbbank.com/" target="_blank"><img src="img/pm-jcb.png" alt="JCB"></a></li>
+                  <li><a href="https://www.paypal.com/" target="_blank"><img src="img/pm-paypal.png" alt="Paypal"></a></li>
                 </ul>
               	<ul class="list-inline">
-                	<li><a href="#"><img src="img/security.png" alt="Secured by Net trust"></a></li>
+                	<li><a href="https://www.netrust.net" target="_blank"><img src="img/security.png" alt="Secured by Net trust"></a></li>
                 </ul>
               	<ul class="list-inline">
-                  <li><a href="#"><img src="img/rrr.png" alt="Reuse Reduce Recycle"></a></li>
+                  <li><a href="http://www.nea.gov.sg/energy-waste/3rs/waste-minimisation-and-recycling" target="_blank"><img src="img/rrr.png" alt="Reuse Reduce Recycle"></a></li>
                 </ul>
               	<ul class="list-inline">
-                	<li><a href="#"><img src="img/technology-innovation.png" alt="Technology innovation program award from"></a></li>
-                  <li><a href="#"><img src="img/spring-singapore.png" alt="Spring Singapore"></a></li>
-                  <li><a href="#"><img src="img/ida.png" alt="ida"></a></li>
+                	<li><a href="http://www.spring.gov.sg/Growing-Business/Grant/development-areas/Pages/technology-innovation.aspx" target="_blank"><img src="img/technology-innovation.png" alt="Technology innovation program award from"></a></li>
+                  <li><a href="http://www.spring.gov.sg/" target="_blank"><img src="img/spring-singapore.png" alt="Spring Singapore"></a></li>
+                  <li><a href="https://www.ida.gov.sg/" target="_blank"><img src="img/ida.png" alt="ida"></a></li>
                 </ul>
               </div>
             </div>
@@ -182,7 +193,7 @@
       <div class="modal-body">
         <button type="button" title="Close" class="closeButton" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
-          <span class="hide">Close</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
         </button>
         <div id="yarraa-login" class="yarraa-login">
           <div class="login-content">
@@ -237,7 +248,7 @@
       <div class="modal-body">
         <button type="button" title="Close" class="closeButton" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
-          <span class="hide">Close</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
         </button>
         <div id="yarraa-login" class="yarraa-login">
           <div class="login-content">
@@ -258,7 +269,7 @@
                 </div>
                  <div class="col-xs-6" style="padding-top:10px; color:#5b3d19">
                   | &nbsp;&nbsp;<i class="fa fa-unlock-alt"></i>
-                    <a class="login-form-reset" id="cancelForget" href="#">{{"CANCEL"|translate}}</a>
+                    <a class="login-form-reset" id="cancelForget" href="#/">{{"CANCEL"|translate}}</a>
                    </div>
                 </div>
               </form>
@@ -320,8 +331,8 @@
                     <button class="btn btn-default btn-block" ng-click="saveRegistration()"><i class="fa fa-check"></i> {{"SIGN_UP_NOW"|translate}}</button>
                     
                   </form>
-                 <div align="center"> <a href="#">{{"CREATE_COMP_ACC"|translate}}</a></div>
-                 <div align="center">   <a href="#" class="loginTriggerClass">{{"ALREADY_HAVE_ACCOUNT"|translate}}</a></div>
+                 <div align="center"> <a href="javascript:void(0);" >{{"CREATE_COMP_ACC"|translate}}</a></div>
+                 <div align="center">   <a href="javascript:void(0);"  class="loginTriggerClass">{{"ALREADY_HAVE_ACCOUNT"|translate}}</a></div>
                 </div>
               </div>
             </div>
@@ -336,6 +347,316 @@
   <!--  Signup Modal -->  
     
     
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="ServicecModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>{{"SERVICE_CENTERS"|translate}}</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#homeS" data-toggle="tab">{{"CASE_ROUTING"|translate}}</a></li>
+              <li><a data-target="#profileS" data-toggle="tab">{{"MONITOR_SUPPLY_LEVEL"|translate}}</a></li>
+              <li><a data-target="#messagesS" data-toggle="tab">{{"LET_CONSUMERS_FIND_Y"|translate}}</a></li>
+              <li><a data-target="#settingsS" data-toggle="tab">{{"BRIDGE_COMMUNICATION"|translate}}</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="homeS">
+                <p>{{"YARRAA_CAN_TELL_YOU_"|translate}}
+                </p>
+              </div>
+              <div class="tab-pane" id="profileS">
+                <p>{{"WITH_YARRAA_YOUR_TE"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="messagesS"><p>{{"WHEN_YOU_USE_YARRAA"|translate}}
+              </p></div>
+              <div class="tab-pane" id="settingsS"><p>{{"IF_YOU_SERVICE_MORE_"|translate}} </p></div>
+            </div>
+
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderServiceCenter.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> {{"VIEW_OUR_BROCHURE"|translate}}</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">{{"EXPLORE_YARRAA_THRO"|translate}}</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=cetAJurtwF4" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_service-center_01.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="ManufacturersModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>{{"MANUFACTURERS"|translate}}</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home3" data-toggle="tab">{{"MONITOR_AND_FIX_MANU"|translate}}</a></li>
+              <li><a data-target="#profile3" data-toggle="tab">{{"STOP_FRAUDULENT_RETU"|translate}}</a></li>
+              <li><a data-target="#messages3" data-toggle="tab">{{"ADDITIONAL_REVENUE_S"|translate}}</a></li>
+              <li><a data-target="#settings3" data-toggle="tab">{{"CONTACT_YOUR_END-USE"|translate}}</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home3">
+                <p>{{"WITH_YARRAA,_YOU_CAN"|translate}}
+                </p>
+              </div>
+              <div class="tab-pane" id="profile3">
+                <p>{{"WHEN_YOUR_END_USERS_"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="messages3"><p>{{"YARRAA_OFFERS_NUMERO"|translate}}
+              </p></div>
+              <div class="tab-pane" id="settings3"><p>{{"NO_MATTER_HOW_FAR_FL"|translate}}</p></div>
+            </div>
+
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderManufacturer.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> {{"VIEW_OUR_BROCHURE"|translate}}</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">{{"EXPLORE_YARRAA_THRO"|translate}}</div>
+                <div class="panel-body">
+                  <a href="https://www.youtube.com/watch?v=YX4y_F2ynp4" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_manufacturer_01.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="RecyclersModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>{{"RECYCLERS"|translate}}</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home7" data-toggle="tab">{{"SHIPPING_SOLUTIONS"|translate}}</a></li>
+              <li><a data-target="#profile7" data-toggle="tab">{{"GLOBAL_REACH"|translate}}</a></li>
+              <li><a data-target="#messages7" data-toggle="tab">{{"PARTNERSHIP"|translate}}</a></li>
+              <li><a data-target="#settings7" data-toggle="tab">{{"UNIVERSAL"|translate}}</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home7">
+                <p>{{"IF_YOU_OR_YOUR_CLIENTS"|translate}}
+                </p>
+              </div>
+              <div class="tab-pane" id="profile7">
+                <p>{{"LET_POTENTIAL_CLIENTS"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="messages7"><p>{{"WITH_YARRAA_YOU_CAN"|translate}}
+              </p></div>
+              <div class="tab-pane" id="settings7"><p>{{"IF_YOU_RECYCLE_DIFFE"|translate}}</p></div>
+            </div>
+<br/>
+           
+            <div class="panel panel-danger">
+                <div class="panel-heading">{{"EXPLORE_YARRAA_THRO"|translate}}</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=nU-WQ2sTdg8" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_02.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="retaillersModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>{{"RETAILERS"|translate}}</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#homeR" data-toggle="tab">{{"ALWAYS_AVAILABLE"|translate}}</a></li>
+              <li><a data-target="#profileR" data-toggle="tab">{{"MANAGE_OPEN_CASES"|translate}}</a></li>
+              <li><a data-target="#messagesR" data-toggle="tab">{{"CUSTOMER_LOYALTY"|translate}}</a></li>
+              <li><a data-target="#settingsR" data-toggle="tab">{{"UNIVERSAL"|translate}}</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="homeR">
+                <p>{{"CREATE_AS_MANY_USERN"|translate}}
+                </p>
+              </div>
+              <div class="tab-pane" id="profileR">
+                <p>{{"NEED_TO_KNOW_THE_HIS"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="messagesR"><p>{{"CREATE_STRONGER_RELA"|translate}}
+              </p></div>
+              <div class="tab-pane" id="settingsR"><p>{{"NO_MATTER_HOW_MANY_D"|translate}}</p></div>
+            </div>
+
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderRetailer.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> {{"VIEW_OUR_BROCHURE"|translate}}</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">{{"EXPLORE_YARRAA_THRO"|translate}}</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=nU-WQ2sTdg8" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_retailer_01.gif" alt="" style="opacity: 1;"></a>
+                  <a href="http://www.youtube.com/watch?v=PsFEW2NFCjY" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_retailer_02.gif" alt="" style="opacity: 1;"></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="DistributorsModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>{{"DISTRIBUTORS"|translate}}</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home2" data-toggle="tab">{{"SAVE_ON_SHIPPING_COS"|translate}}</a></li>
+              <li><a data-target="#profile2" data-toggle="tab">{{"STAY_IN_TOUCH_WITH_E"|translate}}</a></li>
+              <li><a data-target="#messages2" data-toggle="tab">{{"KNOW_WHATS_COMING_"|translate}}</a></li>
+              <li><a data-target="#settings2" data-toggle="tab">{{"PRODUCT_HISTORIES"|translate}}</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home2">
+                <p>{{"STREAMLINING_THE_REV"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="profile2">
+                <p>{{"DO_YOU_MANAGE_BRANDS"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="messages2"><p>{{"IF_YOU_REGULARLY_REC"|translate}}
+              </p></div>
+              <div class="tab-pane" id="settings2"><p>{{"WHEN_YOU_RECEIVE_A_R"|translate}}</p></div>
+            </div>
+            <p style="margin-top:15px;"><a href="http://yarraa.com/images/preloaderDistributor.swf?width=640&height=480"><i class="glyphicon glyphicon-menu-right"></i> {{"VIEW_OUR_BROCHURE"|translate}}</a></p>
+            <div class="panel panel-danger">
+                <div class="panel-heading">{{"EXPLORE_YARRAA_THRO"|translate}}</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=UM2cx9bR_aA" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_distributor_01.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!--LOGIN POPUP/MODAL -->
+<div class="modal loginModal fade" id="collectionpModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:1000px">
+    <div class="modal-content">
+      
+    <!--<div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Yarraa Login</h4>
+    </div>-->
+      <div class="modal-body">
+        <button type="button" title="Close" class="closeButton" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="hide">{{"CLOSE"|translate}}</span>
+        </button>
+        <div id="yarraa-login" class="yarraa-login">
+          <div class="login-content">
+            <h3>{{"COLLECTION_POINTS"|translate}}</h3>
+             <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-target="#home1" data-toggle="tab">{{"KNOW_WHATS_COMING_"|translate}}</a></li>
+              <li><a data-target="#profile1" data-toggle="tab">{{"MANAGE_OPEN_CASES"|translate}}</a></li>
+              <li><a data-target="#messages1" data-toggle="tab">{{"CUSTOMER_LOYALTY"|translate}}</a></li>
+              <li><a data-target="#settings1" data-toggle="tab">{{"UNIVERSAL"|translate}}</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="home1">
+                <p>{{"IF_YOU_REGULARLY_REC"|translate}}
+                </p>
+              </div>
+              <div class="tab-pane" id="profile1">
+                <p>{{"IF_YOU_HAVE_TO_DEAL_"|translate}}</p>
+              </div>
+              <div class="tab-pane" id="messages1"><p>{{"CREATE_STRONGER_RELA"|translate}}
+              </p></div>
+              <div class="tab-pane" id="settings1"><p>{{"NO_MATTER_HOW_MANY_D"|translate}}</p></div>
+            </div>
+            <br/>
+            <div class="panel panel-danger">
+                <div class="panel-heading">{{"EXPLORE_YARRAA_THRO"|translate}}</div>
+                <div class="panel-body">
+                  <a href="http://www.youtube.com/watch?v=nU-WQ2sTdg8" rel="prettyPhoto[videos]" style="position:relative"><span class="mask">&nbsp;</span><img class="illus" src="img/illus_video_02.gif" alt="" style="opacity: 1;"></a>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
 		<script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="src/js/SmoothScroll.js"></script>

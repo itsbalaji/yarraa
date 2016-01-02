@@ -33,7 +33,15 @@ app.config(
 	        when('/extwarranty', {
 		          templateUrl: 'partials/purchasewarranty.html',
 		          controller: 'PurchaseCtrl'
-		        }).	        
+		        }).	  
+	        when('/profileEdit', {
+		          templateUrl: 'partials/profileedit.html',
+		          controller: 'ProfileCtrl'
+		        }).	
+	        when('/productUpload', {
+		          templateUrl: 'partials/b2c_upload.html',
+		          controller: 'ProductUploadCtrl'
+		        }).	
 	        when('/service404', {
 		        templateUrl: 'partials/service404.html'
 		      }).

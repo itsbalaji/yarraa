@@ -5,12 +5,16 @@
           <p>{{"POINTS_AVAILABLE"|translate}} : <span> {{loggedInUser.reward_point.remaining}}</span></p>
           <p>{{"POINTS_EARNED"|translate}} : <span> {{loggedInUser.reward_point.earned}}</span></p>
         </li>
-    	<li><a class="dropdown-button" data-toggle="dropdown"   data-activates="dropdown1"><i class="material-icons left">perm_identity</i>{{loggedInUser.first_name}}<i class="material-icons right">arrow_drop_down</i></a></li>
+    	<li><a class="dropdown-button" data-toggle="dropdown"   data-activates="dropdown1">
+    		<!-- <i class="material-icons left">perm_identity</i>-->
+    		
+    		<img id="profileimg" src="{{REST_URL}}/users/{{loggedInUser.user_id}}/picture" width="50px" height="50px"/> {{loggedInUser.first_name}}
+    		<i class="material-icons right">arrow_drop_down</i></a></li>
 		
   </ul>
   
    <ul id="dropdown1" class="dropdown-content" >
-	                <li><a href="">{{"EDIT_PROFILE"|translate}}</a></li>
+	                <li><a href="#profileEdit">{{"EDIT_PROFILE"|translate}}</a></li>
 	                <li><a href="">{{"SUPPORT"|translate}}</a></li>
 	                <li><a href="">{{"HELP"|translate}}</a></li>
 	                

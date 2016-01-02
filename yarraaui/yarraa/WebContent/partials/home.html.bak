@@ -69,8 +69,8 @@
           <h2>{{"GETTING_STARTED_IN_3"|translate}}</h2> 
           <div class="inner-tabs" align="center">
             <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-default btn-active"><i class="fa fa-shield"></i> {{"GET_COVERED"|translate}}</button>
-              <button type="button" class="btn btn-default btn-active"><i class="icon ion-settings"></i> {{"INSTANT_FIX"|translate}}</button>
+              <button type="button" class="btn btn-default sheild"> {{"GET_COVERED"|translate}}</button>
+              <button type="button" class="btn btn-default wrench btn-active"> {{"INSTANT_FIX"|translate}}</button>
             </div>
           </div>
           <img src="img/yarraa-steps.png" class="img-responsive" alt="getting started with yarraa">
@@ -123,7 +123,7 @@
       <section class="about-yarraa" id="aboutYarraa">
       	<div class="container-fluid">
         	<div class="row">
-          	<div class="col-md-6 about-us" >
+          	<div class="col-md-6 about-us">
             	<h2>{{"ABOUT_YARRAA"|translate}}</h2>
               <p>{{"YARRAA_IS_ALL_ABOUT_"|translate}}</p>
               <div class="team-yarraa" align="center">

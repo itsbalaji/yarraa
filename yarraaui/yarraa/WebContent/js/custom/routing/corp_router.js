@@ -5,7 +5,11 @@ app.config(
 			   when('/', {
 			        templateUrl: 'partials/corp_landing.html',
 			        controller: 'UploadCtrl'
-			      }).		             
+			      }).	
+		      when('/profileEdit', {
+		          templateUrl: 'partials/profileedit.html',
+		          controller: 'ProfileCtrl'
+		        }).	 
 		      otherwise({
 		        redirectTo: '/'
 		      });

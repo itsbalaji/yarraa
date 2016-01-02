@@ -17,6 +17,29 @@ app.directive('onFinishRender', function ($timeout) {
 });
 
 
+app.run(function($rootScope, $location) {
+	/**
+	 * Event-Listner for Back-Button
+	 */
+	$rootScope.$on('$locationChangeStart', function(event, next, current){   
+		
+		if(current.indexOf('/html/index.html') > -1 && 
+				next.indexOf('/html/index.html') > -1)
+		{
+			
+		}
+		else if(next != current)
+		{
+			event.stopPropagation();
+			// Here you can take the control and call your own functions:
+			   // alert('Sorry ! Back Button is disabled');
+			    // Prevent the browser default action (Going back):
+			    event.preventDefault();      
+		}
+	          
+	});
+});
+
 app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_TAGLINE) {
 	$rootScope.loggedInUser = null;
 	$scope.BRAND_TAGLINE = BRAND_TAGLINE;
@@ -78,6 +101,7 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 			itemsDesktopSmall : [979,3]
 		});
 	});
+	
 		
 });
 
@@ -157,7 +181,8 @@ app.factory('notify', ['$window', function(win) {
 		   			$("#alertDesc").html('');
 			  },
 		   success : function(msg, callback) {
-			   if($("#alertMessage").length )
+			  
+			   /*if($("#alertMessage").length )
 		    	{
 				   $("#alertMessage").removeClass();
 				   $("#alertMessage").addClass("alert-success");
@@ -171,6 +196,13 @@ app.factory('notify', ['$window', function(win) {
 					   			$("#alertStatus").html('');
 					   			$("#alertDesc").html('');
 						   }, 10000);
+		    	}*/
+			   if($("#notofyModal").length )
+		    	{				   
+				   $("#alertMessage").removeClass();
+				   $("#alertMessage").addClass("alert-success");		    	
+				   $("#alertDesc").html(msg);
+				   $('#notofyModal').openModal();
 		    	}
 			   
 			   else
@@ -180,7 +212,8 @@ app.factory('notify', ['$window', function(win) {
 			   if(callback)callback();
 		     },
 	     failure : function(msg, callback) {
-	    	if($("#alertMessage").length )
+	    	 
+	    	/*if($("#alertMessage").length )
 	    	{
 	    		 $("#alertMessage").removeClass();
 				   $("#alertMessage").addClass("alert-danger");
@@ -195,7 +228,17 @@ app.factory('notify', ['$window', function(win) {
 					   			$("#alertStatus").html('');
 					   			$("#alertDesc").html('');
 						   }, 5000);
-	    	}
+	    	}*/
+	    	 if($("#notofyModal").length )
+		    	{
+				  
+				   $("#alertMessage").removeClass();
+				   $("#alertMessage").addClass("alert-danger");		    	
+				   $("#alertDesc").html(msg);
+				   //$("#alertMessage").focus();
+				   $('#notofyModal').openModal();
+				   
+		    	}
 	    	 else
 	    	 {
 	    		 win.alert("Error!"+msg);		    	 
@@ -204,18 +247,15 @@ app.factory('notify', ['$window', function(win) {
 	    	 if(callback)callback();
 	    	 
 		  } ,
-	     info : function(msg) {
-	    	 $("#alertMessage").removeClass();
-			   $("#alertMessage").addClass("alert-info");
-			   $("#alertStatus").html("Loading...");
+	     info : function(msg) {  
+	    	 
+	    	if($("#notofyModal").length )
+	    	{				   
+			   $("#alertMessage").removeClass();
+			   $("#alertMessage").addClass("alert-info");		    	
 			   $("#alertDesc").html(msg);
-			   $("#alertMessage").focus();
-			   
-			 //clear after 10 seconds
-			   setTimeout(function()
-					   {				   
-				   			clearNotify();
-					   }, 10000);
+			   $('#notofyModal').openModal();
+	    	}
 		  } 
 	   };
 	 }]);
@@ -254,11 +294,15 @@ app.factory('notify', ['$window', function(win) {
 	   };
 	 }]);
 	
-	app.directive('userInfo', 
-		function()
+	app.directive('userInfo', ['AppConstants',
+		function(AppConstants)
 		{
-			return {
-				templateUrl:'partials/user-info.html'
+			return {				
+				templateUrl:'partials/user-info.html',
+				controller: function($scope)
+				{
+					$scope.REST_URL = AppConstants.REST_URL;
+				}
 			};
-		}
+		}]
 	);
