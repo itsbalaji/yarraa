@@ -1,12 +1,30 @@
 <div ng-controller="ProductUploadCtrl" name="upload" >
-
+<div class="breadcrumb">
+  <ul>
+      <li><a href="#/">Home</a> > </li> 
+      <li>Upload existing warranty information</li>
+  </ul>
+</div>
+ <div class="row" align="center" style="margin-bottom:0;">
+                <h5 class="pageTitle">
+                    <div  class="col s6 pageTitleText"><i class="small material-icons">present_to_all</i>Upload existing warranty information</div>
+                    <div  class="col s3">&nbsp;</div>
+                    <div class=" s3">
+                       &nbsp;
+                    </div> 
+                </h5>
+                
+                <div class="row" style="margin-bottom:0;">
+                  <div class="col s12">
+                    <div class="card-panel" align="left">
+                        <div class="row">
 
   <form class="col s12" name="fileUploadForm1" id="fileUploadForm1" enctype="multipart/form-data" >
   
         
-  Upload the File:
-  
-      <div class="file-field input-field">
+ <h5 style="font-size:18px;">Upload existing warranty information</h5>
+<div class="row">  
+      <div class="file-field input-field  col s6">
         <div class="btn">
           <span>Attachments</span>
           <input type="file" name="file" id="productUpload">
@@ -14,16 +32,35 @@
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text" placeholder="Upload files">
         </div>
-      </div>
-      
-                                  
-	<div class="row">
+      </div> </div>
+<div class="row">
+    <div class="input-field col s6">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Comments</label>
+        </div>
+</div>      
+<div class="row">
          <div class="col s12" style="padding:20px;">
-            <button class="btn waves-effect waves-light left"  ng-click="uploadProducts()" name="action">Upload</button> 
-            <a class="waves-effect waves-light right" href="../template/b2c sample.xls" target="_blank">
-        	{{"DOWNLOAD_SAMPLE"|translate}}</a>
-        		
+            <button class="btn waves-effect waves-light left"  ng-click="upload()"><i class="small material-icons">present_to_all</i>Upload</button>
         </div>
      </div>
+<div class="row">
+	<div class="col s12">
+		<h6>Notes :</h6>
+<ul style="list-style-type: circle;">		
+<li style="font-size:13px;">Only .xls files created with Microsoft Excel 2003 and above are supported.</li>
+		<li style="font-size:13px;">The Excel must contain Header as its first row.</li>
+		<li style="font-size:13px;">Price information must be mentioned in your company currency code</li>
+		<li style="font-size:13px;">To Download the Template <a href="http://www.yarraa.com/AfterSales/yarraauploads/ajax?bst_model=rigelsoft/ui/company/ExtendWarrantyUpload&bst_action=967fcd1_downloadTemplate&bst_instanceID=rigelsoft_00215ui_00215company_00215ExtendWarrantyUpload_0051520578516_0051515229542cbc_005151">Click Here</a></li>
+		<li style="font-size:13px;">If your Excel File Data Structure is entirely different from this, you can define a Template and use your File without any modifications. Please <a href="http://www.yarraa.com/AfterSales/myportal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3gvP4sAs7BQU0N3E3dXA88Az0A3Y2NLA4NAE6B8pFm8s7ujh4m5j4GBhYm7gYGniZO_n4dzoKGBpzEB3eEg-_DrB8kb4ACOBvp-Hvm5qfoFuREGWSaOigDyMh3n/dl3/d3/L0lDU0lKSmdrS0NsRUpDZ3BSQ1NBL29Ob2dBRUlRaGpFS0lRQUJHY1p3aklDa3FTaFNOQkFOYUEhIS80QzFiOVdfTnIwZ0RFU1pJSlJERVNaTUpRaUlrZmchIS83X0pOOFA2VlU1MUc0R0UwSVBJUUYzMzkwMDYwL3p3VkxINTI3MDAxMjgvaWJtLmludi8zMTM2NjkxNTM3MTUvYmZfYWN0aW9uL3JlZGlyZWN0VG9VcGxhZENvbmZpZw!!/">Click here</a> to define a Template now.</li>
+</ul>
+</div>
+</div>                                  
+
    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>

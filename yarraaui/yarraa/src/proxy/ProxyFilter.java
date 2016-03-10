@@ -11,12 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 
 public class ProxyFilter implements Filter {
 	
-    public ProxyFilter() {
-    }
+    public ProxyFilter() {    }
 
     public void destroy() {
-    }
-
+    }  
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
                      HttpServletRequest req = (HttpServletRequest)request;
                      // Store request path to HTTP Request object

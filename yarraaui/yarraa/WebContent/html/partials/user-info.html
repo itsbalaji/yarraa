@@ -2,30 +2,30 @@
 <ul class="right hide-on-med-and-down" style="margin-top:10px;" ng-show="loggedInUser != null">
         <li class="coin">
           <h6>{{"REWARDS"|translate}}</h6>
-          <p>{{"POINTS_AVAILABLE"|translate}} : <span> {{loggedInUser.reward_point.remaining}}</span></p>
-          <p>{{"POINTS_EARNED"|translate}} : <span> {{loggedInUser.reward_point.earned}}</span></p>
+          <p>{{"POINTS_AVAILABLE"|translate}} : <span> {{loggedInUser.reward_point.remaining ? loggedInUser.reward_point.remaining : 0}}</span></p>
+          <p>{{"POINTS_EARNED"|translate}} : <span> {{loggedInUser.reward_point.earned ?  loggedInUser.reward_point.earned : 0}}</span></p>
         </li>
     	<li><a class="dropdown-button" data-toggle="dropdown"   data-activates="dropdown1">
     		<!-- <i class="material-icons left">perm_identity</i>-->
-    		
-    		<img id="profileimg" src="{{REST_URL}}/users/{{loggedInUser.user_id}}/picture" width="50px" height="50px"/> {{loggedInUser.first_name}}
+    		<div id="profileimg" style = "background-image: url({{REST_URL}}/users/{{loggedInUser.user_id}}/picture)"></div>
+    		<!--<img id="profileimg" src="{{REST_URL}}/users/{{loggedInUser.user_id}}/picture" width="50px" height="50px"/> --> {{loggedInUser.first_name}}
     		<i class="material-icons right">arrow_drop_down</i></a></li>
 		
   </ul>
   
    <ul id="dropdown1" class="dropdown-content" >
-	                <li><a href="#profileEdit">{{"EDIT_PROFILE"|translate}}</a></li>
-	                <li><a href="">{{"SUPPORT"|translate}}</a></li>
-	                <li><a href="">{{"HELP"|translate}}</a></li>
+	                <li><a href="#profileEdit"><i class="tiny material-icons">description</i>{{"EDIT_PROFILE"|translate}}</a></li>
+					<li class="divider"></li>	                
+					<li><a href=""><i class="tiny material-icons">assignment_ind</i>{{"SUPPORT"|translate}}</a></li>
+					<li class="divider"></li>	                
+					<li><a href=""><i class="tiny material-icons">info</i>{{"HELP"|translate}}</a></li>
+					<li class="divider"></li>	                
+					<li><a href="#instantFix"><i class="tiny material-icons">info</i>{{"INSTANT_FIX"|translate}}</a></li>
 	                
 	                <li class="divider"></li>
-	                <li><a onClick="logout()">{{"LOGOUT"|translate}}</a></li>
+	                <li><a onClick="logout()"><i class="tiny material-icons">power_settings_new</i>{{"LOGOUT"|translate}}</a></li>
               </ul>
              
-              
-              <script>
-              $('.dropdown-button').dropdown({
-                 
-                }
-              );	
-              </script>
+<script>
+	$('.dropdown-button').dropdown({belowOrigin: true});
+</script>

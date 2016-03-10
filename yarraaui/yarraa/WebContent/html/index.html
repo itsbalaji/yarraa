@@ -30,7 +30,7 @@
     
     <nav class="light-blue lighten-1" role="navigation" >
             <div class="nav-wrapper container" >               
-                <a id="logo-container" href="#" class="brand-logo"><img src="../imgs/logo.jpg"/></a>
+                <a id="logo-container" href="#/" class="brand-logo"><img src="../imgs/logo.jpg"/></a>
                 <div  user-info></div>
               <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
@@ -56,7 +56,7 @@
       <div class="alert alert-success" id=alertMessage role="alert">      		
       		<span id="alertDesc" style="padding:12px">Success message</span>      		
       		<div class="modal-footer">
-      			<a href="#!" eat-click class=" modal-action modal-close waves-effect waves-green btn-flat">{{"CLOSE"|translate}}</a>
+      			<a href="#!" eat-click id="notifyCloseBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">{{"CLOSE"|translate}}</a>
     		</div>
       		
       </div>
@@ -81,7 +81,7 @@
             	
                     
                     
-              <div class="footer row">
+              <div class="footer col s12" style="padding-top:20px;margin-top:20px;">
                   <p>YARRAA Inc &copy; 2009 <a href="../index.html#/termsandcondition" target="_blank">{{"USER_AGREEMENT"|translate}}</a> | <a href="../index.html#/privacypolicy" target="_blank">{{"PRIVACY_POLICY"|translate}}</a> | <a href="../index.html#/copyright" target="_blank">{{"COPYRIGHT_POLICY"|translate}}</a></p>
                   <p>Use of this site is subject to express terms of use, which prohibit commercial use of this site.</p>
                   <p>By continuing past this page, you agree to abide by these terms. Drop us your valuable feedback <a href="feedback@yarraa.com">here</a>.</p>
@@ -130,6 +130,7 @@
             <script type="text/javascript" src="../js/custom/controllers/PurchaseCtrl.js"></script>
             <script type="text/javascript" src="../js/custom/controllers/ProfileCtrl.js"></script>
             <script type="text/javascript" src="../js/custom/controllers/ProductUploadCtrl.js"></script>
+            <script type="text/javascript" src="../js/custom/controllers/InstantFixCtrl.js"></script>
             <script>
             
          // *** Author: Wael Sidawi

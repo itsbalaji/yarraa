@@ -6,7 +6,7 @@
     right:0;
     bottom:0;
     background-color:#fff;
-    z-index:99;
+    z-index:9999;
 }
 #status {
     width:200px;
@@ -482,6 +482,7 @@ span.mask{background: url(../../img/icon_player_02.png) 50% 50% no-repeat;
 #notofyModal
 {
 	z-index:3003 !important;
+	background-color:transparent !important;
 }
 
 #notofyModal .modal-content
@@ -489,3 +490,11 @@ span.mask{background: url(../../img/icon_player_02.png) 50% 50% no-repeat;
 	margin-left:20%;
 	margin-right:20%;
 }
+
+
+#notofyModal .modal-content{padding:0px;}
+#notofyModal.modal{    background-color: #f1f1f1;
+    border-radius: 10px; }
+#notofyModal i{ vertical-align:middle}
+#notofyModal #alertDesc{display:inline-block}
+#alertMessage{padding:15px}

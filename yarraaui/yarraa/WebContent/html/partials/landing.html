@@ -1,4 +1,4 @@
-<div ng-controller="ProductCtrl" name="landing" >
+<div ng-controller="ProductCtrl" name="landing" class="warrantyPageDiv">
 
 	<div class="col s12">
       <ul class="tabs">
@@ -17,7 +17,7 @@
         <div class="col s"><a class="waves-effect waves-light btn" ng-href="#productUpload">
         	<i class="material-icons left">add</i>{{"UPLOAD_PRODUCT"|translate}}</a>
         </div>
-        <div class="col s2">&nbsp;</div>
+        <div class="col s1">&nbsp;</div>
         <div class="col s3">
           <div class="search">
             <div class="search-wrapper card">
@@ -32,10 +32,10 @@
         </div>
       </div>
       <div class="row" id="summaryCount">
-	      <div class="col s3"><span class="label">{{"TOTAL_PRODUCTS"|translate}}</span><span class="count">{{warrantiesFullList.length}}</span></div>
-	      <div class="col s3"><span class="label">{{"WARRANTY_EXPIRED"|translate}}</span><span class="count">{{warrantyExpiredCount}}</span></div>
-	      <div class="col s3"><span class="label">{{"UNDER_COVERAGE"|translate}}</span><span class="count">{{warrantiesFullList.length - warrantyExpiredCount}}</span></div>
-	      <div class="col s3"><span class="label">{{"UNDER_SERVING"|translate}}</span><span class="count"></span></div>
+	      <div class="col s3"><span class="label">{{"TOTAL_PRODUCTS"|translate}}</span><span class="count">{{warrantiesFullList.length | ifEmpty:0}}</span></div>
+	      <div class="col s3"><span class="label">{{"WARRANTY_EXPIRED"|translate}}</span><span class="count">{{warrantyExpiredCount | ifEmpty:0}}</span></div>
+	      <div class="col s3"><span class="label">{{"UNDER_COVERAGE"|translate}}</span><span class="count">{{warrantiesFullList.length - warrantyExpiredCount | ifEmpty:0}}</span></div>
+	      <div class="col s3"><span class="label">{{"UNDER_SERVING"|translate}}</span><span class="count">{{0}}</span></div>
       </div>
 	<div ng-repeat="warranty in warranties | filter:searchText" class="warrantyPage">
       <ul class="collapsible" id="allGrid" data-collapsible="accordion">
@@ -179,7 +179,7 @@
 	
 	<div id="modal1" class="modal">
         <a class="modalClose"><img src="../imgs/delete.png" /></a>
-            <div class="modaltop row">
+            <div class="modaltop">
                 <div class="col s3 headerImg">
                 <div class="imgContainer"><img src="{{imgBaseURL}}/warranties/{{selectedWarranty.warranty_id}}/pictures/1" /> </div>
                 <div style="padding-top:18px;">{{selectedWarranty.title}}</div>
@@ -194,14 +194,16 @@
                <div align="center" class="deviceval">{{selectedWarranty.cost | currency}}</div>
              </div>
             </div>
-            <div class="modalDetail">
+            <div class="modalDetail warrantyProductEdit">
                   <table cellspacing="0" cellpadding="0" border="0">
                     <tr>
                       <td>
                         <b>{{"SERIAL_NO"|translate}} : </b><span> {{selectedWarranty.serial_no}}</span>
                       </td>
                       <td>
-                        <b>{{"PURCHASED_FROM"|translate}} : </b><span> {{selectedWarranty.purchased_from}}</span>
+                        <b>{{"PURCHASED_FROM"|translate}} : </b>
+                        	<span ng-hide="editmode"> {{selectedWarranty.purchased_from}}</span>
+                        	<span ng-show="editmode"> <input id="brand" name="brand" type="text" class="form-control validate" ng-model="selectedWarranty.purchased_from" required="required"></span>
                       </td>
                     </tr>
                     <tr>
@@ -209,7 +211,9 @@
                         <b>{{"BRAND"|translate}} : </b><span> {{selectedWarranty.brand_name}}</span>
                       </td>
                       <td>
-                        <b>{{"WARRANTY_LENGTH"|translate}} : </b><span> {{selectedWarranty.warranty_in_months}} months</span>
+                        <b>{{"WARRANTY_LENGTH"|translate}} : </b>
+                        	<span ng-hide="editmode"> {{selectedWarranty.warranty_in_months}} months</span>
+                        	<span ng-show="editmode"> <input id="warranty_in_months" name="warranty_in_months" type="text" class="form-control validate" ng-model="selectedWarranty.warranty_in_months" required="required"></span>
                       </td>
                     </tr>
                     <tr>
@@ -217,7 +221,9 @@
                         <b>{{"TYPE"|translate}} : </b><span> {{selectedWarranty.product_type}}</span>
                       </td>
                       <td>
-                        <b>{{"PRODUCT_COST"|translate}} : </b><span> {{selectedWarranty.cost | currency}}</span>
+                        <b>{{"PRODUCT_COST"|translate}} : </b>
+                        	<span ng-hide="editmode"> {{selectedWarranty.cost | currency}}</span>
+                        	<span ng-show="editmode"> <input id="cost" name="cost" type="text" class="form-control validate" ng-model="selectedWarranty.cost" required="required"></span>
                       </td>
                     </tr>
                     <tr>
@@ -230,17 +236,26 @@
                     </tr>
                     <tr>
                       <td>
-                        <b>{{"COUNTRY"|translate}} : </b><span> {{selectedWarranty.currency_code}}</span>
+                        <b>{{"COUNTRY"|translate}} : </b>
+                        	<span ng-hide="editmode"> {{selectedWarranty.country}}</span>                        	
+                        	<span ng-show="editmode"> <select ng-model="selectedWarranty.country">
+                                   		<option value="SG" selected>Singapore</option>
+                                  </select>
+                            </span>
                       </td>
                       <td>
-                        <b>{{"BILL_NO"|translate}} : </b><span> {{selectedWarranty.bill_no}}</span>
+                        <b>{{"BILL_NO"|translate}} : </b>
+                        	<span ng-hide="editmode"> {{selectedWarranty.bill_no}}</span>
+                        	<span ng-show="editmode"> <input id="bill_no" name="bill_no" type="text" class="form-control validate" ng-model="selectedWarranty.bill_no" required="required"></span>
                       </td>
                     </tr>
                   </table>
               </div>
-            <!--div class="modal-footer">
-              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-            </div-->
+            <div class="modal-footer">
+              <a href="" class="waves-effect waves-green btn-flat" ng-click="editmode=true" ng-hide="editmode">Edit</a>
+              <a href="" class="waves-effect waves-green btn-flat" ng-click="updateWarranty()" ng-show="editmode">Update</a>
+              <a href="" class="waves-effect waves-green btn-flat" ng-click="editmode=false" ng-show="editmode">cancel</a>
+            </div>
           </div>
 	
 	

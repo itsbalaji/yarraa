@@ -41,8 +41,8 @@ app
 $translateProvider.translations('en_US', {
 	"ABOUT_YARRAA":"About YARRAA",
 	"ADD":"Add",
-	"ADD_PRODUCT":"Add Product",
-	"UPLOAD_PRODUCT":"Upload Product",
+	"ADD_PRODUCT":"ADD PRODUCT",
+	"UPLOAD_PRODUCT":"UPLOAD WARRANTIES",
 	"ADVERTISE":"Advertise",
 	"ALL":"All",
 	"APPLIANCES_INSURANCE":"Appliances insurance",

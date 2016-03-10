@@ -1,5 +1,20 @@
 <div ng-controller="ServiceCtrl" name="service" ng-init="init()">
-
+<div class="breadcrumb">
+  <ul>
+      <li><a href="#/">Home</a> > </li> 
+      <li>Service Center</li>
+  </ul>
+</div>
+<div class="row" align="center" style="margin-bottom:0;">
+                <h5 class="pageTitle">
+                    <div  class="col s6 pageTitleText"><i class="small material-icons">settings_phone</i>Service Center</div>
+                    <div  class="col s3">&nbsp;</div>
+                    <div class=" s3">
+                       &nbsp;
+                    </div> 
+                </h5>
+                
+                <div class="row" style="margin-bottom:0;">
 <div class="col s12">
                     <div class="card-panel" align="left">
                         <div class="row">
@@ -24,13 +39,13 @@
                                   <label for="address">{{"ADDRESS_CONTAIN"|translate}}</label>
                                 </div>
                                 <div class="input-field col s4">
-                                    <button class="btn waves-effect waves-light left" type="submit" name="action">{{"SEARCH"|translate}}</button>
+                                    <button class="btn waves-effect waves-light left" type="submit" name="action"><i class="material-icons left">search</i>{{"SEARCH"|translate}}</button>
                                 </div>
                               </div>
                             </form>
                         </div>
                        
-                         <table  class="bordered striped highlight responsive-table">
+                         <table  class="bordered striped highlight responsive-table yTable">
                             <thead>
                               <tr>
                                   
@@ -73,3 +88,4 @@
                     </div>
                   </div>
 </div>					
+</div>

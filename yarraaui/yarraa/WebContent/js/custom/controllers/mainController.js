@@ -103,6 +103,14 @@ app.controller("MainCtrl", function($scope, $location, $rootScope,$http, BRAND_T
 	});
 	
 		
+}).filter('ifEmpty', function() {
+    return function(input, defaultValue) {
+        if (angular.isUndefined(input) || input === null || input === '') {
+            return defaultValue;
+        }
+
+        return input;
+    }
 });
 
 
@@ -201,8 +209,9 @@ app.factory('notify', ['$window', function(win) {
 		    	{				   
 				   $("#alertMessage").removeClass();
 				   $("#alertMessage").addClass("alert-success");		    	
-				   $("#alertDesc").html(msg);
+				   $("#alertDesc").html(msg);				  
 				   $('#notofyModal').openModal();
+				   $("#confirmActionBtns").remove();
 		    	}
 			   
 			   else
@@ -237,6 +246,7 @@ app.factory('notify', ['$window', function(win) {
 				   $("#alertDesc").html(msg);
 				   //$("#alertMessage").focus();
 				   $('#notofyModal').openModal();
+				   $("#confirmActionBtns").remove();
 				   
 		    	}
 	    	 else
@@ -254,9 +264,36 @@ app.factory('notify', ['$window', function(win) {
 			   $("#alertMessage").removeClass();
 			   $("#alertMessage").addClass("alert-info");		    	
 			   $("#alertDesc").html(msg);
+			   $("#confirmActionBtns").remove();
 			   $('#notofyModal').openModal();
 	    	}
-		  } 
+		  },
+		  confirm : function(msg, callbackYes, callbackCancel) {	    	 
+		    
+		    	
+		    	$("#alertMessage").removeClass();
+				$("#alertMessage").addClass("alert-danger");		    	
+				$("#alertDesc").html(msg);
+				
+				$('#notofyModal').openModal();				
+				$("#confirmActionBtns").remove();
+				
+//				var $newdiv1 = $( '<div id="confirmActionBtns" class="row">' +
+//	                '<div class="col s6" style="padding:20px;">' + 
+//	                	'<button class="btn waves-effect waves-light left" ng-click="callbackYes()" name="action">{{"YES"|translate}}</button> &nbsp;<span class="buttonbar"></span>' +
+//	                    '<button class="btn waves-effect waves-light left" ng-click="callbackCancel()" name="action">{{"NO"|translate}}</button>' +                   
+//	               '</div>'+
+//               '</div>');
+				var $newdiv1 = $( '<button id="confirmActionBtns" class="btn waves-effect waves-light left"  name="action">DELETE</button> ');
+				$("#alertMessage .modal-footer").append($newdiv1);
+				
+				$("#confirmActionBtns").click(function() {
+					$('#notofyModal').closeModal();	
+					callbackYes();
+				});
+				
+		    	 
+			  } 
 	   };
 	 }]);
 
@@ -286,10 +323,10 @@ app.factory('notify', ['$window', function(win) {
 		     },
 	     failure : function(msg) {
 	    	 $("#alertMessage").removeClass();
-			   $("#alertMessage").addClass("alert-danger");
-	    	 $("#alertStatus").html("Error!");
-			   $("#alertStatus").html(msg);
-			   $("#alertMessage").focus();
+			   $("#alertMessage").addClass("alert-danger");		    	
+			   $("#alertDesc").html(msg);
+			   $('#notofyModal').openModal();
+			   $("#confirmActionBtns").remove();
 		     } 
 	   };
 	 }]);

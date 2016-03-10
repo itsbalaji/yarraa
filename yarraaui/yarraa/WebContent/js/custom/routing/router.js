@@ -42,6 +42,10 @@ app.config(
 		          templateUrl: 'partials/b2c_upload.html',
 		          controller: 'ProductUploadCtrl'
 		        }).	
+	        when('/instantFix', {
+		          templateUrl: 'partials/instantfix.html',
+		          controller: 'InstantFixCtrl'
+		        }).	
 	        when('/service404', {
 		        templateUrl: 'partials/service404.html'
 		      }).

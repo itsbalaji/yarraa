@@ -9,6 +9,7 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 	$scope.countList=0;
 	$scope.currEpochDate;
 	$scope.selectedWarranty = {};
+	$scope.editmode = false;
 	
 	
 	
@@ -180,6 +181,58 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 		
 		
 	}
+	
+	$scope.updateWarranty = function()
+	{
+		$scope.editmode = false;
+		
+		var requestJSON = {};
+		requestJSON.cost = $scope.selectedWarranty.cost;
+		requestJSON.bill_no = $scope.selectedWarranty.bill_no;
+		requestJSON.country = $scope.selectedWarranty.country;
+		requestJSON.purchased_from = $scope.selectedWarranty.purchased_from;
+		requestJSON.warranty_period = $scope.selectedWarranty.warranty_in_months;
+		requestJSON.warranty_start_date = $scope.selectedWarranty.warranty_start_date;
+		
+		
+		
+		$http({
+			method : 'POST',
+			url : AppConstants.REST_URL + '/warranties/'+$scope.selectedWarranty.warranty_id,
+			data: requestJSON,
+			headers: {'Content-Type': 'application/json'}
+		}
+		 )
+		.then(function(response)
+		{
+			if(response.data)
+			{
+				
+				if(response.data.errors)
+				{
+					if(response.data.errors[0])
+						notify.failure(response.data.errors[0].message);
+					else
+						notify.failure(response.data.errors.message);
+				}
+				else
+				{
+					notify.success("Product Updated Saved");
+				}
+			}
+			else
+			{
+				notify.failure(JSON.stringify(response));
+			}
+			
+		}
+		,function(res)
+		{
+			notify.failure("Technical Error");	
+		});
+		
+		
+	}
 	$scope.warrantyExpireNextMonth = function()
 	{
 		$scope.warranties = [];
@@ -223,10 +276,16 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 	$scope.deleteWarranty = function(warranty_id)
 	{
 		
-		
-			$http({
+			$scope.doDeleteId = warranty_id;
+			notify.confirm('Do you want to delete the warranty', doDeleteWarranty);
+			
+	}
+	
+	var doDeleteWarranty = function()
+	{
+		$http({
 				method : 'DELETE',
-				url : AppConstants.REST_LOCAL_URL + '/warranties/'+warranty_id,
+				url : AppConstants.REST_LOCAL_URL + '/warranties/'+$scope.doDeleteId,
 				headers: {'Content-Type': 'application/json'}
 			}
 			 )
@@ -256,7 +315,7 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 			{
 				notify.failure("Technical Error");	
 			});
-		}
+	}
 	
 	$scope.toggleDetails = function(id)
 	{	
@@ -360,8 +419,9 @@ app.controller("ProductCtrl", function($scope, notify, AppConstants, $http, $loc
 	
 	$scope.popupDetails = function(warranty_id)
 	{
+		$scope.editmode = false;
 		result = $scope.getWarrantyById(warranty_id);
-		$scope.selectedWarranty = result;
+		$scope.selectedWarranty = JSON.parse(JSON.stringify(result));
 		$('#modal1').openModal();
 	}
 	
