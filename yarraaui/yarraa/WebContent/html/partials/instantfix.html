@@ -1,0 +1,144 @@
+<div ng-controller="InstantFixCtrl" name="instantFix" ng-init="init()">	
+	
+	 <h5 class="pageTitle">
+	     <div  class="col s6 pageTitleText"><i class="small material-icons">swap_vertical_circle</i> Instant Fix </div>
+	     <div  class="col s3">&nbsp;</div>
+	     <div class="search s3">&nbsp;</div> 
+	 </h5>
+	 <div class="row">
+	   <div class="col s12">
+	     <div class="card-panel" align="left">
+	       <h5>Select Product :</h5>
+	         <div class="row">
+	           <div class="col s2 m2" ng-repeat="prod in productsTypes" ng-if="prod.imgSrc">
+	             <div class="card small" ng-click="populateBrands(prod.name)">
+	               <div class="card-image">
+	                 <img ng-src="imgs/{{prod.imgSrc}}" ng-if="prod.imgSrc">
+	               </div>
+	               <div class="card-content">
+	               </div>
+	               <div class="card-action">
+	                 <a href="" >{{prod.name}}</a>
+	               </div>
+	             </div>
+	            </div>
+	         </div>
+	          <div class="row">
+	             <form class="col s12">
+	               <div class="row">
+	                 <div class="input-field col s4">
+	                 
+	                   <select  ng-model="brandSelected" ng-change="populateProducts()">
+	                      <option value="" selected disabled>Please Select Brand</option>
+	                      <option ng-repeat="brand in brands" value="{{brand}}">{{brand}}</options>
+	                    </select>
+	                  
+	                 </div>
+	                 <div class="input-field col s4">
+	                   <select ng-model="modelSelected" ng-change="populateIssues()">
+	                    <option value="" selected disabled>Please Select Product Type</option>
+	                    <option ng-repeat="prod in models" value="{{prod.warranty_id}}">{{prod.model_name}}:{{prod.serial_no}}</options>	                     
+	                   </select>
+	                 </div>
+	                 
+	                 <div class="input-field col s4">
+	                     <button class="btn waves-effect waves-light left" type="button" ng-click="fixnow()"> <i class="small material-icons">swap_vertical_circle</i>Fix Now</button>
+	                 </div>
+	               </div>
+	               <div class="row">
+	                   <div class="input-field col s8">
+	                 <select  ng-model="issueSelected" ng-change="getServiceCenters()">
+	                    <option value="" selected disabled>What would like to fix ?</option>
+	                    <option ng-repeat="issue in issues" value="{{issue.issue_id}}">{{issue.issue_desc}}</options>
+	                   </select>
+	                 </div>
+	               </div>
+	
+	             </form>
+	         </div>
+	         
+	         
+	          <table  class="bordered striped highlight responsive-table" ng-show="isCentersAvailable == true">
+	             <thead>
+	               <tr>
+	                   <th data-field="id">Buy</th>
+	                   <th data-field="brand">Service Center</th>
+	                   <th data-field="model">Cost</th>
+	                   <th data-field="producttype">User rating</th>
+	               </tr>
+	             </thead>
+	     
+	             <tbody>
+	               <tr ng-repeat="scl in serviceCenterList">
+	                 <td><p>
+	                       <input name="group1" type="radio" id="test1" />
+	                      <label for="">&nbsp;</label>
+	                     </p>
+	                 </td>
+	                 <td>{{scl.service_center_id}}</td>
+	                 <td>$ {{scl.fix_price}}</td>
+	                 <td> <star-rating ng-model="scl.rating" ng-ratingvalue="{{scl.rating}}" readonly="isReadonly"></star-rating></td>
+	               </tr>
+	               
+	             </tbody>
+	           </table>
+	           
+	           
+	           <h5>Review your Selection</h5>
+	           <div class="row">
+	           <table  class="bordered striped highlight responsive-table col s8">
+	             <tr>
+	               <td>Product</td>
+	               <td><div id="productContainer" ng-if="productContainer==true"><div><img src="imgs/iphone.png" /></div>Oppo Mobile Phone<br/> Serial No :123</div></td>
+	             </tr>
+	             <tr>
+	               <td>Warranty</td>
+	               <td><div id="warrantyContainer" ng-if="warrantyContainer==true">3 Months Remaining</div></td>
+	             </tr>
+	             <tr>
+	               <td>Service Center Rating</td>
+	               <td ng-init="rating2=2">
+	                   <star-rating ng-model="rating2" readonly="isReadonly"></star-rating>
+	                  
+	               </td>
+	             </tr>
+	             <tr>
+	               <td>Screen Replacement<br/> Power Button Issue</td>
+	               <td>$300</td>
+	             </tr>
+	             <tr>
+	               <td>Pick up and Delivery</td>
+	               <td>$80</td>
+	             </tr>
+	             <tr>
+	               <td>Specify Pickup Date and Time </td>
+	               <td>
+	                   <input type="date" class="datepicker" style="width:150px">
+	                   <select style="width:150px; display:inline">
+	                    <option value="" selected>Hour</option>
+	                     <option value="1">00</option>
+	                     <option value="2">01</option>
+	                     <option value="3">02</option>
+	                   </select>
+	               </td>
+	
+	             </tr>
+	             <tr>
+	               <td>Remarks</td>
+	               <td><textarea></textarea></td>
+	             </tr>
+	           </table>
+	         </div>
+	          <p>
+	             <input type="checkbox" class="filled-in" id="filled-in-box" />
+	             <label for="filled-in-box">Terms and Conditions</label>
+	           </p>
+	           <p style="margin-left:40px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	           <hr/>
+	          
+	           <button class="btn waves-effect waves-light" type="submit" name="action"><i class="small material-icons">done</i>Confirm</button>
+	     </div>
+	   </div>
+	 </div>
+	
+</div>
